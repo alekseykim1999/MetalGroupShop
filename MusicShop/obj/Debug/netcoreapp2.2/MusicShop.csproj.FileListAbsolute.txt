@@ -1,0 +1,14 @@
+D:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\MusicShop.deps.json
+D:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\MusicShop.runtimeconfig.json
+D:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\MusicShop.runtimeconfig.dev.json
+D:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\MusicShop.dll
+D:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\MusicShop.pdb
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.csprojAssemblyReference.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.csproj.CoreCompileInputs.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.RazorAssemblyInfo.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.RazorAssemblyInfo.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.AssemblyInfoInputs.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.AssemblyInfo.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.RazorTargetAssemblyInfo.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.dll
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.pdb
