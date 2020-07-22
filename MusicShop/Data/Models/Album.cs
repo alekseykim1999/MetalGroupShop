@@ -10,11 +10,12 @@ namespace MusicShop.Models
 
           public int Id { get; set; }
           public string Name { get; set; }
-          public string Release_date { get; set; }
-          public ushort Price { get; }
+          public DateTime Release_date { get; set; }
+          public ushort Price { get; set; }
 
+          public bool Available { get; set; }
           public string img { get; set; }
-          public int GroupId { get; set; }
+          public MetalGroup Group { get; set; }
                 
     }
 }
