@@ -21,3 +21,6 @@ D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.Views.pdb
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.csproj.CopyComplete
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Album\List.g.cshtml.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs

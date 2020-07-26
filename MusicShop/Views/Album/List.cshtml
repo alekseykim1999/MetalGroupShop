@@ -1,28 +1,18 @@
-﻿@using MusicShop.Models
-@model  IEnumerable<Album>
+﻿@*@using MusicShop.Models
+@model  IEnumerable<Album>*@
+
+@*@using MusicShop.ViewModel
+
+@model AlbumListViewModel*@
+<h1>@ViewBag.GroupName</h1>
+<h2>@Model.currGroup</h2>
 @{
-    Layout = null;
+     foreach (var album in Model.AllAlbums)
+     {
+        <div>
+            <h3> Альбом : @album.Name </h3>
+            <p> Цена : @album.Price.ToString("c")</p>
+        </div>
+     }
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>List</title>
-
-</head>
-<body>
-    <h2>Hello Sinner</h2>
-    <h2>Все Альбомы</h2>
-    @{ 
-        foreach(var album in Model)
-        {
-            <div>
-                <h2> Альбом : @album.Name </h2>
-                <p> Цена : @album.Price.ToString("c")</p>
-            </div>
-        }
-    }
-</body>
-</html>
