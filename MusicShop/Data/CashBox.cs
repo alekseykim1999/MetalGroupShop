@@ -26,7 +26,7 @@ namespace Supermarket.Item
         }
         public int calculate(List<Album> items_in_basket)
         {
-            int sum = items_in_basket.Sum(n => n.price);
+            int sum = 0;
             return sum;
         }
 

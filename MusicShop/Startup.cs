@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using MusicShop.Data.Mocks;
+using MusicShop.Interfaces;
 
 namespace MusicShop
 {
@@ -15,9 +17,11 @@ namespace MusicShop
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services) //регистрация плагинов внутри проекта
         {
-
-
+            services.AddTransient<IAllAlbums, MockAlbum>(); //связь между классом и интерфейсом
+            services.AddTransient<IAllGroups, MockGroups>();
             services.AddMvc(); //добавить поддержку MVC
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

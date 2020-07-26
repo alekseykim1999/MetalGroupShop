@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MusicShop.Interfaces
 {
-    interface IAllGroups
+    public interface IAllGroups
     {
-        IEnumerable<MetalGroup> getAllGroups { get}
+        IEnumerable<MetalGroup> getAllGroups { get; }
         
     }
 }

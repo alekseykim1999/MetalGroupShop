@@ -1,0 +1,28 @@
+﻿@using MusicShop.Models
+@model  IEnumerable<Album>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+
+</head>
+<body>
+    <h2>Hello Sinner</h2>
+    <h2>Все Альбомы</h2>
+    @{ 
+        foreach(var album in Model)
+        {
+            <div>
+                <h2> Альбом : @album.Name </h2>
+                <p> Цена : @album.Price.ToString("c")</p>
+            </div>
+        }
+    }
+</body>
+</html>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicShop.Interfaces
 {
-    interface IAllAlbums
+    public interface IAllAlbums
     {
         IEnumerable<Album> getAllAlbums { get; }
         Album getObjectAlbum(int id);

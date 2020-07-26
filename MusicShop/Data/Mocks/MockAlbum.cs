@@ -19,8 +19,7 @@ namespace MusicShop.Data.Mocks
                 return new List<Album>
                 {
                     new Album{Name="Korn", Release_date=new DateTime(1994, 7, 20), img="", Price=4000, Available=true, Group=groupIdGetter.getAllGroups.First()},
-                    new Album{Name="Life Is Peachy", Release_date=new DateTime(1996, 7, 20), img="", Price=4000, Available=true, Group=groupIdGetter.getAllGroups.First()}
-                    
+                    new Album{Name="Life Is Peachy", Release_date=new DateTime(1996, 7, 20), img="", Price=4000, Available=true, Group=groupIdGetter.getAllGroups.First()}                 
                 };
             }
             

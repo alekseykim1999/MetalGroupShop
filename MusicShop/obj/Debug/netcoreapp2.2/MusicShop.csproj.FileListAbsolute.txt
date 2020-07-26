@@ -12,3 +12,12 @@ D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.RazorTargetAssemblyInfo.cache
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.dll
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.pdb
+D:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\MusicShop.Views.dll
+D:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\MusicShop.Views.pdb
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.TagHelpers.input.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.TagHelpers.output.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.RazorCoreGenerate.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.RazorTargetAssemblyInfo.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.Views.pdb
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.csproj.CopyComplete
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Album\List.g.cshtml.cs
