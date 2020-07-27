@@ -4,10 +4,31 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div>
+    <div class="header">
+        <h1><font color="blue">"Metal Music Shop"</font></h1>
+    </div>
+    <div class="mleft">
+        <ul>
+            <li>Вернуться на главную</li>
+            <li>Перейти к исполнителям</li>
+            <li>Обзор жанров</li>
+            <li>Новости</li>
+            <li>Заказы</li>
+        </ul>
+
+    </div>
+    <div class="mright">
         @RenderBody()
     </div>
+    <div class="footer">
+        <font color="blue">
+            <p>2020 Created by Aleksey</p>
+        </font>
+    </div>
+    <script src="~/js/bootstrap.min.js"></script>
 </body>
 </html>

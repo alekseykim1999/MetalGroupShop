@@ -1,0 +1,32 @@
+﻿body {
+    background-color:aliceblue;
+}
+
+.header {
+    background-color: white;
+    padding: 25px;
+    border-style: ridge;
+    border-color: coral;
+    border-width: 10px;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 3000x;
+}
+
+.mleft {
+    background-image: url('New.jpg');
+    float: left;
+    width: 200px;
+    height: 200vh;
+    border-style: inset;
+    border-color: coral;
+    border-width: 7px;
+}
+
+.mright {
+
+    float: center;
+    width: 1800px;
+    margin-left: -150px;
+    margin-top: 30px;
+}
