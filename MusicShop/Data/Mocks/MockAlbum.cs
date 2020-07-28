@@ -1,4 +1,5 @@
-﻿using MusicShop.Interfaces;
+﻿using MusicShop.GroupRepository;
+using MusicShop.Interfaces;
 using MusicShop.Models;
 using System;
 using System.Collections.Generic;
@@ -32,14 +33,8 @@ namespace MusicShop.Data.Mocks
 
         private void getAlbumFromDatabase()
         {
-            //Album album = new Album { Name = "Korn", Release_date = new DateTime(1994, 7, 20), img = "", Price = 4000, Available = true, Group = groupIdGetter.getAllGroups.First() };
+            DatabaseRepo repository = new DatabaseRepo();
 
-            //Иницализация полей проходит успешно
-            //код для заполнения списка альбомов через SQL
-
-            //Надо подключиться к серверу, через запросы получать все строки, создавать объект альбома и инициализоровать поля
-
-            //В цикле создатся объекты, инициализируются поля и добавляются в список
         }
 
         public Album getObjectAlbum(int id)

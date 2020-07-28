@@ -11,6 +11,7 @@ namespace MusicShop.Data.Mocks
     {
         public IEnumerable<MetalGroup> getAllGroups
         {
+
             get{
                 return new List<MetalGroup>
                 {
