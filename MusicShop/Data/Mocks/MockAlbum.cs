@@ -40,7 +40,8 @@ namespace MusicShop.Data.Mocks
                             Distributor = reader[3].ToString(),
                             Release_date = (DateTime)reader[4],
                             Available = true,
-                            Price = 4000
+                            Price = 4000, 
+                            img = "/img/" + reader[0].ToString() +".jpg"
                         }
                         );
                     }

@@ -6,29 +6,45 @@
     <title>@ViewBag.Title</title>
     <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="header">
-        <h1><font color="blue">"Metal Music Shop"</font></h1>
-    </div>
-    <div class="mleft">
-        <ul>
-            <li>Вернуться на главную</li>
-            <li>Перейти к исполнителям</li>
-            <li>Обзор жанров</li>
-            <li>Новости</li>
-            <li>Заказы</li>
-        </ul>
+    <div class="main">
+        <div class="header">
+            <h1 align="center "class="main_title" margin-top="3px" ><font color="Black">"Metal Music Shop"</font></h1>
+
+            <div class="search">
+                <p class="login">Login</p>
+                <p>
+                    <input list="text" class="texbox" oninput="MyFunction()" id="thistext" placeholder="Поиск...">
+                    <datalist id="text">
+                        <option>Элемент поиска</option>
+                    </datalist>
+                </p>
+                <button class="main_button"><i class="fa fa-search"></i></button></p>
+            </div>
+        </div>
+        <div class="mleft">
+            <ul>
+                <li>Вернуться на главную</li>
+                <li>Перейти к исполнителям</li>
+                <li>Обзор жанров</li>
+                <li>Новости</li>
+                <li>Заказы</li>
+            </ul>
+
+        </div>
+        <div class="mright">
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <font color="blue">
+                <p>2020 Created by Aleksey</p>
+            </font>
+        </div>
 
     </div>
-    <div class="mright">
-        @RenderBody()
-    </div>
-    <div class="footer">
-        <font color="blue">
-            <p>2020 Created by Aleksey</p>
-        </font>
-    </div>
+    
     <script src="~/js/bootstrap.min.js"></script>
 </body>
 </html>
