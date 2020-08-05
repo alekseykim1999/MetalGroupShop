@@ -26,13 +26,14 @@
         </div>
         <div class="mleft">
             <ul>
-                <li>Вернуться на главную</li>
-                <li>Перейти к исполнителям</li>
-                <li>Обзор жанров</li>
-                <li>Новости</li>
-                <li>Заказы</li>
+                @{
+                    foreach (var band in Model.AllBands)
+                    {
+                        <li><a>@band.GroupName</a></li>
+                    }
+                }
             </ul>
-
+            
         </div>
         <div class="mright">
             @RenderBody()

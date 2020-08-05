@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MusicShop.GroupRepository;
 using MusicShop.Interfaces;
 using MusicShop.ViewModel;
 
@@ -25,16 +24,15 @@ public class AlbumController : Controller
         }
         public ViewResult List()
         {
-
-            
-            
             ViewBag.Title = "Hello Sinner";
             ViewBag.GroupName = "Metal Music"; //один из способов передачи информации на страницу. Желательно не использовать 
             //var albums = all_albums.getAllAlbums; также один из способов передачи - напрямую.
 
             AlbumListViewModel obj = new AlbumListViewModel();
-            obj.AllAlbums = all_albums.getAllAlbums;
-            obj.currGroup = "Korn";
+            obj.AllAlbums = all_albums.getAllAlbums; //получить все альбомы
+
+            obj.AllBands = all_groups.getAllGroups; //получить все группы
+
             return View(obj); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
     
 

@@ -12,6 +12,7 @@ namespace MusicShop.ViewModel
 
         public IEnumerable<Album> AllAlbums { get; set; }
 
+        public IEnumerable<MetalGroup> AllBands { get; set; }
         public string currGroup { get; set; }
     }
 }

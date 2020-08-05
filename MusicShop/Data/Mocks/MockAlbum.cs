@@ -1,5 +1,4 @@
-﻿using MusicShop.GroupRepository;
-using MusicShop.Interfaces;
+﻿using MusicShop.Interfaces;
 using MusicShop.Models;
 using System;
 using System.Collections.Generic;
