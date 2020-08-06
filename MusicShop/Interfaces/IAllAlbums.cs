@@ -8,7 +8,7 @@ namespace MusicShop.Interfaces
 {
     public interface IAllAlbums
     {
-        IEnumerable<Album> getAllAlbums { get; }
         Album getObjectAlbum(int id);
+        IEnumerable<Album> getConcreteAlbums(int v); //вывести альбомы
     }
 }

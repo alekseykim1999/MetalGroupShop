@@ -11,48 +11,44 @@ namespace MusicShop.Data.Mocks
     public class MockAlbum : IAllAlbums
     {
         string connectionString = "Data Source=DESKTOP-OT44A5H\\SQLEXPRESS;Initial Catalog=MusicShop;Integrated Security=True";
-        List<Album> albums = new List<Album>();
+        List<Album> albumsOfBand = new List<Album>();
 
 
         private readonly IAllGroups groupIdGetter = new MockGroups();
 
-        public IEnumerable<Album> getAllAlbums
+        public IEnumerable<Album> getConcreteAlbums(int group_id)
         {
-            get
+
+            using (SqlConnection db = new SqlConnection(connectionString))
             {
-                using (SqlConnection db = new SqlConnection(connectionString))
+                db.Open();
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "SELECT [id_album],[num_group],[title],[distributor],[release_date] FROM [Albums] WHERE [num_group] = " + group_id;
+                command.Connection = db;
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    db.Open();
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = "SELECT [id_album],[num_group],[title],[distributor],[release_date] FROM [Albums]";
-                    command.Connection = db;
-
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    while (reader.Read())
+                    albumsOfBand.Add(new Album
                     {
-                        albums.Add(new Album
-                        {
-                            Id = (int)reader[0],
-                            GroupId = (int)reader[1],
-                            Name = reader[2].ToString(),
-                            Distributor = reader[3].ToString(),
-                            Release_date = (DateTime)reader[4],
-                            Available = true,
-                            Price = 4000, 
-                            img = "/img/" + reader[0].ToString() +".jpg"
-                        }
-                        );
+                        Id = (int)reader[0],
+                        GroupId = (int)reader[1],
+                        Name = reader[2].ToString(),
+                        Distributor = reader[3].ToString(),
+                        Release_date = (DateTime)reader[4],
+                        Available = true,
+                        Price = 4000,  
+                        img="/img/" + group_id + "/" + reader[0] +".jpg"
                     }
-                    reader.Close();
-
+                    );
                 }
+                reader.Close();
+                return albumsOfBand;
 
-                return albums;
             }
-            
-
         }
+
         public Album getObjectAlbum(int id)
         {
             throw new NotImplementedException();

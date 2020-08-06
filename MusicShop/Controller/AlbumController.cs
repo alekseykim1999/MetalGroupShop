@@ -22,14 +22,15 @@ public class AlbumController : Controller
             all_albums = _iAllAlbums; //в Startup указана связь между классом и интерфейсом
             all_groups = _iAllGroups;
         }
-        public ViewResult List()
+
+
+        public ViewResult List() //главная страница
         {
             ViewBag.Title = "Hello Sinner";
             ViewBag.GroupName = "Metal Music"; //один из способов передачи информации на страницу. Желательно не использовать 
             //var albums = all_albums.getAllAlbums; также один из способов передачи - напрямую.
 
             AlbumListViewModel obj = new AlbumListViewModel();
-            obj.AllAlbums = all_albums.getAllAlbums; //получить все альбомы
 
             obj.AllBands = all_groups.getAllGroups; //получить все группы
 
@@ -38,6 +39,20 @@ public class AlbumController : Controller
 
         }
 
-      
-    }
+
+        public ViewResult AllAlbums() //страница, хранящая альбомы группы. Добавить параметр int group_id. Его получаем через JavaScript при клике на ссылку группы
+        {
+
+            AlbumListViewModel obj = new AlbumListViewModel();
+            obj.AllBands = all_groups.getAllGroups; //получить все группы
+            obj.AllAlbums = all_albums.getConcreteAlbums(1); //сюда надо передавать id выбранной группы
+
+
+            return View(obj); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
+
+
+        }
+
+
+}
 

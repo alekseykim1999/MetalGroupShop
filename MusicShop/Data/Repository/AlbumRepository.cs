@@ -19,8 +19,10 @@ namespace MusicShop.Data.Repository
             this.appDbContent = _appdbcont;
         }
 
-
-        public IEnumerable<Album> getAllAlbums => appDbContent.Album.Include(a=>a.GroupId);
+        public IEnumerable<Album> getConcreteAlbums(int v)
+        {
+            throw new NotImplementedException();
+        }
 
         public Album getObjectAlbum(int AlbumId) => appDbContent.Album.FirstOrDefault(p => p.Id == AlbumId);
     }

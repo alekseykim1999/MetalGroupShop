@@ -29,13 +29,43 @@
                 @{
                     foreach (var band in Model.AllBands)
                     {
-                        <li><a>@band.GroupName</a></li>
+                        <li><div>
+                            
+                            <a href='/Album/AllAlbums' id="@band.id">@band.GroupName</a>
+                            
+                        </div>
+                        </li>
                     }
                 }
             </ul>
             
+
         </div>
+
+        <div class="fast_search">
+            <div class="navigation">
+                <a href="/shop"> Перейти к товарам </a>
+            </div>
+            <div class="navigation">
+                <a href="/my"> Перейти к студентам </a>
+            </div>
+            <div class="navigation">
+                <a href="/country22"> Перейти к странам </a>
+            </div>
+            <div class="navigation">
+                <a href="/index"> Перейти на главную </a>
+            </div>
+            <div class="navigation">
+                <a href="/catalog"> Перейти к каталогам </a>
+            </div>
+            <div class="navigation">
+                <a href="/our"> О нас </a>
+            </div>
+        </div>
+
+
         <div class="mright">
+            
             @RenderBody()
         </div>
         <div class="footer">

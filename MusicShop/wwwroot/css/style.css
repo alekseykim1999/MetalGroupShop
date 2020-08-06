@@ -17,7 +17,7 @@
 .mleft {
     text-align: left;
     float: center;
-    width: 300px;
+    width: 170px;
     height: 1000px;
     margin-left: -8px;
     margin-top: 0px;
@@ -30,10 +30,10 @@
 .mright {
     overflow: hidden;
     float: center;
-    width: 1200px;
+    width: 1330px;
     height: 1000px;
     margin: auto;
-    margin-left: 294px;
+    margin-left: 165px;
     margin-top: -1000px;
     text-align: center;
     color: 000000;
@@ -127,5 +127,27 @@ a:hover
     font-family: URW Chancery L, cursive;
     margin-top: 5px;
     color: #b00808;
+}
+
+.fast_search {
+    float: center;
+    width: 1330x;
+    margin-left: 165px;
+    margin-top: -965px;
+}
+
+.navigation {
+    float: left; /*Задаем обтекание*/
+    line-height: 50px; /*Высота строки +  верт. центрирования текста*/
+    font-size: 16px;
+    background: dodgerblue;
+    color: red;
+    margin-top: -34px;
+    width: 221.5px; /*Фиксируем ширину блока*/
+    text-align: center; /*Центрируем текст по горизонтали*/
+    border-style: inset;
+    border-color: darkblue;
+    border-width: 3px;
+    background: #515151;
 }
 

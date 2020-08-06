@@ -1,0 +1,22 @@
+﻿@*@using MusicShop.Models
+    @model  IEnumerable<Album>*@
+
+@*@using MusicShop.ViewModel
+
+@model AlbumListViewModel*@
+
+<h1>@ViewBag.GroupName</h1>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var album in Model.AllAlbums)
+        {
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@album.img" alt="@album.Name" />
+                <h3> Альбом : @album.Name </h3>
+                <p> Цена : @album.Price.ToString("c")</p>
+            </div>
+        }
+    }
+
+</div>
