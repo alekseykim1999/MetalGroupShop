@@ -39,19 +39,25 @@ public class AlbumController : Controller
 
         }
 
-
-        public ViewResult AllAlbums() //страница, хранящая альбомы группы. Добавить параметр int group_id. Его получаем через JavaScript при клике на ссылку группы
+        public ViewResult AllAlbums(int bandId) //страница, хранящая альбомы группы.
         {
 
             AlbumListViewModel obj = new AlbumListViewModel();
             obj.AllBands = all_groups.getAllGroups; //получить все группы
-            obj.AllAlbums = all_albums.getConcreteAlbums(1); //сюда надо передавать id выбранной группы
+            obj.AllAlbums = all_albums.getConcreteAlbums(bandId); //сюда надо передавать id выбранной группы
 
 
             return View(obj); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
 
 
         }
+
+    public ViewResult InfoAlbum() //страница, хранящая конкретный альбом
+    {
+        return View(); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
+
+
+    }
 
 
 }
