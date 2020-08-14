@@ -17,5 +17,10 @@ namespace MusicShop.Data.Repository
         }
 
         public IEnumerable<MetalGroup> getAllGroups => appDbContent.MetalGroup;
+
+        public MetalGroup getOneGroup(int id_band)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

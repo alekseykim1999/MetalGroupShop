@@ -47,6 +47,9 @@ namespace MusicShop.Data.Mocks
             }
         }
 
-        
+        public MetalGroup getOneGroup(int id_band)
+        {
+            return bands[id_band];
+        }
     }
 }

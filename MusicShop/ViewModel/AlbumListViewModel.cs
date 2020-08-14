@@ -13,6 +13,26 @@ namespace MusicShop.ViewModel
         public IEnumerable<Album> AllAlbums { get; set; }
 
         public IEnumerable<MetalGroup> AllBands { get; set; }
-        public string currGroup { get; set; }
+
+
+        public int idAlbum { get; set; }
+        public Album ConcreteAlbum
+        {
+            get
+            {
+                Album current = null;
+                foreach(var cur_album in AllAlbums)
+                {
+                    if(cur_album.Id==idAlbum)
+                    {
+                        current = cur_album;
+                    }
+                }
+                return current;
+            }   
+        }
+        
+
+       
     }
 }

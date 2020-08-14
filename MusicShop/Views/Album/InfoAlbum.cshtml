@@ -1,4 +1,8 @@
-﻿
+﻿@*@using MusicShop.Models
+    @model  Album*@
+@*@using MusicShop.ViewModel
+
+    @model AlbumListViewModel*@
 @{
     Layout = null;
 }
@@ -11,6 +15,12 @@
     <title>InfoAlbum</title>
 </head>
 <body>
+    @{
+        var current_album = Model.ConcreteAlbum;
+    }
     <h3>hi there</h3>
+    <h2>@current_album.Name</h2>
+    <img  src="@current_album.img" width="160" height="160" />
+
 </body>
 </html>

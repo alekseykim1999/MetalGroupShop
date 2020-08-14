@@ -9,6 +9,7 @@ namespace MusicShop.Interfaces
     public interface IAllGroups
     {
         IEnumerable<MetalGroup> getAllGroups { get; }
-        
+        MetalGroup getOneGroup(int id_band);
+
     }
 }

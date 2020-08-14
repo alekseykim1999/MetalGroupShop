@@ -23,7 +23,8 @@ namespace MusicShop.Data.Mocks
             {
                 db.Open();
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "SELECT [id_album],[num_group],[title],[distributor],[release_date] FROM [Albums] WHERE [num_group] = " + group_id;
+                command.CommandText = "SELECT [id_album],[num_group],[title],[distributor],[release_date] FROM [Albums] WHERE [num_group] = " + group_id
+                    + " ORDER BY [release_date]";
                 command.Connection = db;
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -51,7 +52,7 @@ namespace MusicShop.Data.Mocks
 
         public Album getObjectAlbum(int id)
         {
-            throw new NotImplementedException();
+            return albumsOfBand[id]; // вернуть один альбом
         }
     }
 }
