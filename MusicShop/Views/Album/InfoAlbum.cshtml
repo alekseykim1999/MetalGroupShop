@@ -12,6 +12,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/one_album_style.css" rel="stylesheet" type="text/css" />
     <title>InfoAlbum</title>
 </head>
 <body>
@@ -19,8 +20,22 @@
         var current_album = Model.ConcreteAlbum;
     }
     <h3>hi there</h3>
-    <h2>@current_album.Name</h2>
-    <img  src="@current_album.img" width="160" height="160" />
+    <div class="title">
+        <h2>@current_album.Name</h2>
+        <img src="@current_album.img" width="160" height="160" />
+    </div>
+
+    <div class="list_songs">
+
+    </div>
+    <div class="text_review">
+
+    </div>
+
+    <div class="btn_order">
+
+    </div>
+
 
 </body>
 </html>

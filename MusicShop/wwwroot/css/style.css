@@ -11,14 +11,14 @@
     margin: auto;
     margin-left: -10px;
     margin-top: -15px;
-    background: url("/img/header.jpg") ;
+    background: url("/img/header.jpg");
 }
 
 .mleft {
     text-align: left;
     float: center;
     width: 170px;
-    height: 1000px;
+    height: 1100px;
     margin-left: -8px;
     margin-top: 0px;
     border-style: inset;
@@ -31,7 +31,7 @@
     overflow: hidden;
     float: center;
     width: 1330px;
-    height: 1000px;
+    height: 1050px;
     margin: auto;
     margin-left: 165px;
     margin-top: -1000px;
@@ -133,7 +133,7 @@ a:hover
     float: center;
     width: 1330x;
     margin-left: 165px;
-    margin-top: -965px;
+    margin-top: -1070px;
 }
 
 .navigation {
@@ -149,5 +149,15 @@ a:hover
     border-color: darkblue;
     border-width: 3px;
     background: #515151;
+}
+
+.footer {
+    height: 50px;
+    width: 1496px;
+    border: 2;
+    border-style: inset;
+    border-color: darkblue;
+    border-width: 3px;
+    background-color: black;
 }
 

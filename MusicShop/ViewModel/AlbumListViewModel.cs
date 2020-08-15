@@ -20,15 +20,7 @@ namespace MusicShop.ViewModel
         {
             get
             {
-                Album current = null;
-                foreach(var cur_album in AllAlbums)
-                {
-                    if(cur_album.Id==idAlbum)
-                    {
-                        current = cur_album;
-                    }
-                }
-                return current;
+                return AllAlbums.First(a => a.Id == idAlbum);
             }   
         }
         
