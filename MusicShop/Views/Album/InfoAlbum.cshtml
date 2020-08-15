@@ -18,19 +18,24 @@
 <body>
     @{
         var current_album = Model.ConcreteAlbum;
+        var current_group = Model.ConcreteGroup;
     }
-    <h3>hi there</h3>
-    <div class="title">
-        <h2>@current_album.Name</h2>
+    <div class="title" align="center">
+        <h2>@current_group.GroupName</h2>
+        
         <img src="@current_album.img" width="160" height="160" />
-    </div>
 
-    <div class="list_songs">
-
+        <h2>@current_album.Name</h2>
+       
     </div>
     <div class="text_review">
 
     </div>
+    <div class="list_songs">
+        <h2>@current_album.Release_date</h2>
+        <h2>@current_album.Distributor</h2>
+    </div>
+
 
     <div class="btn_order">
 

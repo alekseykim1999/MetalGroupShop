@@ -16,6 +16,8 @@ namespace MusicShop.ViewModel
 
 
         public int idAlbum { get; set; }
+
+        public int idgroup { get; set; }
         public Album ConcreteAlbum
         {
             get
@@ -23,8 +25,16 @@ namespace MusicShop.ViewModel
                 return AllAlbums.First(a => a.Id == idAlbum);
             }   
         }
-        
 
-       
+        public MetalGroup ConcreteGroup
+        {
+            get
+            {
+                return AllBands.First(a => a.id == idgroup);
+            }
+        }
+
+
+
     }
 }
