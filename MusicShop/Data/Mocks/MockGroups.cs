@@ -40,6 +40,7 @@ namespace MusicShop.Data.Mocks
                         );
                     }
                     reader.Close();
+                    db.Close();
 
                 }
 
