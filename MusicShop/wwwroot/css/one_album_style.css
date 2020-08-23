@@ -48,3 +48,9 @@
     margin: auto;
     margin-left: 303px;
     margin-top: -210px;
+}
+
+
+li {
+    list-style-type: none;
+}

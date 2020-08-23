@@ -1,8 +1,11 @@
 ﻿@*@using MusicShop.Models
     @model  Album*@
-@*@using MusicShop.ViewModel
 
+@*@using MusicShop.ViewModel 
     @model AlbumListViewModel*@
+
+@*@using MusicShop.WorkClasses
+    @model FileWorker*@
 @{
     Layout = null;
 }
@@ -19,6 +22,7 @@
     @{
         var current_album = Model.ConcreteAlbum;
         var current_group = Model.ConcreteGroup;
+      
     }
     <div class="title" align="center">
         <h2>@current_group.GroupName</h2>
@@ -32,13 +36,26 @@
 
     </div>
     <div class="list_songs">
-        <h2>@current_album.Release_date</h2>
-        <h2>@current_album.Distributor</h2>
+        <ul>
+            @{
+                foreach (var song in Model.getSongs())
+                {
+                    <li>
+                        @song;
+                    </li>
+                }
+            }
+        </ul>
     </div>
-
+    
 
     <div class="btn_order">
-
+        <form>
+            <button>Добавить в корзину</button>
+        </form>
+        <form>
+            <button>Написать отзыв</button>
+        </form>
     </div>
 
 

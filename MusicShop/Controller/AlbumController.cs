@@ -58,11 +58,10 @@ public class AlbumController : Controller
         {
             obj.AllAlbums = help_albums;
             obj.idAlbum = albumId;
+
             obj.idgroup = group_id;
             return View(obj); 
             
-
-   
         }
 
 

@@ -1,4 +1,5 @@
 ﻿using MusicShop.Models;
+using MusicShop.WorkClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace MusicShop.ViewModel
         public int idAlbum { get; set; }
 
         public int idgroup { get; set; }
+
         public Album ConcreteAlbum
         {
             get
@@ -32,6 +34,12 @@ namespace MusicShop.ViewModel
             {
                 return AllBands.First(a => a.id == idgroup);
             }
+        }
+
+
+        public List<string> getSongs()
+        {
+            return FileWorker.readFile(idgroup, idAlbum);
         }
 
 
