@@ -44,7 +44,7 @@ namespace MusicShop.Data.Mocks
 
                 }
 
-                return bands;
+                return bands.OrderBy(u=>u.GroupName);
             }
         }
 

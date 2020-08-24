@@ -27,16 +27,17 @@
 }
 
 .text_review {
-    
-
     border-style: inset;
     border-color: black;
     border-width: 3px;
     width: 1198px;
     height: 600px;
     margin: auto;
-    margin-left:303px;
+    margin-left: 303px;
     margin-top: -306.1px;
+    color: #d7a503;
+    font-size: 18px;
+    
 }
 
 .btn_order {
@@ -50,7 +51,28 @@
     margin-top: -210px;
 }
 
+.btn_cart {
+    cursor: pointer;
+    display: block;
+    height: 60px;
+    width: 250px;
+    line-height: 70px;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 60px;
+}
 
+
+.btn_review {
+    cursor: pointer;
+    display: block;
+    height: 60px;
+    width: 250px;
+    line-height: 70px;
+    text-align: center;
+    margin-left: 800px;
+    margin-top: -60px;
+}
 li {
     list-style-type: none;
 }
