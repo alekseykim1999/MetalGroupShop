@@ -37,6 +37,9 @@ namespace MusicShop.ViewModel
         }
 
 
+
+
+
         public List<string> getSongs()
         {
             return FileWorker.readFileSongs(idgroup, idAlbum);
@@ -45,7 +48,7 @@ namespace MusicShop.ViewModel
 
         public string getReview()
         {
-            Task<string> task1 = FileWorker.readFileReview(idgroup, idAlbum); //You can also use var instead of Task<int>
+            Task<string> task1 = FileWorker.readFileReview(idgroup, idAlbum); 
             return task1.Result;
         }
 

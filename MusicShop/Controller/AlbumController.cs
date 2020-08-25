@@ -16,9 +16,8 @@ public class AlbumController : Controller
     {
 
         private readonly IAllAlbums all_albums;
-
-
         public static IEnumerable<Album> help_albums;
+
 
         AlbumListViewModel obj = new AlbumListViewModel();
 
@@ -26,8 +25,8 @@ public class AlbumController : Controller
 
         public AlbumController(IAllAlbums _iAllAlbums, IAllGroups _iAllGroups)
         {
-            all_albums = _iAllAlbums; //в Startup указана связь между классом и интерфейсом
-            obj.AllBands = _iAllGroups.getAllGroups; //получить все группы
+            all_albums = _iAllAlbums;
+            obj.AllBands = _iAllGroups.getAllGroups; 
            
 
         }
@@ -47,14 +46,14 @@ public class AlbumController : Controller
         {
             help_albums=all_albums.getConcreteAlbums(bandId);
             group_id = bandId;
-            obj.AllAlbums = help_albums; //сюда надо передавать id выбранной группы
+            obj.AllAlbums = help_albums; 
 
             return View(obj); 
 
 
         }
 
-        public ViewResult InfoAlbum(int albumId) //страница, хранящая конкретный альбом
+        public ViewResult InfoAlbum(int albumId) 
         {
             obj.AllAlbums = help_albums;
             obj.idAlbum = albumId;

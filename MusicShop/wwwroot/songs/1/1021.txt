@@ -1,13 +1,13 @@
-1	It's On!
-2	Freak on a Leash
-3	Got the Life
-4	Dead Bodies Everywhere
-5	Children of the Korn ft. Ice Cube
-6	B.B.K.
-7	Pretty
-8	All in the Family
-9	Reclaim My Place
-10	Justin
-11	Seed
-12	Cameltosis ft. Tre Hardson
-13	My Gift to You
+1.	It's On!
+2.	Freak on a Leash
+3.	Got the Life
+4.	Dead Bodies Everywhere
+5.	Children of the Korn ft. Ice Cube
+6.	B.B.K.
+7.	Pretty
+8.	All in the Family
+9.	Reclaim My Place
+10.	Justin
+11.	Seed
+12.	Cameltosis ft. Tre Hardson
+13.	My Gift to You

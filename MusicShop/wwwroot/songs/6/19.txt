@@ -1,7 +1,7 @@
-1	The Propaganda
-2	The Truth
-3	The Priest
-4	The Key
-5	The Channel
-6	The Story
-7	The Surrender
+1.	The Propaganda
+2.	The Truth
+3.	The Priest
+4.	The Key
+5.	The Channel
+6.	The Story
+7.	The Surrender

@@ -1,13 +1,13 @@
-1	Intro
-2	Pollution
-3	Counterfeit
-4	Stuck
-5	Nobody Loves Me
-6	Sour
-7	Stalemate
-8	Clunk
-9	Faith
-10	Stink Finger
-11	Indigo Flow
-12	Leech
-13	Everything
+1.	Intro
+2.	Pollution
+3.	Counterfeit
+4.	Stuck
+5.	Nobody Loves Me
+6.	Sour
+7.	Stalemate
+8.	Clunk
+9.	Faith
+10.	Stink Finger
+11.	Indigo Flow
+12.	Leech
+13.	Everything
