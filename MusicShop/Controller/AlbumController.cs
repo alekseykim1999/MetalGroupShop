@@ -12,7 +12,7 @@ using MusicShop.ViewModel;
 //url - имя хоста/имя контроллера (в данном случае - Album)/имя функции (например, List())
 
 //код ищет папку Views, в ней ищет папку с названием контроллера (Album), в ней ищет cshtml файл с названием функции (List)
-public class AlbumController : Controller
+    public class AlbumController : Controller
     {
 
         private readonly IAllAlbums all_albums;
@@ -30,7 +30,7 @@ public class AlbumController : Controller
            
 
         }
-        public ViewResult List() //главная страница
+        public ViewResult Main() //главная страница
         {
 
             ViewBag.Title = "Hello Sinner";
@@ -42,7 +42,7 @@ public class AlbumController : Controller
 
         }
 
-        public ViewResult AllAlbums(int bandId) //страница, хранящая альбомы группы.
+        public ViewResult AlbumsOfGroup(int bandId) //страница, хранящая альбомы группы.
         {
             help_albums=all_albums.getConcreteAlbums(bandId);
             group_id = bandId;

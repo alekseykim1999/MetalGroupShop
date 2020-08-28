@@ -1,0 +1,8 @@
+﻿@model Album;
+
+<div class="col-md-4">
+    <img class="img-thumbnail" src="@Model.img" alt="@Model.Name" width="160" height="160" />
+    <h3><a href='/Album/InfoAlbum?albumId=@Model.Id'> Альбом : @Model.Name </a></h3>
+
+    <p> Цена : @Model.Price.ToString("c")</p>
+</div>

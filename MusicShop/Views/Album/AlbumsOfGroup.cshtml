@@ -1,0 +1,18 @@
+﻿@*@using MusicShop.Models
+    @model  IEnumerable<Album>*@
+
+@*@using MusicShop.ViewModel
+
+@model AlbumListViewModel*@
+
+<h1>@ViewBag.GroupName</h1>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (Album album in Model.AllAlbums)
+        {
+            @Html.Partial("Albums", album)
+        }
+    }
+
+</div>

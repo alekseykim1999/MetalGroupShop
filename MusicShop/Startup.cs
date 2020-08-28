@@ -10,8 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MusicShop.Data;
 using MusicShop.Data.Mocks;
+using MusicShop.Data.Models;
 using MusicShop.Data.Repository;
 using MusicShop.Interfaces;
+using Supermarket.Item;
 
 namespace MusicShop
 {
@@ -36,9 +38,18 @@ namespace MusicShop
 
             services.AddTransient<IAllAlbums, MockAlbum>(); //связь между классом и интерфейсом
             services.AddTransient<IAllGroups, MockGroups>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCart(sp));
+
             services.AddMvc(); //добавить поддержку MVC
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
+            services.AddMemoryCache();
+            services.AddSession();
+
+
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +58,7 @@ namespace MusicShop
             app.UseDeveloperExceptionPage(); //страницы с ошибками
             app.UseStatusCodePages(); //страница с кодом статуса - 200, если все хорошо
             app.UseStaticFiles(); // отображать статические файлы CSS
+            app.UseSession();
             app.UseMvcWithDefaultRoute(); // если  в url не указан контроллер и представление, то вывести файл по умлочанию
         }
     }
