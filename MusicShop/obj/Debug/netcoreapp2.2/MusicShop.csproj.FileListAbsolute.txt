@@ -27,3 +27,4 @@ D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Vie
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Albums.g.cshtml.cs
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Album\AlbumsOfGroup.g.cshtml.cs
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Album\Main.g.cshtml.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\ShopCart\Index.g.cshtml.cs

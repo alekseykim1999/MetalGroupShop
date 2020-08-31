@@ -1,14 +1,14 @@
-﻿using MusicShop.Data.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using MusicShop.Data.Models;
+using MusicShop.Models;
 using MusicShop.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
-
-    public class ShopCartController : Controller
-    {
+     public class ShopCartController : Controller
+     {
         private readonly ShopCart ShopCart;
 
 
@@ -24,5 +24,14 @@ using System.Web.Mvc;
             return View(obj);
         }
 
+        public RedirectToActionResult AddToCart(Album _curAlb)
+        {
+            ShopCart.AddToCart(_curAlb);
+
+            return RedirectToAction("Index");
+        }
+
     }
+
+   
 

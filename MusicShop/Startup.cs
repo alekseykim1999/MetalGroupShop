@@ -34,6 +34,8 @@ namespace MusicShop
 
         public void ConfigureServices(IServiceCollection services) //регистрация плагинов внутри проекта
         {
+
+         
             services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IAllAlbums, MockAlbum>(); //связь между классом и интерфейсом
@@ -42,7 +44,7 @@ namespace MusicShop
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShopCart.GetCart(sp));
 
-            services.AddMvc(); //добавить поддержку MVC
+            services.AddMvcCore(); //добавить поддержку MVC
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
             services.AddMemoryCache();

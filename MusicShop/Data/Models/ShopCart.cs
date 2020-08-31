@@ -15,17 +15,23 @@ namespace MusicShop.Data.Models
         public string cartId { get; set; }
         List<ShopCartAlbum> list_of_items { get; set; }
 
+        private readonly AppDBContent appDbContent;
 
+        public ShopCart(AppDBContent _content)
+        {
+            this.appDbContent = _content;
+        }
         public static ShopCart GetCart(IServiceProvider services)
         {
             ISession session = services.GetRequiredService<HttpContextAccessor>()?.HttpContext.Session;
+            var context = services.GetService<AppDBContent>();
             string shopCartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
 
-            return new ShopCart() { cartId = shopCartId};
+            return new ShopCart(context) { cartId = shopCartId};
         }
 
 
-        public void AddToCart(Album _album, int amount)
+        public void AddToCart(Album _album)
         {
             if (list_of_items == null)
             {

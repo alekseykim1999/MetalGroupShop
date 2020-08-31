@@ -8,7 +8,6 @@ namespace MusicShop.ViewModel
 {
     public class ShopCartViewModel
     {
-
         public ShopCart cart { get; set; }
     }
 }
