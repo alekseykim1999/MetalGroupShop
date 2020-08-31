@@ -12,46 +12,49 @@ namespace MusicShop.Data.Models
 {
     public class ShopCart
     {
-        public string cartId { get; set; }
-        List<ShopCartAlbum> list_of_items { get; set; }
+        private List<ShopCartAlbum> lineCollection = new List<ShopCartAlbum>();
 
-        private readonly AppDBContent appDbContent;
-
-        public ShopCart(AppDBContent _content)
+        public void AddItem(Album alb, int quantity)
         {
-            this.appDbContent = _content;
-        }
-        public static ShopCart GetCart(IServiceProvider services)
-        {
-            ISession session = services.GetRequiredService<HttpContextAccessor>()?.HttpContext.Session;
-            var context = services.GetService<AppDBContent>();
-            string shopCartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
+            ShopCartAlbum line = lineCollection
+                .Where(g => g.album.Id == alb.Id)
+                .FirstOrDefault();
 
-            return new ShopCart(context) { cartId = shopCartId};
-        }
-
-
-        public void AddToCart(Album _album)
-        {
-            if (list_of_items == null)
+            if (line == null)
             {
-                list_of_items = new List<ShopCartAlbum>();
+                lineCollection.Add(new ShopCartAlbum
+                {
+                    itemId = alb.Id,
+                    album = alb,
+                    Quantity = quantity,
+                    price = alb.Price
+                });
             }
-
-            list_of_items.Add(new ShopCartAlbum
+            else
             {
-                shopCartId = cartId,
-                album=_album,
-                price = _album.Price
-            });
+                line.Quantity += quantity;
+            }
         }
 
-        public List<ShopCartAlbum> GetShopItems()
+        public void RemoveLine(Album alb)
         {
-            return list_of_items.Where(c => c.shopCartId == cartId).ToList();
+            lineCollection.RemoveAll(l => l.album.Id == alb.Id);
         }
 
+        public decimal ComputeTotalValue()
+        {
+            return lineCollection.Sum(e => e.album.Price * e.Quantity);
 
-        
+        }
+        public void Clear()
+        {
+            lineCollection.Clear();
+        }
+
+        public IEnumerable<ShopCartAlbum> Lines
+        {
+            get { return lineCollection; }
+        }
     }
+
 }

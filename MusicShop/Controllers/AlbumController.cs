@@ -7,11 +7,8 @@ using MusicShop.Interfaces;
 using MusicShop.Models;
 using MusicShop.ViewModel;
 
-//данный класс содержит функции, возвращающие ViewResult -  объект HTML страницы
-
-//url - имя хоста/имя контроллера (в данном случае - Album)/имя функции (например, List())
-
-//код ищет папку Views, в ней ищет папку с названием контроллера (Album), в ней ищет cshtml файл с названием функции (List)
+namespace MusicShop.Controllers
+{
     public class AlbumController : Controller
     {
 
@@ -26,8 +23,8 @@ using MusicShop.ViewModel;
         public AlbumController(IAllAlbums _iAllAlbums, IAllGroups _iAllGroups)
         {
             all_albums = _iAllAlbums;
-            obj.AllBands = _iAllGroups.getAllGroups; 
-           
+            obj.AllBands = _iAllGroups.getAllGroups;
+
 
         }
         public ViewResult Main() //главная страница
@@ -36,33 +33,36 @@ using MusicShop.ViewModel;
             ViewBag.Title = "Hello Sinner";
             ViewBag.GroupName = "Metal Music"; //один из способов передачи информации на страницу. Желательно не использовать 
 
-           
+
             return View(obj); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
-    
+
 
         }
 
         public ViewResult AlbumsOfGroup(int bandId) //страница, хранящая альбомы группы.
         {
-            help_albums=all_albums.getConcreteAlbums(bandId);
+            help_albums = all_albums.getConcreteAlbums(bandId);
             group_id = bandId;
-            obj.AllAlbums = help_albums; 
+            obj.AllAlbums = help_albums;
 
-            return View(obj); 
+            return View(obj);
 
 
         }
 
-        public ViewResult InfoAlbum(int albumId) 
+        public ViewResult InfoAlbum(int albumId)
         {
             obj.AllAlbums = help_albums;
             obj.idAlbum = albumId;
 
             obj.idgroup = group_id;
-            return View(obj); 
-            
+            return View(obj);
+
         }
 
 
+    }
 }
+
+    
 

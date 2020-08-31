@@ -11,7 +11,6 @@ namespace MusicShop.Data.Models
         public int itemId { get; set; }
         public Album album { get; set; }
         public int price { get; set; }
-
-        public string shopCartId { get; set; }
+        public int Quantity { get; set; }
     }
 }

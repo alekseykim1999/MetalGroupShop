@@ -41,9 +41,7 @@ namespace MusicShop
             services.AddTransient<IAllAlbums, MockAlbum>(); //связь между классом и интерфейсом
             services.AddTransient<IAllGroups, MockGroups>();
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(sp => ShopCart.GetCart(sp));
-
+           
             services.AddMvcCore(); //добавить поддержку MVC
             services.AddMvc(option => option.EnableEndpointRouting = false);
 

@@ -1,37 +1,45 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using MusicShop.Data.Models;
 using MusicShop.Models;
-using MusicShop.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-     public class ShopCartController : Controller
-     {
-        private readonly ShopCart ShopCart;
+namespace MusicShop.Controllers
+{
+    public class ShopCartController : Controller
+    {
 
-
-        public ShopCartController(ShopCart _shopCart)
+        public RedirectToRouteResult AddToCart(Album alb, string returnUrl)
         {
-            ShopCart = _shopCart;
+
+            GetCart().AddItem(alb, 1);
+
+            return RedirectToRoute("Index", new { returnUrl });
         }
 
-        public ViewResult Index()
-        { 
-            var obj = new ShopCartViewModel { cart = ShopCart };
-
-            return View(obj);
-        }
-
-        public RedirectToActionResult AddToCart(Album _curAlb)
+        public RedirectToRouteResult RemoveFromCart(Album alb, string returnUrl)
         {
-            ShopCart.AddToCart(_curAlb);
 
-            return RedirectToAction("Index");
+            GetCart().RemoveLine(alb);
+
+            return RedirectToRoute("Index", new { returnUrl });
         }
 
+        public ShopCart GetCart()
+        {
+            
+            ShopCart cart = (ShopCart)Session["Cart"];
+            if (cart == null)
+            {
+                cart = new ShopCart();
+                Session["ShopCart"] = cart;
+            }
+            return cart;
+        }
     }
 
-   
+}
+
+
+
+
 

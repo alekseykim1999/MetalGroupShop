@@ -22,15 +22,15 @@
     @{
         var current_album = Model.ConcreteAlbum;
         var current_group = Model.ConcreteGroup;
-      
+
     }
     <div class="title" align="center">
         <h2>@current_group.GroupName</h2>
-        
+
         <img src="@current_album.img" width="160" height="160" />
 
         <h2>@current_album.Name</h2>
-       
+
     </div>
     <div class="text_review">
         @Model.getReview();
@@ -47,17 +47,22 @@
             }
         </ul>
     </div>
-    
+
 
     <div class="btn_order">
-        <form>
-            <button class="btn_cart">Добавить в корзину</button>
-        </form>
+            @using (Html.BeginForm("AddToCart", "ShopCart"))
+            {
+                <div class="pull-right">
+                
+                    <input type="submit" class="btn_cart" value="Добавить в корзину" />
+                </div>
+            }
+          
         <form>
             <button class="btn_review">Написать отзыв</button>
         </form>
     </div>
-
+    
 
 </body>
 </html>
