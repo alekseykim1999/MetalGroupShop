@@ -1,14 +1,42 @@
-﻿@model ShopCartViewModel
+﻿@model MusicShop.ViewModel.CartIndexViewModel
 
-<div class="container">
-    @foreach(var el in Model.cart.GetShopItems())
-    {
-        <div class="alert alert-warning mt-3">
-            <b>Альбом:</b> @el.album.Name<br />
-            <b>Цена:</b> @el.album.Price.ToString("c"); 
-        </div>
-     }
+@{
+    ViewBag.Title = "GameStore: ваша корзина";
+}
 
-    <hr/>
-    <div class="btn btn-danger" asp-controller="Order">Оплатить</div>       
+<h2>Ваша корзина</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Кол-во</th>
+            <th>Название</th>
+            <th class="text-right">Цена</th>
+            <th class="text-right">Общая цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr>
+                <td class="text-center">@line.Quantity</td>
+                <td class="text-left">@line.album.Name</td>
+                <td class="text-right">@line.album.Price.ToString("# руб")</td>
+                <td class="text-right">
+                    @((line.Quantity * line.album.Price).ToString("# руб"))
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Итого:</td>
+            <td class="text-right">
+                @Model.Cart.ComputeTotalValue().ToString("# тг")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Продолжить покупки</a>
 </div>

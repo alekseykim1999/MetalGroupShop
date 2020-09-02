@@ -30,7 +30,7 @@ namespace MusicShop.Controllers
         public ViewResult Main() //главная страница
         {
 
-            ViewBag.Title = "Hello Sinner";
+            ViewBag.Title = "Rock Portal";
             ViewBag.GroupName = "Metal Music"; //один из способов передачи информации на страницу. Желательно не использовать 
 
 

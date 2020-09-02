@@ -53,11 +53,11 @@
             @using (Html.BeginForm("AddToCart", "ShopCart"))
             {
                 <div class="pull-right">
-                
+                    @Html.HiddenFor(x => current_album)
+                   
                     <input type="submit" class="btn_cart" value="Добавить в корзину" />
                 </div>
-            }
-          
+             }
         <form>
             <button class="btn_review">Написать отзыв</button>
         </form>
