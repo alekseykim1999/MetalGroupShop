@@ -65,6 +65,11 @@ namespace MusicShop
             app.UseStaticFiles(); // отображать статические файлы CSS
             app.UseSession();
             app.UseMvcWithDefaultRoute(); // если  в url не указан контроллер и представление, то вывести файл по умлочанию
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");
+            });
         }
     }
 }

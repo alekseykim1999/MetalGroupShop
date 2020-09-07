@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Authorization</title>
+</head>
+<body>
+    @using (Html.BeginForm("CheckData", "Entrance"))
+    {
+        <input type="text" name="_login" />
+        <input type="text" name="_password" />
+        <input type="submit" class="submit_btn" />
+    }
+</body>
+</html>
