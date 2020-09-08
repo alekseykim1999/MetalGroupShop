@@ -32,10 +32,10 @@ namespace MusicShop.Controllers
         public RedirectResult RegisterUser(IFormCollection form)
         {
 
-            string login = form["_bookName"].ToString();
-            string password = form["_description"].ToString();
-
-            return Redirect("/Album/Main");
+            string login = form["_newLogin"].ToString();
+            string password = form["_newPassword"].ToString();
+            repo.SaveUserData(login, password);
+            return Redirect("/Entrance/Authorization");
 
         }
 
@@ -43,6 +43,11 @@ namespace MusicShop.Controllers
         public ViewResult Authorization() //главная страница
         {
             return View(); 
+        }
+
+        public ViewResult Registration() //главная страница
+        {
+            return View();
         }
     }
 }

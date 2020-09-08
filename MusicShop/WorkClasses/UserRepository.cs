@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Text;
+using System.Data;
 
 namespace MusicShop.WorkClasses
 {
@@ -13,13 +14,21 @@ namespace MusicShop.WorkClasses
         private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Users.mdb;";
 
         protected OleDbConnection myConnection = new OleDbConnection(connectString);
+        OleDbCommand worker = new OleDbCommand();
 
-        //public void SaveUserData(string _name, string _ppassword)
-        //{
+        public void SaveUserData(string _name, string _password) // сохранить аккаунт в бд
+        {
+            myConnection.Open();
+            worker.Connection = myConnection;
+            worker.CommandType = CommandType.Text;
+            worker.CommandText = ("INSERT INTO [UserData]([Login],[Password]) VALUES (@name,@pass)");
+            worker.Parameters.AddWithValue("@name", _name);
+            worker.Parameters.AddWithValue("@name", _password);
+            worker.ExecuteNonQuery();
+            myConnection.Close();
+        }
 
-        //}
-
-        public string GetUserData(string _name)
+        public string GetUserData(string _name) //получить данные для проверки
         {
             myConnection.Open();
             string answer = "";
