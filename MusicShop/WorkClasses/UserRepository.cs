@@ -13,35 +13,38 @@ namespace MusicShop.WorkClasses
         private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Users.mdb;";
 
         protected OleDbConnection myConnection = new OleDbConnection(connectString);
+
         //public void SaveUserData(string _name, string _ppassword)
         //{
 
         //}
 
-        public bool GetUserData(string _name, string _password)
+        public string GetUserData(string _name)
         {
-
-            StringBuilder pair = new StringBuilder();
-            string query = "SELECT [Login],[Password] FROM [UserData] WHERE [Login] = '" + _name + "' AND [Password] = '" + _password + "'" ;
+            myConnection.Open();
+            string answer = "";
+            string pass = "";
+            string query = "SELECT [Password] FROM [UserData] WHERE [Login] = '" + _name + "'";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                pair.Append(reader[0].ToString() + "|");
-                pair.Append(reader[1].ToString());
+                pass = reader[0].ToString();
+                break;
             }
             reader.Close();
-
             myConnection.Close();
 
-            if(pair==null)
+            try
             {
-                return false; //строка с логином и паролем есть. Все совпало
+                answer= pass.Substring(0, 47);
             }
-            else
+            catch
             {
-                return true;
+                answer = "error";
             }
+            return answer;
+            
         }
     }
 }

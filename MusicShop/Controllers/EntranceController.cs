@@ -17,21 +17,14 @@ namespace MusicShop.Controllers
         [HttpPost]
         public RedirectResult CheckData(IFormCollection form)
         {
-            string mainPath = "";
-           
+            string mainPath = "";           
             string login =form["_login"].ToString(); //получить логин
             string _hashPassword = worker.HashFunction(form["_password"].ToString()); //получить захэшированный пароль
 
-
-            bool success = repo.GetUserData(login, _hashPassword);
-            if(success) //если совпало все
-            {
+            if (_hashPassword==repo.GetUserData(login)) //если пароли совпали
                 mainPath="/Album/Main";
-            }
             else
-            {
                 mainPath = "...";
-            }
             return Redirect(mainPath);
         }
 
@@ -42,9 +35,6 @@ namespace MusicShop.Controllers
             string login = form["_bookName"].ToString();
             string password = form["_description"].ToString();
 
-
-
-
             return Redirect("/Album/Main");
 
         }
@@ -52,10 +42,7 @@ namespace MusicShop.Controllers
 
         public ViewResult Authorization() //главная страница
         {
-
-            return View(); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
-
-
+            return View(); 
         }
     }
 }
