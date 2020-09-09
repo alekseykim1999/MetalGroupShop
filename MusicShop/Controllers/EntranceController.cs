@@ -33,7 +33,7 @@ namespace MusicShop.Controllers
         {
 
             string login = form["_newLogin"].ToString();
-            string password = form["_newPassword"].ToString();
+            string password = worker.HashFunction(form["_newPassword"].ToString());
             repo.SaveUserData(login, password);
             return Redirect("/Entrance/Authorization");
 
