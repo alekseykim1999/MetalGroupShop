@@ -11,7 +11,6 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -22,7 +21,6 @@
     @{
         var current_album = Model.ConcreteAlbum;
         var current_group = Model.ConcreteGroup;
-
     }
     <div class="title" align="center">
         <h2>@current_group.GroupName</h2>
@@ -47,8 +45,6 @@
             }
         </ul>
     </div>
-
-
     <div class="btn_order">
             @using (Html.BeginForm("AddToCart", "ShopCart"))
             {
@@ -62,7 +58,5 @@
             <button class="btn_review">Написать отзыв</button>
         </form>
     </div>
-    
-
 </body>
 </html>

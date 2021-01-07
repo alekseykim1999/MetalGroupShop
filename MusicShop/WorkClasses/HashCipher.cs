@@ -14,9 +14,7 @@ namespace MusicShop.WorkClasses
         public string HashFunction(string _data)
         {
             Byte[] inputBytes = Encoding.UTF8.GetBytes(_data);
-
             Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
-
             return BitConverter.ToString(hashedBytes);
         }
     }

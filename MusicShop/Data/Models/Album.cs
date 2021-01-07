@@ -7,7 +7,6 @@ namespace MusicShop.Models
 {
     public class Album
     {
-
           public int Id { get; set; }
           public string Name { get; set; }
           public DateTime Release_date { get; set; }
@@ -15,8 +14,6 @@ namespace MusicShop.Models
           public string Distributor { get; set; }
           public bool Available { get; set; }
           public string img { get; set; }
-          
-
           public int GroupId { get; set; }
 
     }

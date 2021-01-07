@@ -12,8 +12,6 @@ namespace MusicShop.Data.Repository
     {
 
         private readonly AppDBContent appDbContent;
-
-
         public AlbumRepository(AppDBContent _appdbcont)
         {
             this.appDbContent = _appdbcont;

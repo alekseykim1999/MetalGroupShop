@@ -8,11 +8,8 @@ using MusicShop.Models;
 
 namespace Supermarket.Item
 {
-
-   
     class CashBox : ICalculable
     {
-
         private static CashBox instance;
         private CashBox()
         {
@@ -29,7 +26,5 @@ namespace Supermarket.Item
             int sum = 0;
             return sum;
         }
-
-       
     }
 }

@@ -8,7 +8,6 @@ namespace MusicShop.Interfaces
 {
     interface ICalculable
     {
-
         int calculate(List<Album> items_in_basket);
     }
 }

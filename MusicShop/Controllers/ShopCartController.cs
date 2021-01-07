@@ -18,18 +18,13 @@ namespace MusicShop.Controllers
         private string url = "/Album/Main";
         public RedirectToActionResult AddToCart(Album alb)
         {
-
-            
             GetCart().AddItem(alb, 1);
-
             return RedirectToAction("Index", new { url });
         }
 
         public RedirectToRouteResult RemoveFromCart(Album alb)
         {
-
             GetCart().RemoveLine(alb);
-
             return RedirectToRoute("Index", new { url });
         }
 
@@ -38,10 +33,7 @@ namespace MusicShop.Controllers
 
             ShopCart cart;
             BinaryFormatter bf = new BinaryFormatter();
-
-
             byte[] cache = HttpContext.Session.Get("ShopCart");
-
             if (cache == null)
             {
                 cart = new ShopCart();
@@ -54,10 +46,8 @@ namespace MusicShop.Controllers
                     object obj = bf.Deserialize(ms);
                     cart = (ShopCart)obj;
                 }
-
                 return cart;
             }
-            
         }
 
 
@@ -69,7 +59,6 @@ namespace MusicShop.Controllers
                 ReturnUrl = returnUrl
             });
         }
-
     }
 
 }

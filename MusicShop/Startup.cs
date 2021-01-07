@@ -34,17 +34,11 @@ namespace MusicShop
 
         public void ConfigureServices(IServiceCollection services) //регистрация плагинов внутри проекта
         {
-
-         
             services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
-
             services.AddTransient<IAllAlbums, MockAlbum>(); //связь между классом и интерфейсом
             services.AddTransient<IAllGroups, MockGroups>();
-
-           
             services.AddMvcCore(); //добавить поддержку MVC
             services.AddMvc(option => option.EnableEndpointRouting = false);
-
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
@@ -65,7 +59,6 @@ namespace MusicShop
             app.UseStaticFiles(); // отображать статические файлы CSS
             app.UseSession();
             app.UseMvcWithDefaultRoute(); // если  в url не указан контроллер и представление, то вывести файл по умлочанию
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");

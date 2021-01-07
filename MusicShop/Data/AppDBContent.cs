@@ -9,15 +9,10 @@ namespace MusicShop.Data
 {
     public class AppDBContent : DbContext
     {
-
         public AppDBContent(DbContextOptions<AppDBContent> options) : base(options)
-            {
-
-
+        {
         }
-
         public DbSet<Album> Album { get; set; }
-
         public DbSet<MetalGroup> MetalGroup { get; set; }
     }
 }

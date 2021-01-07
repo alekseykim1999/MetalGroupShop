@@ -11,11 +11,10 @@ namespace MusicShop.WorkClasses
     /*класс для получения логина и пароля и для их сохранения*/
     public class UserRepository
     {
-        private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Users.mdb;";
+        private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database.mdb;";
 
         protected OleDbConnection myConnection = new OleDbConnection(connectString);
         OleDbCommand worker = new OleDbCommand();
-
         public void SaveUserData(string _name, string _password) // сохранить аккаунт в бд
         {
             myConnection.Open();
@@ -43,7 +42,6 @@ namespace MusicShop.WorkClasses
             }
             reader.Close();
             myConnection.Close();
-
             try
             {
                 answer= pass.Substring(0, 47);

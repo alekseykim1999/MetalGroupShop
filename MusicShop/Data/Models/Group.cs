@@ -12,7 +12,6 @@ namespace MusicShop.Models
         public string GenreName { get; set; }
         public DateTime born { get; set; }
         public List<Album> albums { get; set; }
-
         public MetalGroup()
         {
 

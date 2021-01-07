@@ -31,12 +31,10 @@ namespace MusicShop.Controllers
         [HttpPost]
         public RedirectResult RegisterUser(IFormCollection form)
         {
-
             string login = form["_newLogin"].ToString();
             string password = worker.HashFunction(form["_newPassword"].ToString());
             repo.SaveUserData(login, password);
             return Redirect("/Entrance/Authorization");
-
         }
 
 

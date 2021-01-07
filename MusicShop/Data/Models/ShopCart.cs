@@ -13,7 +13,6 @@ namespace MusicShop.Data.Models
     public class ShopCart
     {
         private List<ShopCartAlbum> lineCollection = new List<ShopCartAlbum>();
-
         public void AddItem(Album alb, int quantity)
         {
             ShopCartAlbum line = lineCollection
