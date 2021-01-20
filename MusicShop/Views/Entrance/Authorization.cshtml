@@ -8,21 +8,27 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/css/entrance_style.css" rel="stylesheet" type="text/css" />
     <title>Authorization</title>
 </head>
-<body>
-    @using (Html.BeginForm("CheckData", "Entrance"))
-    {
-        <h3> Введите логин</h3>
-        <br />
-        <input type="text" name="_login" />
-        <br />
-        <h3> Введите пароль</h3>
-        <br />
-        <input type="text" name="_password" />
-        <br />
-        <input type="submit" class="submit_btn" />
-        <a href="/Entrance/Registration">Не имеете аккаунта? Зарегестрируйтесь </a>
-    }
+<body class="main_entrance">
+    
+    <div class="input_form">
+        @using (Html.BeginForm("CheckData", "Entrance"))
+        {
+            <h1>Добро пожаловать!</h1>
+            <h3> Введите логин</h3>
+            <br />
+            <input type="text" name="_login" />
+            <br />
+            <h3> Введите пароль</h3>
+            <br />
+            <input type="password" name="_password" />
+            <br />
+            <br />
+            <input type="submit" class="submit_btn" />
+            <a href="/Entrance/Registration">Не имеете аккаунта? Зарегестрируйтесь </a>
+        }
+    </div>
 </body>
 </html>

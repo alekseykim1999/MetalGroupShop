@@ -34,3 +34,4 @@ D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Vie
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.genruntimeconfig.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\TextSearcher\SearchPage.cshtml.g.cs
