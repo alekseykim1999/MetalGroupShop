@@ -127,8 +127,35 @@ a:hover
     background: #828284; /* Цвет фона */
 }
 
+@font-face {
+    font-family: "Gothical";
+    src: url(/img/Gothical.ttf);
+}
+
+@font-face {
+    font-family: "HardRock";
+    src: url(/img/HARD_ROCK.ttf);
+}
+
+@font-face {
+    font-family: "HeavyMetal";
+    src: url(/img/Newrocker-Gy5a.ttf);
+}
+
+.album_name {
+    font-family: HeavyMetal;
+    font-size: 20px;
+    color: black;
+}
+.band_name {
+    font-family: "HardRock";
+    color: #393939;
+    font-size: 20px;
+    margin-top: 3px;
+}
 .main_title {
-    font-family: URW Chancery L, cursive;
+    font-family: "Gothical";
+    font-size:50px;
     margin-top: 5px;
     color: #b00808;
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fxEcZN8bjQ1oa24dNc4QMQYmcC9fvxl1ZRdSesgzlvxVj9z6MKvO/6MmxJUC6PhERad+aU6oZ9ZUptN/XaxxGQ==",
+  "dgSpecHash": "+QVJmEeUU/cr6LwNKmvE8b60w5NNU79tBzfWQ0pM+EYMzksyfru32NiiM3ucFIkHxsdWEizd/qWZZBz+Dccujw==",
   "success": true,
-  "projectFilePath": "D:\\Институт\\MusicShopProject\\MusicShop\\MusicShop.csproj",
+  "projectFilePath": "E:\\Институт\\MusicShopProject\\MusicShop\\MusicShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Алексей\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

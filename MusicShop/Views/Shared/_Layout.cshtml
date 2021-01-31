@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title class="title_name">@ViewBag.Title</title>
     <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,7 +11,7 @@
 <body>
     <div class="main">
         <div class="header">
-            <h1 align="center "class="main_title" margin-top="3px" ><font color="Black">"Metal Music Shop"</font></h1>
+            <h1 align="center "class="main_title" margin-top="3px" ><font color="Black">"Rock Music"</font></h1>
 
             <div class="search">
                 <p class="login">Login</p>
@@ -21,7 +21,7 @@
                         <option>Элемент поиска</option>
                     </datalist>
                 </p>
-                <button class="main_button"><i class="fa fa-search"></i></button></p>
+                <button class="main_button"><i class="fa fa-search"></i></button>
             </div>
         </div>
         <div class="mleft">
@@ -31,7 +31,11 @@
                     foreach (var band in Model.AllBands)
                     {
                         <li><div>                          
-                            <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id" class="band-name">@band.GroupName</a>   
+                            <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id">
+                                <div class="band_name">
+                                    @band.GroupName
+                                </div>
+                            </a>   
                         </div>
                         </li>
                     }
@@ -64,7 +68,6 @@
 
 
         <div class="mright">
-            
             @RenderBody()
         </div>
 

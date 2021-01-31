@@ -9050,6 +9050,7 @@
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11888,6 +11889,7 @@
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11960,6 +11962,7 @@
       "path": "system.runtime.serialization.xml/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13576,11 +13579,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Институт\\MusicShopProject\\MusicShop\\MusicShop.csproj",
+      "projectUniqueName": "E:\\Институт\\MusicShopProject\\MusicShop\\MusicShop.csproj",
       "projectName": "MusicShop",
-      "projectPath": "D:\\Институт\\MusicShopProject\\MusicShop\\MusicShop.csproj",
+      "projectPath": "E:\\Институт\\MusicShopProject\\MusicShop\\MusicShop.csproj",
       "packagesPath": "C:\\Users\\Алексей\\.nuget\\packages\\",
-      "outputPath": "D:\\Институт\\MusicShopProject\\MusicShop\\obj\\",
+      "outputPath": "E:\\Институт\\MusicShopProject\\MusicShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13680,7 +13683,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   },

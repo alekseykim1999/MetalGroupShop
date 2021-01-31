@@ -1,0 +1,5 @@
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp3.1\MusicShop.csprojAssemblyReference.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp3.1\MusicShop.AssemblyInfoInputs.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp3.1\MusicShop.AssemblyInfo.cs
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp3.1\MusicShop.csproj.CoreCompileInputs.cache
+D:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp3.1\MusicShop.MvcApplicationPartsAssemblyInfo.cache

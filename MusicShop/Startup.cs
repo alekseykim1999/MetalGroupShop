@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +9,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using MusicShop.Data;
+using MusicShop.Data.FileModels;
 using MusicShop.Data.Mocks;
 using MusicShop.Data.Models;
 using MusicShop.Data.Repository;
@@ -35,6 +38,7 @@ namespace MusicShop
         public void ConfigureServices(IServiceCollection services) //регистрация плагинов внутри проекта
         {
             services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationContext>();
             services.AddTransient<IAllAlbums, MockAlbum>(); //связь между классом и интерфейсом
             services.AddTransient<IAllGroups, MockGroups>();
             services.AddMvcCore(); //добавить поддержку MVC
@@ -58,7 +62,7 @@ namespace MusicShop
             app.UseStatusCodePages(); //страница с кодом статуса - 200, если все хорошо
             app.UseStaticFiles(); // отображать статические файлы CSS
             app.UseSession();
-            app.UseMvcWithDefaultRoute(); // если  в url не указан контроллер и представление, то вывести файл по умлочанию
+            app.UseMvcWithDefaultRoute(); // если  в url не указан контроллер и представление, то вывести файл по умолчанию
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");

@@ -11,7 +11,7 @@ namespace MusicShop.WorkClasses
     {
         public static List<string> readFileSongs(int _group, int _album)
         {
-            string path = "D:\\Институт\\MusicShopProject\\MusicShop\\wwwroot\\songs\\" + _group + "\\" + _album + ".txt";
+            string path = "E:\\Институт\\MusicShopProject\\MusicShop\\wwwroot\\songs\\" + _group + "\\" + _album + ".txt";
             List<string> songs = new List<string>();
             using (StreamReader _sw = new StreamReader(path, Encoding.Default))
             {
@@ -37,7 +37,7 @@ namespace MusicShop.WorkClasses
 
         public static async Task<string> readFileReview(int _group, int _album)
         {
-            string path = "D:\\Институт\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _group + "\\" + _album + ".txt";
+            string path = "E:\\Институт\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _group + "\\" + _album + ".txt";
             string review="";
             using (StreamReader _sw = new StreamReader(path, Encoding.Default))
             {

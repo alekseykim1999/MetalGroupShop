@@ -15,7 +15,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/css/one_album_style.css" rel="stylesheet" type="text/css" />
-    <title>InfoAlbum</title>
+    <title>Информация об альбоме</title>
 </head>
 <body>
     @{
@@ -23,11 +23,11 @@
         var current_group = Model.ConcreteGroup;
     }
     <div class="title" align="center">
-        <h2>@current_group.GroupName</h2>
+        <h2 class="group_name">@current_group.GroupName</h2>
 
         <img src="@current_album.img" width="160" height="160" />
 
-        <h2>@current_album.Name</h2>
+        <h2 class="album_name">@current_album.Name</h2>
 
     </div>
     <div class="text_review">
@@ -38,7 +38,7 @@
             @{
                 foreach (var song in Model.getSongs())
                 {
-                    <li>
+                    <li class="song_name">
                         @song;
                     </li>
                 }
@@ -51,7 +51,7 @@
                 <div class="pull-right">
                     @Html.HiddenFor(x => current_album)
                    
-                    <input type="submit" class="btn_cart" value="Добавить в корзину" />
+                    <input type="submit" class="btn_cart" value="Добавить в коллекцию" />
                 </div>
              }
         <form>
