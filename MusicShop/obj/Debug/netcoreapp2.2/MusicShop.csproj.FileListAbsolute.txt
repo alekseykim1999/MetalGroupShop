@@ -72,3 +72,8 @@ E:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop
 E:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.pdb
 E:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.genruntimeconfig.cache
 E:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.csproj.CopyComplete
+E:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\x86\leptonica-1.80.0.dll
+E:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\x86\tesseract41.dll
+E:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\x64\leptonica-1.80.0.dll
+E:\Институт\MusicShopProject\MusicShop\bin\Debug\netcoreapp2.2\x64\tesseract41.dll
+E:\Институт\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\TextSearcher\ScanPicture.cshtml.g.cs

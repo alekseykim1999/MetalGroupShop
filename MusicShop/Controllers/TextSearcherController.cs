@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicShop.Data.FileModels;
+using Ocr;
+using Tesseract;
+using System.Drawing;
+using MusicShop.ViewModel;
 
 namespace MusicShop.Controllers
 {
@@ -16,6 +20,8 @@ namespace MusicShop.Controllers
 
         ApplicationContext _context;
         IHostingEnvironment _appEnvironment;
+
+        ScanViewModel scanned = new ScanViewModel();
 
         public TextSearcherController(ApplicationContext context, IHostingEnvironment appEnvironment)
         {
@@ -29,23 +35,14 @@ namespace MusicShop.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddFile(IFormFile uploadedFile)
+        public ViewResult ScanPicture(IFormCollection form)
         {
-            if (uploadedFile != null)
-            {
-                // путь к папке Files
-                string path = "D:\\Институт\\MusicShopProject\\MusicShop\\wwwroot\\files" + uploadedFile.FileName;
-                // сохраняем файл в папку Files в каталоге wwwroot
-                using (var fileStream = new FileStream(path, FileMode.Create))
-                {
-                    await uploadedFile.CopyToAsync(fileStream);
-                }
-                FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
-                _context.Files.Add(file);
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction("SearchPage");
+            var service = new TesseractService(@"C:\Program Files\Tesseract-OCR", "eng", @"C:\Program Files\Tesseract-OCR\tessdata");
+            var stream = System.IO.File.OpenRead(form["_file"].ToString());
+            scanned.ScannedText = service.GetText(stream);
+            return View(scanned);
+        
         }
+
     }
 }

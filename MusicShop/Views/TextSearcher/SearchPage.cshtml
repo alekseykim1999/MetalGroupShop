@@ -1,10 +1,6 @@
 ﻿@{
     Layout = null;
 }
-@model IEnumerable<MusicShop.Data.FileModels.FileModel>
-@{
-    ViewData["Title"] = "Добавление файла";
-}
 
 <!DOCTYPE html>
 
@@ -18,18 +14,16 @@
     <h1>
         Сканирование текста
     </h1>
-    <h3>Выберите файл для загрузки</h3>
-    <form asp-action="AddFile" asp-controller="TextSearcher" method="post" enctype="multipart/form-data">
-        <input type="file" name="uploadedFile" />
-        <br>
-        <input type="submit" value="Загрузить" />
-    </form>
-
-    <dl class="dl-horizontal">
-        <dt>
-            <img src="~/files/Info.jpg" alt="Image">
-        </dt>
-    </dl>
+    <div class="input_form">
+        @using (Html.BeginForm("ScanPicture", "TextSearcher"))
+        { 
+            <h3> Укажите картинку</h3>
+            <br />
+            <input type="file" name="_file" />
+            <br />
+            <input type="submit"/>
+        }
+    </div>
 </body>
 </html>
 

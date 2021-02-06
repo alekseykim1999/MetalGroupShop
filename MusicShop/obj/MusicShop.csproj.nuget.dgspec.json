@@ -99,6 +99,10 @@
             "System.Data.OleDb": {
               "target": "Package",
               "version": "[4.7.1, )"
+            },
+            "Tesseract": {
+              "target": "Package",
+              "version": "[4.1.1, )"
             }
           },
           "imports": [
