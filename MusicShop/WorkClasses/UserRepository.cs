@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Text;
 using System.Data;
+using Npgsql;
 
 namespace MusicShop.WorkClasses
 {
@@ -29,22 +30,24 @@ namespace MusicShop.WorkClasses
 
         public string GetUserData(string _name) //получить данные для проверки
         {
-            myConnection.Open();
             string answer = "";
             string pass = "";
-            string query = "SELECT [Password] FROM [UserData] WHERE [Login] = '" + _name + "'";
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            OleDbDataReader reader = command.ExecuteReader();
-            while (reader.Read())
+            var cs = "Host=localhost;Username=postgres;Password=12345;Database=Music Data Base";
+            var con = new NpgsqlConnection(cs);
+            con.Open();
+            string sql = "SELECT userpassword FROM userdata WHERE userlogin = '" + _name + "'";
+            var cmd = new NpgsqlCommand(sql, con);
+            NpgsqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
             {
-                pass = reader[0].ToString();
+                pass = rdr[0].ToString();
                 break;
             }
-            reader.Close();
-            myConnection.Close();
+            rdr.Close();
+            con.Close();
             try
             {
-                answer= pass.Substring(0, 47);
+                answer = pass.Substring(0, 47);
             }
             catch
             {

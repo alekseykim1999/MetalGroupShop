@@ -11,7 +11,7 @@ namespace MusicShop.WorkClasses
     {
         public static List<string> readFileSongs(int _group, int _album)
         {
-            string path = "E:\\Институт\\MusicShopProject\\MusicShop\\wwwroot\\songs\\" + _group + "\\" + _album + ".txt";
+            string path = "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\wwwroot\\songs\\" + _group + "\\" + _album + ".txt";
             List<string> songs = new List<string>();
             using (StreamReader _sw = new StreamReader(path, Encoding.Default))
             {
@@ -37,7 +37,7 @@ namespace MusicShop.WorkClasses
 
         public static async Task<string> readFileReview(int _group, int _album)
         {
-            string path = "E:\\Институт\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _group + "\\" + _album + ".txt";
+            string path = "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _group + "\\" + _album + ".txt";
             string review="";
             using (StreamReader _sw = new StreamReader(path, Encoding.Default))
             {
@@ -60,5 +60,37 @@ namespace MusicShop.WorkClasses
         {
             throw new NotImplementedException();
         }
+
+
+
+
+        public Dictionary<string, string> Get_Dictionary(string _source)
+        {
+            Dictionary<string, string> codes = new Dictionary<string, string>(); //словарь для дерева
+            string line; //хранит текущую строку
+            using (StreamReader _sw = new StreamReader(@_source, Encoding.Default))
+            {
+                while (!_sw.EndOfStream)
+                {
+                    line = _sw.ReadLine(); //Чтение построчно
+
+                    String[] words = line.Split(new char[] { '	' }, StringSplitOptions.RemoveEmptyEntries); //деление по " " Получаем код, имя и уровень 
+                    try
+                    {
+                        codes.Add(words[0], words[1]); //заполнение словаря  
+
+                    }
+                    catch
+                    {
+                        
+                    }
+
+                }
+                _sw.Close();
+            }
+            return codes;
+
+        }
+
     }
 }

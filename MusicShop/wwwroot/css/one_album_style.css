@@ -1,20 +1,20 @@
 ﻿body {
-    background: url("/img/Background.jpg") no-repeat;
+    background: url("/img/NewBackground.jpg") no-repeat;
 }
 
 @font-face {
     font-family: "Gothical";
-    src: url(/img/Gothical.ttf);
+    src: url(/img/Cooljazz.ttf);
 }
 
 @font-face {
     font-family: "HardRock";
-    src: url(/img/HARD_ROCK.ttf);
+    src: url(/img/Cooljazz.ttf);
 }
 
 @font-face {
     font-family: "HeavyMetal";
-    src: url(/img/Newrocker-Gy5a.ttf);
+    src: url(/img/Cooljazz.ttf);
 }
 
 

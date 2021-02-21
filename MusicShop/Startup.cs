@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using JavaScriptEngineSwitcher.ChakraCore;
+using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -16,6 +18,7 @@ using MusicShop.Data.Mocks;
 using MusicShop.Data.Models;
 using MusicShop.Data.Repository;
 using MusicShop.Interfaces;
+using React.AspNet;
 using Supermarket.Item;
 
 namespace MusicShop
@@ -51,6 +54,11 @@ namespace MusicShop
                 options.Cookie.IsEssential = true;
             });
 
+            services.AddMemoryCache();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddReact();
+            services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
+
 
 
         }
@@ -67,6 +75,11 @@ namespace MusicShop
             {
                 routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");
             });
+
+            app.UseDeveloperExceptionPage();
+
+            app.UseReact(config => { });
+            app.UseDefaultFiles();
         }
     }
 }
