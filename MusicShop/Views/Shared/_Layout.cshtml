@@ -11,10 +11,8 @@
 <body>
     <div class="main">
         <div class="header">
-            <h1 align="center "class="main_title" margin-top="3px" ><font color="Black">"Jazz Music"</font></h1>
-
+            <div class="main_title">Jazz Music</div>
             <div class="search">
-                <p class="login">Login</p>
                 <p>
                     <input list="text" class="texbox" oninput="MyFunction()" id="thistext" placeholder="Поиск...">
                     <datalist id="text">
@@ -25,24 +23,27 @@
             </div>
         </div>
         <div class="mleft">
-            <h3>Группы</h3>
-            <ul>
-                @{
-                    foreach (var band in Model.AllBands)
-                    {
-                        <li><div>                          
-                            <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id">
-                                <div class="band_name">
-                                    @band.GroupName
-                                </div>
-                            </a>   
-                        </div>
-                        </li>
-                    }
-                }
-            </ul>
-            
+            <div class="gap">
 
+            </div>
+            <h3 class="groups_title">Artists</h3>
+                <ul>
+                    @{
+                        foreach (var band in Model.AllBands)
+                        {
+                            <li>
+                                <div>
+                                    <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id">
+                                        <div class="band_name">
+                                            @band.GroupName
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
+        
         </div>
 
         <div class="fast_search">
@@ -71,7 +72,7 @@
             @RenderBody()
         </div>
 
-        <div class="footer" >
+        <div class="footer">
             <font color="red">
                 <p>2020 Created by Aleksey</p>
             </font>

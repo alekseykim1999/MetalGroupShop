@@ -1,46 +1,46 @@
 ﻿.main {
-    width: 1505x;
+    width: 1400px;
     height: 1300px;
 }
 .header {
-    border-style: inset;
-    border-color: #2e2e2f;
-    border-width: 7px;
-    width: 1505px;
-    height: 150px;
+    width: 1527.5px;
+    height: 170px;
     margin: auto;
     margin-left: -10px;
     margin-top: -15px;
     background: url("/img/header.jpg");
 }
-
+.gap{
+    height:15px;
+}
 .mleft {
     text-align: center;
-    float: center;
-    width: 170px;
+    width: 197px;
     height: 1100px;
     margin-left: -8px;
     margin-top: 0px;
-    border-style: inset;
-    border-color: #a5a5a5;
-    border-width: 1px;
     background: #c3c3c3;
 }
 
+
+.groups_title {
+    font-family: "Lemon";
+    margin-left: 30px;
+    width: 100px;
+    height: 30px;
+}
 li{
     text-align:left;
     margin-left:-20px;
 }
 .mright {
     overflow: hidden;
-    float: center;
-    width: 1330px;
+    width: 1327.5px;
     height: 1050px;
     margin: auto;
-    margin-left: 165px;
+    margin-left: 190px;
     margin-top: -1000px;
     text-align: center;
-    color: 000000;
     font-size: 16px;
     background: url("/img/NewBackground.jpg") no-repeat;
 }
@@ -59,7 +59,7 @@ li {
 }
 
 ul {
-    padding-left: 3;
+    padding-left: -6px;
 }
 
 
@@ -67,9 +67,7 @@ ul {
     float: left;
     display: block;
     width: 300px;
-    border: 1px solid blue;
     margin: 2px;
-    border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     background: #ffffff !important;
@@ -88,14 +86,19 @@ ul {
     margin-top: 7px;
 }
 .search {
-    margin-top: 4px;
+    margin-top: 60px;
+    width:530px;
+    height:40px;
+    margin-left:1000px;
+    position:absolute;
 }
 .search button 
 {
+     margin-top:-14px;
+     position:absolute;
      background: #23ccea;
-     border: 2;
+     border: 2px;
      border-radius: 5px;
-     margin-top: -0.8px;
 }
 
 button:hover {
@@ -118,19 +121,24 @@ a {
 
 a:visited 
 {
-    color: #0b0b01; /* Цвет посещенной ссылки */
+    color: #0b0b01; 
 }
 a:hover 
 {
     text-decoration: none;
     color: #0b0b01;
-    background: #828284; /* Цвет фона */
 }
 
 @font-face {
     font-family: "Gothical";
     src: url(/img/Cooljazz.ttf);
 }
+
+@font-face {
+    font-family: "Lemon";
+    src: url(/img/LemonJelly.ttf);
+}
+
 
 @font-face {
     font-family: "HardRock";
@@ -154,41 +162,46 @@ a:hover
     margin-top: 3px;
 }
 .main_title {
-    font-family: "Gothical";
-    font-size:50px;
-    margin-top: 5px;
+    font-family: "Lemon";
+    font-size: 50px;
     color: #b00808;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+    width:300px;
+    height:50px;
 }
 
 .fast_search {
-    float: center;
-    width: 1330x;
-    margin-left: 165px;
+
+    width: 1327.3px;
+    margin-left: 190px;
     margin-top: -1070px;
 }
 
 .navigation {
     float: left; /*Задаем обтекание*/
     line-height: 50px; /*Высота строки +  верт. центрирования текста*/
-    font-size: 16px;
+    font-size: 30px;
     background: dodgerblue;
     color: red;
-    margin-top: -34px;
-    width: 221.5px; /*Фиксируем ширину блока*/
+    margin-top: -30px;
+    width: 221.2px; /*Фиксируем ширину блока*/
     text-align: center; /*Центрируем текст по горизонтали*/
-    border-style: inset;
-    border-color: darkblue;
-    border-width: 3px;
-    background: #515151;
+    background: #f47176;
+    border: 1px solid;
+    border-color: black;
+    font-family: "Lemon";
 }
+
+.navigation :hover {
+    background: #828284; /* Цвет фона */
+}
+
 
 .footer {
     height: 50px;
-    width: 1496px;
-    border: 2;
-    border-style: inset;
-    border-color: darkblue;
-    border-width: 3px;
+    width: 1518px;
     background-color: black;
 }
 
