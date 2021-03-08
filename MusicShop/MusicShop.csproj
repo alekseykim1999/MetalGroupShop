@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.14.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore" Version="3.9.1" />
     <PackageReference Include="JavaScriptEngineSwitcher.ChakraCore.Native.linux-x64" Version="3.9.1" />

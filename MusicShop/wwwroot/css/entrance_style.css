@@ -2,7 +2,54 @@
     background: url("/img/NewBackground.jpg") no-repeat;
 }
 
-.input_form{
-    margin-left:600px;
-    margin-top:200px;
+.input_form {
+    margin-left: 600px;
+    margin-top: 200px;
+    background-color: #47f678;
+    width:400px;
 }
+
+.welcome_title {
+    font-family: "Quickiss";
+    color: #ea1660;
+    margin-left: 90px;
+    font-size:70px;
+}
+
+.login_title {
+    font-family: "Cinderela";
+    color: #4b4ef8;
+    font-size: 30px;
+    margin-left:130px;
+}
+
+@font-face {
+    font-family: "Quickiss";
+    src: url(/img/QuickKiss.ttf);
+}
+
+@font-face {
+    font-family: "Cinderela";
+    src: url(/img/Cinderela.ttf);
+}
+
+.input_box {
+    display: block;
+    width: 300px;
+    margin: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: 30px;
+    color: #0b0b01;
+    font-size: 11px;
+    font-family: Tahoma;
+    margin-left: 50px;
+    margin-top: -15px;
+    background-color: #ffe; /* Цвет фона */
+    color: #930; /* Цвет текста */
+    font-size: 20px;
+    font-family: "Quickiss";
+}
+

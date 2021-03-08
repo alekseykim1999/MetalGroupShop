@@ -9,6 +9,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/css/entrance_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/fancyInput.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src='js/fancyInput.js'></script>
     <title>Authorization</title>
 </head>
 <body class="main_entrance">
@@ -16,18 +19,26 @@
     <div class="input_form">
         @using (Html.BeginForm("CheckData", "Entrance"))
         {
-            <h1>Добро пожаловать!</h1>
-            <h3> Введите логин</h3>
+
+            <div class="welcome_title">
+                    Welcome!
+            </div>
+   
+            <div class="login_title"> Login </div>
             <br />
-            <input type="text" name="_login" />
+            <div>
+                <input type="text" name="_login" class="input_box" placeholder="Login..."/>
+            </div>
             <br />
-            <h3> Введите пароль</h3>
+            <div class="login_title"> Password</div>
             <br />
-            <input type="password" name="_password" />
+            <div>
+                <input type="password" name="_password" class="input_box" placeholder="Pssword..."/>
+            </div>
             <br />
             <br />
             <input type="submit" class="submit_btn" />
-            <a href="/Entrance/Registration">Не имеете аккаунта? Зарегестрируйтесь </a>
+            <a href="/Entrance/Registration">Dont't have account? Registration! </a>
         }
     </div>
 </body>

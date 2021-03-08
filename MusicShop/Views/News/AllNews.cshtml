@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+@*@using MusicShop.Models
+    @model  IEnumerable<NewsModel>*@
+@model NewsViewModel 
+
+<ul>
+   @{
+       foreach (var newsInfo in Model.allnews)
+       {
+                <li>
+                   <div>
+                       <img src="@newsInfo.img"/>
+                       <h3>@newsInfo.news</h3>
+                   </div>
+                </li>
+       }
+    }
+</ul>
+

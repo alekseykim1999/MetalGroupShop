@@ -11,6 +11,18 @@
           "lib/netstandard2.0/AdvancedStringBuilder.dll": {}
         }
       },
+      "AngleSharp/0.14.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AngleSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AngleSharp.dll": {}
+        }
+      },
       "EntityFramework/6.4.4": {
         "type": "package",
         "build": {
@@ -4788,7 +4800,7 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -5102,6 +5114,27 @@
         "lib/netstandard1.0/AdvancedStringBuilder.xml",
         "lib/netstandard2.0/AdvancedStringBuilder.dll",
         "lib/netstandard2.0/AdvancedStringBuilder.xml"
+      ]
+    },
+    "AngleSharp/0.14.0": {
+      "sha512": "34w9I7nyszfEYBY8g7T3B0AtWlOivNh+QoWc3KECRwbmcNyqWmb4huihtmpH2Ds7rIRRHMMPv9yfPBxxjBn03g==",
+      "type": "package",
+      "path": "anglesharp/0.14.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "anglesharp.0.14.0.nupkg.sha512",
+        "anglesharp.nuspec",
+        "lib/net46/AngleSharp.dll",
+        "lib/net46/AngleSharp.xml",
+        "lib/net461/AngleSharp.dll",
+        "lib/net461/AngleSharp.xml",
+        "lib/net472/AngleSharp.dll",
+        "lib/net472/AngleSharp.xml",
+        "lib/netstandard1.3/AngleSharp.dll",
+        "lib/netstandard1.3/AngleSharp.xml",
+        "lib/netstandard2.0/AngleSharp.dll",
+        "lib/netstandard2.0/AngleSharp.xml"
       ]
     },
     "EntityFramework/6.4.4": {
@@ -14159,6 +14192,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AngleSharp >= 0.14.0",
       "EntityFramework >= 6.4.4",
       "JSON >= 1.0.1",
       "JavaScriptEngineSwitcher.ChakraCore >= 3.9.1",
@@ -14226,6 +14260,10 @@
       "netcoreapp2.2": {
         "targetAlias": "netcoreapp2.2",
         "dependencies": {
+          "AngleSharp": {
+            "target": "Package",
+            "version": "[0.14.0, )"
+          },
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"

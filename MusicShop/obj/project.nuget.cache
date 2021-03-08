@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "eZ3fknKe6ucmZYAtpmjBuY4pxJ2e9ZmQJo4w08IOUKDz5zWJk3u0VRreaOpQ2QqARJ4/y8L9eiiAs8wCqQ2ccg==",
+  "dgSpecHash": "G0HNqj8rODFnht5j+34xniufSaQ6+J4/au8EdkwrCVLyHTbiVc86CDRCDP4dEmJL9/wsBYnGleFc7a4aVuIQFw==",
   "success": true,
   "projectFilePath": "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\MusicShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Алексей\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
+    "C:\\Users\\Алексей\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\javascriptengineswitcher.chakracore\\3.9.1\\javascriptengineswitcher.chakracore.3.9.1.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\javascriptengineswitcher.chakracore.native.linux-x64\\3.9.1\\javascriptengineswitcher.chakracore.native.linux-x64.3.9.1.nupkg.sha512",

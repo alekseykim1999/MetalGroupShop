@@ -180,22 +180,22 @@ a:hover
 }
 
 .navigation {
-    float: left; /*Задаем обтекание*/
-    line-height: 50px; /*Высота строки +  верт. центрирования текста*/
+    float: left;
+    line-height: 50px;
     font-size: 30px;
     background: dodgerblue;
     color: red;
     margin-top: -30px;
-    width: 221.2px; /*Фиксируем ширину блока*/
-    text-align: center; /*Центрируем текст по горизонтали*/
-    background: #f47176;
+    width: 221.2px;
+    text-align: center;
+    background: steelblue linear-gradient( rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .2) 50% ) center center / 100% 1em;
     border: 1px solid;
     border-color: black;
     font-family: "Lemon";
 }
 
 .navigation :hover {
-    background: #828284; /* Цвет фона */
+    background: #828284; 
 }
 
 

@@ -120,3 +120,4 @@ E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcorea
 E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.pdb
 E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.genruntimeconfig.cache
 E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.csproj.CopyComplete
+E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\News\AllNews.cshtml.g.cs
