@@ -9,17 +9,17 @@ using System.Text;
 
 namespace Parser.Core.Platonus
 {
-    class NewsParser : IParser<string[]> //сам парсер 
+    class NewsParser : IParser<string[]> 
     {
-        public string[] Parse(IHtmlDocument document) //функция, которая выводит нужную информацию
+        public string[] Parse(IHtmlDocument document) 
         {
 
-            var list = new List<string>(); //список всех найденных надписей
+            var list = new List<string>(); 
             foreach (var img in document.QuerySelectorAll("img"))
             {
                 string src = img.GetAttribute("src");
                 if(!src.Contains(".png") && src!="https://tengrinews.kz/https://mc.yandex.ru/watch/1838272")
-                 list.Add("https://tengrinews.kz/"+src); //добавить содержание тегов 
+                 list.Add("https://tengrinews.kz/"+src); 
             }
             list.RemoveAt(list.Count - 1);
 

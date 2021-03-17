@@ -15,18 +15,26 @@
         <script src='js/fancyInput.js'></script>
     </head>
     <body>
-        <ul class="background_color">
-            @{
-                foreach (var newsInfo in Model.allnews)
-                {
-                    <li>
-                        <div class="news_block">
-                            <img class="news_image" src="@newsInfo.img" />
-                            <h3 class="news_text">@newsInfo.news</h3>
-                        </div>
-                    </li>
+        <div class="news_header">
+            <br />
+            <h1 class="news_header_text">
+                Music News For Current Day
+            </h1>
+        </div>
+        <div class="background_color">
+            <ul>
+                @{
+                    foreach (var newsInfo in Model.allnews)
+                    {
+                        <li>
+                            <div class="news_block">
+                                <img class="news_image" src="@newsInfo.img" />
+                                <h3 class="news_text">@newsInfo.news</h3>
+                            </div>
+                        </li>
+                    }
                 }
-            }
-        </ul>
-        </body>
+            </ul>
+        </div>
+    </body>
 </html>

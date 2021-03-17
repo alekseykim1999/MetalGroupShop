@@ -66,15 +66,15 @@ namespace MusicShop.WorkClasses
 
         public Dictionary<string, string> Get_Dictionary(string _source)
         {
-            Dictionary<string, string> codes = new Dictionary<string, string>(); //словарь для дерева
-            string line; //хранит текущую строку
+            Dictionary<string, string> codes = new Dictionary<string, string>(); 
+            string line; 
             using (StreamReader _sw = new StreamReader(@_source, Encoding.Default))
             {
                 while (!_sw.EndOfStream)
                 {
                     line = _sw.ReadLine(); //Чтение построчно
 
-                    String[] words = line.Split(new char[] { '	' }, StringSplitOptions.RemoveEmptyEntries); //деление по " " Получаем код, имя и уровень 
+                    String[] words = line.Split(new char[] { '	' }, StringSplitOptions.RemoveEmptyEntries); 
                     try
                     {
                         codes.Add(words[0], words[1]); //заполнение словаря  

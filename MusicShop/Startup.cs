@@ -32,19 +32,13 @@ namespace MusicShop
         {
             _confString = new ConfigurationBuilder().SetBasePath(host.ContentRootPath).AddJsonFile("dbsettings.json").Build();
         }
-
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-
-
-        public void ConfigureServices(IServiceCollection services) //регистрация плагинов внутри проекта
+        public void ConfigureServices(IServiceCollection services) 
         {
             services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ApplicationContext>();
-            services.AddTransient<IAllAlbums, MockAlbum>(); //связь между классом и интерфейсом
+            services.AddTransient<IAllAlbums, MockAlbum>(); 
             services.AddTransient<IAllGroups, MockGroups>();
-            services.AddMvcCore(); //добавить поддержку MVC
+            services.AddMvcCore(); 
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
@@ -66,11 +60,11 @@ namespace MusicShop
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseDeveloperExceptionPage(); //страницы с ошибками
-            app.UseStatusCodePages(); //страница с кодом статуса - 200, если все хорошо
-            app.UseStaticFiles(); // отображать статические файлы CSS
+            app.UseDeveloperExceptionPage(); 
+            app.UseStatusCodePages(); 
+            app.UseStaticFiles(); 
             app.UseSession();
-            app.UseMvcWithDefaultRoute(); // если  в url не указан контроллер и представление, то вывести файл по умолчанию
+            app.UseMvcWithDefaultRoute(); 
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");

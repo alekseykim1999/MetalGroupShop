@@ -19,6 +19,6 @@ namespace MusicShop
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>(); //call code srom Startup.cs
+                .UseStartup<Startup>(); 
     }
 }

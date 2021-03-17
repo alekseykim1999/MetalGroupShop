@@ -12,16 +12,13 @@ namespace MusicShop.Controllers
 {
     public class NewsController : Controller
     {
-
-
-
-        public ViewResult AllNews() //главная страница
+        public ViewResult AllNews() 
         {
             NewsViewModel obj = new NewsViewModel();
             NewsWorker newsGetter = new NewsWorker();
             obj.allnews = newsGetter.getAllNews();
 
-            return View(obj); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
+            return View(obj); 
         }
 
     }

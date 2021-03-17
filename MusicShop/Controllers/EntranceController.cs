@@ -19,9 +19,9 @@ namespace MusicShop.Controllers
         {
             string mainPath = "";           
             string login =form["_login"].ToString(); //получить логин
-            string _hashPassword = worker.HashFunction(form["_password"].ToString()); //получить захэшированный пароль
+            string _hashPassword = worker.HashFunction(form["_password"].ToString()); 
 
-            if (_hashPassword==repo.GetUserData(login)) //если пароли совпали
+            if (_hashPassword==repo.GetUserData(login)) 
                 mainPath="/Album/Main";
             else
                 mainPath = "...";

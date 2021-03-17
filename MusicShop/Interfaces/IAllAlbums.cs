@@ -9,6 +9,6 @@ namespace MusicShop.Interfaces
     public interface IAllAlbums
     {
         Album getObjectAlbum(int id);
-        IEnumerable<Album> getConcreteAlbums(int v); //вывести альбомы
+        IEnumerable<Album> getConcreteAlbums(int v); 
     }
 }

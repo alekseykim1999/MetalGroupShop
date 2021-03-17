@@ -9,6 +9,6 @@ namespace Parser.Core
 {
     interface IParser<T> where T : class
     {
-        T Parse(IHtmlDocument document); //функция парсинга   
+        T Parse(IHtmlDocument document); 
     }
 }

@@ -14,15 +14,9 @@ namespace Ocr
         private readonly string _tesseractExePath;
         private readonly string _language;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TesseractService"/> class.
-        /// </summary>
-        /// <param name="tesseractDir">The path for the Tesseract4 installation folder (C:\Program Files\Tesseract-OCR).</param>
-        /// <param name="language">The language used to extract text from images (eng, por, etc)</param>
-        /// <param name="dataDir">The data with the trained models (tessdata). Download the models from https://github.com/tesseract-ocr/tessdata_fast</param>
         public TesseractService(string tesseractDir, string language = "en", string dataDir = null)
         {
-            // Tesseract configs.
+            
             _tesseractExePath = Path.Combine(tesseractDir, "tesseract.exe");
             _language = language;
 
@@ -32,11 +26,7 @@ namespace Ocr
             Environment.SetEnvironmentVariable("TESSDATA_PREFIX", dataDir);
         }
 
-        /// <summary>
-        /// Read text from the images streams.
-        /// </summary>
-        /// <param name="images">The images streams.</param>
-        /// <returns>The images text.</returns>
+       
         public string GetText(params Stream[] images)
         {
             var output = string.Empty;
@@ -90,7 +80,7 @@ namespace Ocr
 
         private static void WriteInputFiles(Stream[] inputStreams, string tempPath, string tempInputFile)
         {
-            // If there is more thant one image file, so build the list file using the images as input files.
+          
             if (inputStreams.Length > 1)
             {
                 var imagesListFileContent = new StringBuilder();
@@ -111,7 +101,7 @@ namespace Ocr
             }
             else
             {
-                // If is only one image file, than use the image file as input file.
+                
                 using (var tempStream = File.OpenWrite(tempInputFile))
                 {
                     CopyStream(inputStreams.First(), tempStream);

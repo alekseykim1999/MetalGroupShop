@@ -29,7 +29,7 @@ namespace MusicShop.Controllers
             _appEnvironment = appEnvironment;
         }
 
-        public IActionResult SearchPage() //главная страница
+        public IActionResult SearchPage() 
         {
             return View();
         }

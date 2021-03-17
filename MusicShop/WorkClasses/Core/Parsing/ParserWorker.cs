@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace Parser.Core.Platonus
 {
-    class ParserWorker<T> where T : class //сам класс парсера, который управляет процессом
+    class ParserWorker<T> where T : class 
     {
         IParser<T> parser;
         IParserSettings parserSettings;
 
-        private string login; //логин
-        private string password; //пароль
+        private string login; 
+        private string password; 
 
 
-        bool isActive; //работает ли
-        HtmlLoader loader; //загрузчик страницы
+        bool isActive; 
+        HtmlLoader loader; 
 
-        //свойства
+       
         #region Properties
 
         public string Login
@@ -85,7 +85,7 @@ namespace Parser.Core.Platonus
         public void Start()
         {
             isActive = true;
-            Work(); //запустить функцию работы
+            Work(); 
         }
 
         public void Abort()
@@ -97,24 +97,24 @@ namespace Parser.Core.Platonus
         {
             if(!isActive)
             {
-                onCompleted?.Invoke(this); //событие - уведомление
+                onCompleted?.Invoke(this); 
                 return;
             }
             else
             {
-                var source = await loader.getSourceByPageId(); //получить страницу
-                var domParser = new HtmlParser(); //парсер из библиотеки
-                var documentPage = await domParser.ParseDocumentAsync(source); //получить страницу документа
-                var result = parser.Parse(documentPage); //получить нужную страницу
-                onNewData.Invoke(this, result); // событие - увемоление
+                var source = await loader.getSourceByPageId(); 
+                var domParser = new HtmlParser(); 
+                var documentPage = await domParser.ParseDocumentAsync(source); 
+                var result = parser.Parse(documentPage); 
+                onNewData.Invoke(this, result); 
             }
 
             onCompleted?.Invoke(this);
         }
 
 
-        public event Action<object, T> onNewData; //событие при получении данных
-        public event Action<object> onCompleted; //событие при завершении работы
+        public event Action<object, T> onNewData; 
+        public event Action<object> onCompleted; 
 
 
 

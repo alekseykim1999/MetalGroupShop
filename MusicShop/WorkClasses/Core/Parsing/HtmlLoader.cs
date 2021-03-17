@@ -9,29 +9,29 @@ using System.IO;
 
 namespace Parser.Core.Platonus
 {
-    class HtmlLoader //объект, который загружает страницу
+    class HtmlLoader 
     {
-        readonly HttpClient client; //клиент 
-        readonly string url; //путь к страницу
+        readonly HttpClient client; 
+        readonly string url;
 
         public HtmlLoader(IParserSettings settings)
         {
-            client = new HttpClient(); //создать клиента
-            url = $"{settings.BaseUrl}/{settings.Prefix}"; //полный путь к нужному html
+            client = new HttpClient(); 
+            url = $"{settings.BaseUrl}/{settings.Prefix}"; 
         }
 
-        public async Task<string> getSourceByPageId() //получить нужную страницу
+        public async Task<string> getSourceByPageId() 
         {
            
-            var response = await client.GetAsync(url); //получить ответ клиенту
+            var response = await client.GetAsync(url); 
             string source = null;
 
-            if(response!=null && response.StatusCode == HttpStatusCode.OK) //если статус ОК, то страница передалась
+            if(response!=null && response.StatusCode == HttpStatusCode.OK) 
             {
-                source = await response.Content.ReadAsStringAsync(); //получить весь код главной страницы платонуса
+                source = await response.Content.ReadAsStringAsync(); 
             }
 
-            return source; //весь код страницы
+            return source; 
         }
 
         public void Authorize()

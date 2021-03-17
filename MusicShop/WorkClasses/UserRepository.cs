@@ -9,14 +9,14 @@ using Npgsql;
 
 namespace MusicShop.WorkClasses
 {
-    /*класс для получения логина и пароля и для их сохранения*/
+  
     public class UserRepository
     {
         private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database.mdb;";
 
         protected OleDbConnection myConnection = new OleDbConnection(connectString);
         OleDbCommand worker = new OleDbCommand();
-        public void SaveUserData(string _name, string _password) // сохранить аккаунт в бд
+        public void SaveUserData(string _name, string _password) 
         {
             myConnection.Open();
             worker.Connection = myConnection;
@@ -28,7 +28,7 @@ namespace MusicShop.WorkClasses
             myConnection.Close();
         }
 
-        public string GetUserData(string _name) //получить данные для проверки
+        public string GetUserData(string _name) 
         {
             string answer = "";
             string pass = "";

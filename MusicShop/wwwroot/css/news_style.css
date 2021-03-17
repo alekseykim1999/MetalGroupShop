@@ -2,15 +2,28 @@
 {
 
 }
-
-
-.news_text 
-{
-    margin-left:350px;
+.news_text {
     position:absolute;
-    margin-bottom:40px;
+    margin-left: 350px;
+    position: absolute;
+    margin-top:-100px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
 
 .news_block
 {
@@ -18,5 +31,23 @@
 }
 
 .background_color {
-    background: url("/img/NewBackground.jpg");
+    background: url("/img/BackgroundForNews.jpg");
+}
+
+.news_header {
+    background: #b5bdc8;
+    background: linear-gradient(to top, #b5bdc8 0%, #a8a8a8 36%, #28343b 100%);
+    width: auto;
+    height: 120px;
+}
+
+.news_header_text {
+    margin-left: 700px;
+    font-family: "Quickiss";
+    color: #72f0d5;
+}
+
+@font-face {
+    font-family: "Quickiss";
+    src: url(/img/QuickKiss.ttf);
 }

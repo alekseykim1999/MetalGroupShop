@@ -18,8 +18,8 @@ namespace MusicShop.WorkClasses
                 new NewsParser());
 
             parser.ParserSettings = new ParserSettings();
-            parser.onCompleted += parser_on_completed; //функция, которая вызывается при уведомлении события о конце
-            parser.onNewData += parser_on_new_data; //при полуениии данных
+            parser.onCompleted += parser_on_completed; 
+            parser.onNewData += parser_on_new_data; 
             parser.Start();
 
             Thread.Sleep(3000); 
@@ -52,24 +52,21 @@ namespace MusicShop.WorkClasses
                     }
                     catch
                     {
-
+                        resultList.Add(new NewsModel { img = " ", news = " " });
                     }
                      
                 }
-
             return resultList;
 
         }
 
         private static void parser_on_completed(object obj)
         {
-            Console.WriteLine("Парсинг завершен");
+           
         }
 
         private static void parser_on_new_data(object arg1, string[] arg2)
         {
-
-            //выводить массив полученных строк на консоль
             for (int i = 0; i < arg2.Length; i++)
             {
                 allNews.Add(arg2[i]);

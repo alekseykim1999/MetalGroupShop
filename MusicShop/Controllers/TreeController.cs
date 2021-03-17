@@ -15,7 +15,7 @@ namespace MusicShop.Controllers
 
         public ActionResult GenresTree()
         {
-            var query = InitData().ToList(); //get parent not and popute
+            var query = InitData().ToList(); 
             return View(query);
         }
 
@@ -23,14 +23,11 @@ namespace MusicShop.Controllers
         [HttpPost]
         public JsonResult FilterNode(int parentid)
         {
-            var query = InitData().Where(c => c.parent_id == parentid).ToList(); //according parent id to filter node
+            var query = InitData().Where(c => c.parent_id == parentid).ToList(); 
             return Json(query);
         }
         public List<TreeviewModel> InitData()
         {
-
-
-            //make recursive function with file
             List<TreeviewModel> itemlist = new List<TreeviewModel>();
             itemlist.Add(new TreeviewModel() { cat_id = 101, parent_id = 0, descript = "Sports" });
             itemlist.Add(new TreeviewModel() { cat_id = 102, parent_id = 0, descript = "Fruits" });

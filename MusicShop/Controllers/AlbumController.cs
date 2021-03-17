@@ -27,11 +27,11 @@ namespace MusicShop.Controllers
         public ViewResult Main() //главная страница
         {
             ViewBag.Title = "Rock Portal";
-            ViewBag.GroupName = "Metal Music"; //один из способов передачи информации на страницу. Желательно не использовать 
-            return View(obj); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
+            ViewBag.GroupName = "Metal Music"; 
+            return View(obj); 
         }
 
-        public ViewResult AlbumsOfGroup(int bandId) //страница, хранящая альбомы группы.
+        public ViewResult AlbumsOfGroup(int bandId) 
         {
             help_albums = all_albums.getConcreteAlbums(bandId);
             group_id = bandId;
