@@ -5,8 +5,11 @@
 .input_form {
     margin-left: 600px;
     margin-top: 200px;
-    background-color: #47f678;
-    width:400px;
+    background: #b5bdc8;
+    background: linear-gradient(to top, #b5bdc8 0%, #f27c54 36%, #7ff427 100%);
+    width: 400px;
+    border: 1px solid #c6040c; /* Параметры рамки */
+    border-radius: 20px; /* Радиус скругления */
 }
 
 .welcome_title {
@@ -51,5 +54,34 @@
     color: #930; /* Цвет текста */
     font-size: 20px;
     font-family: "Quickiss";
+}
+
+
+.button_style {
+    display: inline-block;
+    padding: 10px 40px;
+    color: #D7D7D7;
+    background: #48A65B;
+    border: 2px solid #48A65B;
+    font-size: .95em;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    margin-left:135px;
+}
+
+.button_style:hover 
+{
+    background: #79ff9f;
+}
+
+.link_style {
+    font-family: "Cinderela";
+    color: #4b4ef8;
+    margin-top: 20px;
+    margin-left: 70px;
 }
 

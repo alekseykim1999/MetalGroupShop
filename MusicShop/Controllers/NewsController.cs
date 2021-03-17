@@ -20,7 +20,7 @@ namespace MusicShop.Controllers
             NewsViewModel obj = new NewsViewModel();
             NewsWorker newsGetter = new NewsWorker();
             obj.allnews = newsGetter.getAllNews();
-            int p = 0;
+
             return View(obj); //сначала вызовется ViewStart, затем Layout, затем сама страница с переданными параметрами
         }
 

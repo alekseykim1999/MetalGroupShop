@@ -5,19 +5,28 @@
 
 @*@using MusicShop.Models
     @model  IEnumerable<NewsModel>*@
-@model NewsViewModel 
-
-<ul>
-   @{
-       foreach (var newsInfo in Model.allnews)
-       {
-                <li>
-                   <div>
-                       <img src="@newsInfo.img"/>
-                       <h3>@newsInfo.news</h3>
-                   </div>
-                </li>
-       }
-    }
-</ul>
-
+@model NewsViewModel
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/css/news_style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/fancyInput.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src='js/fancyInput.js'></script>
+    </head>
+    <body>
+        <ul class="background_color">
+            @{
+                foreach (var newsInfo in Model.allnews)
+                {
+                    <li>
+                        <div class="news_block">
+                            <img class="news_image" src="@newsInfo.img" />
+                            <h3 class="news_text">@newsInfo.news</h3>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        </body>
+</html>

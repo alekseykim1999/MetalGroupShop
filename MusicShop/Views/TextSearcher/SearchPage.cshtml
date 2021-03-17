@@ -8,22 +8,35 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Search Page</title>
+    <link href="~/css/text_searcher.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="main_entrance">
+<body>
+        <div class="header_block">
+            <br />
+            <h1 class="text_header">
+                Text Scanning
+            </h1>
+        </div>
 
-    <h1>
-        Сканирование текста
-    </h1>
-    <div class="input_form">
-        @using (Html.BeginForm("ScanPicture", "TextSearcher"))
-        { 
-            <h3> Укажите картинку</h3>
-            <br />
-            <input type="file" name="_file" />
-            <br />
-            <input type="submit"/>
-        }
-    </div>
+        <div class="main_block">
+            <div class="image_input_form">
+                @using (Html.BeginForm("ScanPicture", "TextSearcher"))
+                {
+                    <h3 class="text_form">Set Image</h3>
+                    <br />
+                    <label class="button_one">
+                        <input type="file" name="_file" />
+                        Set source to the image
+                    </label>
+                    <br />
+                    <label class="button_two">
+                        <input type="submit" />
+                        Send
+                    </label>
+                  
+                }
+            </div>
+        </div>
 </body>
 </html>
 

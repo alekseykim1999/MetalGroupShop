@@ -32,19 +32,35 @@ namespace MusicShop.WorkClasses
         {
             string answer = "";
             string pass = "";
-            var cs = "Host=localhost;Username=postgres;Password=12345;Database=Music Data Base";
-            var con = new NpgsqlConnection(cs);
-            con.Open();
-            string sql = "SELECT userpassword FROM userdata WHERE userlogin = '" + _name + "'";
-            var cmd = new NpgsqlCommand(sql, con);
-            NpgsqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+
+            myConnection.Open();
+            string query = "SELECT [Password] FROM [UserData] WHERE [Login] = '" + _name + "'";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
             {
-                pass = rdr[0].ToString();
+                pass = reader[0].ToString();
+                
                 break;
             }
-            rdr.Close();
-            con.Close();
+
+
+         
+            //var cs = "Host=localhost;Username=postgres;Password=12345;Database=Music Data Base";
+            //var con = new NpgsqlConnection(cs);
+            //con.Open();
+            //string sql = "SELECT userpassword FROM userdata WHERE userlogin = '" + _name + "'";
+            //var cmd = new NpgsqlCommand(sql, con);
+            //NpgsqlDataReader rdr = cmd.ExecuteReader();
+            //while (rdr.Read())
+            //{
+            //    pass = rdr[0].ToString();
+            //    break;
+            //}
+            //rdr.Close();
+            //con.Close();
+
+
             try
             {
                 answer = pass.Substring(0, 47);

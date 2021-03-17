@@ -7,6 +7,10 @@ namespace MusicShop.ViewModel
 {
     public class NewsViewModel
     {
-        public List<NewsModel> allnews { get; set; }
+        public List<NewsModel> allnews { 
+            get; 
+            set; }
+
+        
     }
 }

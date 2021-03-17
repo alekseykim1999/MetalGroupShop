@@ -29,16 +29,34 @@ namespace MusicShop.WorkClasses
             foreach (string ss in allNews)
             {
                 if (ss.Contains(".jpeg"))
+                {
                     images.Add(ss);
+                }
                 else
-                    texts.Add(ss);
+                {
+                    if(!texts.Contains(ss))
+                    {
+                        texts.Add(ss);
+                    }
+                }
+                    
             }
             texts.RemoveRange(12, 7);
             List<NewsModel> resultList = new List<NewsModel>();
-            for (int index = 0; index < texts.Count; index++)
-            {
-                resultList.Add(new NewsModel { img = images[index], news = texts[index] });
-            }
+
+                for (int index = 0; index < texts.Count; index++)
+                {
+                    try
+                    {
+                        resultList.Add(new NewsModel { img = images[index], news = texts[index] });
+                    }
+                    catch
+                    {
+
+                    }
+                     
+                }
+
             return resultList;
 
         }
