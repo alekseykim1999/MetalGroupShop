@@ -23,5 +23,12 @@ namespace MusicShop.Data.Repository
         }
 
         public Album getObjectAlbum(int AlbumId) => appDbContent.Album.FirstOrDefault(p => p.Id == AlbumId);
+
+
+        public IEnumerable<Album> getAllAlbums()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

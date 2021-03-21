@@ -50,13 +50,17 @@
     font-family: Tahoma;
     margin-left: 50px;
     margin-top: -15px;
-    background-color: #ffe; /* Цвет фона */
-    color: #930; /* Цвет текста */
+    background-color: #ffe; 
+    color: #930; 
     font-size: 20px;
     font-family: "Quickiss";
 }
 
-
+.price_field
+{
+    width:200px;
+    text-align:center;
+}
 .button_style {
     display: inline-block;
     padding: 10px 40px;

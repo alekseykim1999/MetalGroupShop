@@ -12,10 +12,39 @@ namespace MusicShop.Data.Mocks
     public class MockAlbum : IAllAlbums
     {
 
-        List<Album> albumsOfBand = new List<Album>();
+       
         private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database.mdb;";
         protected OleDbConnection myConnection = new OleDbConnection(connectString);
+        List<Album> albumsOfBand = new List<Album>();
 
+
+        public IEnumerable<Album> getAllAlbums()
+        {
+            myConnection.Open();
+            List<Album> allAlbums = new List<Album>();
+            string query = "SELECT [id_album],[name_group],[title],[distributor],[release_date] FROM [Albums],[Groups]" +
+                "WHERE [Albums].[num_group] = [Groups].[id_group] ORDER BY [id_album]";
+            OleDbCommand command = new OleDbCommand(query, myConnection);
+            OleDbDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                allAlbums.Add(new Album
+                {
+                    Id = (int)reader[0],
+                    GroupName = reader[1].ToString(),
+                    Name = reader[2].ToString(),
+                    Distributor = reader[3].ToString(),
+                    Release_date = (DateTime)reader[4],
+                    Available = true,
+                    Price = 4000,
+                    img = ""
+                }
+                );
+            }
+            reader.Close();
+            myConnection.Close();
+            return allAlbums;
+        }
         public IEnumerable<Album> getConcreteAlbums(int group_id)
         {
             
@@ -35,7 +64,7 @@ namespace MusicShop.Data.Mocks
                         Release_date = (DateTime)reader[4],
                         Available = true,
                         Price = 4000,
-                        img = "/img/" + group_id + "/" + reader[0] + ".jpg"
+                        img = ""
                     }
                     );
                 }

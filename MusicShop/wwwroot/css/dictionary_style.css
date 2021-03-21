@@ -1,0 +1,139 @@
+﻿
+.dictionary_header {
+    background: #b5bdc8;
+    background: linear-gradient(to top, #b5bdc8 0%, #a8a8a8 36%, #28343b 100%);
+    width: auto;
+    height: 120px;
+}
+.dictionary_header_text {
+    margin-left: 700px;
+    font-family: "Quickiss";
+    color: #72f0d5;
+}
+
+.dictionary_background {
+    background: url("/img/DictionaryBackground.jpg");
+}
+
+@font-face {
+    font-family: "Quickiss";
+    src: url(/img/QuickKiss.ttf);
+}
+
+@font-face {
+    font-family: "Cinderela";
+    src: url(/img/Cinderela.ttf);
+}
+
+@font-face {
+    font-family: "HeavyMetal";
+    src: url(/img/Cooljazz.ttf);
+}
+
+
+
+.filter-text {
+    color: #930;
+    font-size: 15px;
+    margin-left:15px;
+    height:50px;
+    font-family: Cinderela;
+}
+
+
+.price_field {
+    color: #930;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align:center;
+    width:200px;
+}
+
+.id_field {
+    color: #930;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+
+.group_field {
+    color: #0e179a;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+
+.distributor_field {
+    color: #26c9bc;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+
+.release_field {
+    color: #e60000;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+    width: 200px;
+}
+
+
+.name_field {
+    color: #a5027a;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+.table table-striped {
+    table-layout:fixed;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 100px;
+    width:1000px;
+}
+
+th, td:first-child {
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+
+td {
+    background: #D8E6F3;
+}
+
+th:first-child, td:first-child 
+{
+        text-align: left;
+}
+
+
+.form-control {
+    display: block;
+    width: 300px;
+    margin: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: 30px;
+    color: #0b0b01;
+    font-size: 11px;
+    font-family: Tahoma;
+    margin-left: 50px;
+    margin-top: -15px;
+    background-color: #ffe;
+    color: #930;
+    font-size: 20px;
+    font-family: "Quickiss";
+}
+

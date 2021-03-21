@@ -1,0 +1,164 @@
+﻿@{
+    Layout = null;
+}
+
+@*@using MusicShop.Models
+    @model  Album*@
+
+@*@using MusicShop.ViewModel
+    @model AlbumListViewModel*@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/dictionary_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/fancyInput.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src='js/fancyInput.js'></script>
+</head>
+<body>
+    <div class="dictionary_header">
+        <br/>
+        <h1 class="dictionary_header_text">
+            Dictionary
+        </h1>
+    </div>
+    <div class="dictionary_background">
+        <div>
+            <br />
+            <div class="filter-text">
+                Filter By Name
+            </div>
+            <input class="form-control" type="text" placeholder="Name" id="search-text" onkeyup="NameSearch()">
+
+            <div class="filter-text">
+                Filter By Group
+            </div>
+            <input class="form-control" type="text" placeholder="Group" id="group-text" onkeyup="GroupSearch()">
+
+            <div class="filter-text">
+                Filter By Distributor
+            </div>
+            <input class="form-control" type="text" placeholder="Distributor" id="publish-text" onkeyup="PublisherSearch()">
+            <br />
+            <br />
+        </div>
+        <div>
+            <table border="1" align="center" class="table table-striped" id="info-table">
+                <tr>
+                    <td class="id_field">
+                        Id
+                    </td>
+                    <td class="name_field">
+                        Name
+                    </td>
+                    <td class="group_field">
+                        Group
+                    </td>
+                    <td class="distributor_field">
+                        Distributor
+                    </td>
+                    <td class="release_field">
+                        Release Date
+                    </td>
+                    <td class="price_field">
+                        Price
+                    </td>
+                </tr>
+                @{
+                    foreach (var album in Model.AllAlbums)
+                    {
+                        <tr>
+                            <td class="id_field">
+                                @album.Id
+                            </td>
+                            <td class="name_field">
+                                @album.Name
+                            </td>
+                            <td class="group_field">
+                                @album.GroupName
+                            </td>
+                            <td class="distributor_field">
+                                @album.Distributor
+                            </td>
+                            <td class="release_field">
+                                @album.Release_date
+                            </td>
+                            <td class="price_field">
+                                @album.Price
+                            </td>
+                        </tr>
+
+                    }
+
+                }
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+        function NameSearch() {
+            var phrase = document.getElementById('search-text');
+            var table = document.getElementById('info-table');
+            var regPhrase = new RegExp(phrase.value, 'i');
+            var flag = false;
+            for (var i = 1; i < table.rows.length; i++) {
+                flag = false;
+                for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+                    flag = regPhrase.test(table.rows[i].cells[1].innerHTML);
+                    if (flag) break;
+                }
+                if (flag) {
+                    table.rows[i].style.display = "";
+                } else {
+                    table.rows[i].style.display = "none";
+                }
+
+            }
+        }
+
+        function GroupSearch() {
+            var phrase = document.getElementById('group-text');
+            var table = document.getElementById('info-table');
+            var regPhrase = new RegExp(phrase.value, 'i');
+            var flag = false;
+            for (var i = 1; i < table.rows.length; i++) {
+                flag = false;
+                for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+                    flag = regPhrase.test(table.rows[i].cells[2].innerHTML);
+                    if (flag) break;
+                }
+                if (flag) {
+                    table.rows[i].style.display = "";
+                } else {
+                    table.rows[i].style.display = "none";
+                }
+
+            }
+        }
+
+        function PublisherSearch() {
+            var phrase = document.getElementById('publish-text');
+            var table = document.getElementById('info-table');
+            var regPhrase = new RegExp(phrase.value, 'i');
+            var flag = false;
+            for (var i = 1; i < table.rows.length; i++) {
+                flag = false;
+                for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+                    flag = regPhrase.test(table.rows[i].cells[3].innerHTML);
+                    if (flag) break;
+                }
+                if (flag) {
+                    table.rows[i].style.display = "";
+                } else {
+                    table.rows[i].style.display = "none";
+                }
+
+            }
+        }
+</script>
+
+
+
+
+
