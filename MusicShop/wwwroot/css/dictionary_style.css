@@ -12,7 +12,9 @@
 }
 
 .dictionary_background {
-    background: url("/img/DictionaryBackground.jpg");
+    background: url("/img/NewBackground.jpg");
+    width: auto;
+    height: 200px;
 }
 
 @font-face {
@@ -85,7 +87,58 @@
     font-family: HeavyMetal;
     text-align: center;
 }
+
+.price_field_1 {
+    color: #242222;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+    width: 200px;
+}
+
+.id_field_1 {
+    color: #242222;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+
+.group_field_1 {
+    color: #242222;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+
+.distributor_field_1 {
+    color: #242222;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+
+.release_field_1 {
+    color: #242222;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+    width: 200px;
+}
+
+
+.name_field_1 {
+    color: #242222;
+    font-size: 20px;
+    font-family: HeavyMetal;
+    text-align: center;
+}
+
+.table_view {
+    height: 300px;
+    overflow-y: auto;
+}
 .table table-striped {
+   
     table-layout:fixed;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
@@ -93,6 +146,7 @@
     text-align: center;
     margin-top: 100px;
     width:1000px;
+   
 }
 
 th, td:first-child {
