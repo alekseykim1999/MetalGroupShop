@@ -1,4 +1,26 @@
-﻿/* Remove default bullets */
+﻿
+.tree_header {
+    background: #b5bdc8;
+    background: linear-gradient(to top, #b5bdc8 0%, #a8a8a8 36%, #28343b 100%);
+    width: auto;
+    height: 120px;
+}
+
+.tree_header_text {
+    margin-left: 700px;
+    font-family: "Quickiss";
+    color: #72f0d5;
+}
+
+.tree_background {
+    background: url("/img/TreeBackground.jpg");
+    width: auto;
+    height: 200px;
+}
+
+
+
+/* Remove default bullets */
 ul, #myUL {
     list-style-type: none;
 }
@@ -38,3 +60,14 @@ ul, #myUL {
 .active {
     display: block;
 }
+
+.tree_block
+{
+    margin-top:100px;
+    margin-left:350px;
+    background-color:red;
+    color:gold;
+    width:800px;
+    height:450px
+}
+

@@ -71,7 +71,6 @@ namespace MusicShop
             });
 
             app.UseDeveloperExceptionPage();
-
             app.UseReact(config => { });
             app.UseDefaultFiles();
         }

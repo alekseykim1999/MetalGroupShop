@@ -5,85 +5,91 @@
 <head>
     <link href="~/css/tree_view_style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <div id="content"></div>
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.11.0/umd/react.development.js"></script>
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.11.0/umd/react-dom.development.js"></script>
-    <script src="js/app.jsx"></script>
-    <ul id="myUL">
-        <li>
-            <span class="caret">Rock</span>
-            <ul class="nested">
+<body class="tree_background">
+    <div class="tree_header">
+        <br />
+        <h1 class="tree_header_text">
+            Genres
+        </h1>
+    </div>
+    <div>
+        <div class="tree_block">
+            <ul id="myUL">
                 <li>
-                    <span class="caret">Metal</span>
+                    <span class="caret">Rock</span>
                     <ul class="nested">
-                        <li>Heavy Metal</li>
-                        <li>Thrash Metal</li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="caret">Punk</span>
-                    <ul class="nested">
-                        <li>Hardcore Punk</li>
                         <li>
-                            <span class="caret">Crust Punk</span>
+                            <span class="caret">Metal</span>
                             <ul class="nested">
-                                <li>Britain Crust Punk</li>
-                                <li>French Crust Punk</li>
-                                <li>United States Crust Punk</li>
+                                <li>Heavy Metal</li>
+                                <li>Thrash Metal</li>
                             </ul>
                         </li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="caret">Grunge</span>
-                    <ul class="nested">
-                        <li>Classic Grunge</li>
-                        <li>Post-Grunge</li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="caret">Blues Rock</span>
-                    <ul class="nested">
-                        <li>Old School Blues Rock</li>
+                        <li>
+                            <span class="caret">Punk</span>
+                            <ul class="nested">
+                                <li>Hardcore Punk</li>
+                                <li>
+                                    <span class="caret">Crust Punk</span>
+                                    <ul class="nested">
+                                        <li>Britain Crust Punk</li>
+                                        <li>French Crust Punk</li>
+                                        <li>United States Crust Punk</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="caret">Grunge</span>
+                            <ul class="nested">
+                                <li>Classic Grunge</li>
+                                <li>Post-Grunge</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="caret">Blues Rock</span>
+                            <ul class="nested">
+                                <li>Old School Blues Rock</li>
 
-                    </ul>
-                </li>
-                <li>
-                    <span class="caret">Hard Rock</span>
-                    <ul class="nested">
-                        <li>Britain Hard Rock</li>
-                        <li>United States Hard Rock</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <span class="caret">Hip-Hop</span>
-            <ul class="nested">
-                <li>
-                    <span class="caret">Rap</span>
-                    <ul class="nested">
+                            </ul>
+                        </li>
                         <li>
-                            <span class="caret">West Side Rap</span>
+                            <span class="caret">Hard Rock</span>
                             <ul class="nested">
-                                <li>Gangsta Rap</li>
-                                <li>J-Funk</li>
+                                <li>Britain Hard Rock</li>
+                                <li>United States Hard Rock</li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <span class="caret">Rythm-And-Blues</span>
+                    <span class="caret">Hip-Hop</span>
                     <ul class="nested">
-                        <li>Club R-n-B</li>
-                        <li>Classic R-n-B</li>
-                        <li>New R-n-B</li>
+                        <li>
+                            <span class="caret">Rap</span>
+                            <ul class="nested">
+                                <li>
+                                    <span class="caret">West Side Rap</span>
+                                    <ul class="nested">
+                                        <li>Gangsta Rap</li>
+                                        <li>J-Funk</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="caret">Rythm-And-Blues</span>
+                            <ul class="nested">
+                                <li>Club R-n-B</li>
+                                <li>Classic R-n-B</li>
+                                <li>New R-n-B</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
-        </li>
-    </ul>
+        </div>
+     </div>
 </body>
 </html>
 
