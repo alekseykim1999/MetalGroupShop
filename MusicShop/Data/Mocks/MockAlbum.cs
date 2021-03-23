@@ -64,7 +64,7 @@ namespace MusicShop.Data.Mocks
                         Release_date = (DateTime)reader[4],
                         Available = true,
                         Price = 4000,
-                        img = ""
+                        img = "/img/" + group_id + "/" + reader[0] + ".jpg"
                     }
                     );
                 }
