@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/one_album_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+        <div>
+            @using (Html.BeginForm("WriteReview", "Album"))
+            {
+
+                <div>
+                    <input type="text" name="_review_text" class="input_box" placeholder="Review..." />
+                </div>
+                <div>
+                    <input type="submit" class="btn_review" value="Finish" />
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

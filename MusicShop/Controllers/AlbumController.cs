@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicShop.Interfaces;
 using MusicShop.Models;
 using MusicShop.ViewModel;
+using MusicShop.WorkClasses;
 
 namespace MusicShop.Controllers
 {
@@ -18,6 +20,7 @@ namespace MusicShop.Controllers
         AlbumListViewModel obj = new AlbumListViewModel();
 
         private static int group_id;
+        private static int album_id;
 
         public AlbumController(IAllAlbums _iAllAlbums, IAllGroups _iAllGroups)
         {
@@ -44,7 +47,25 @@ namespace MusicShop.Controllers
             obj.AllAlbums = help_albums;
             obj.idAlbum = albumId;
             obj.idgroup = group_id;
+            album_id = albumId;
             return View(obj);
+        }
+
+
+        public ViewResult CreateReview()
+        {
+            return View();
+        }
+
+        public RedirectResult WriteReview(IFormCollection form)
+        {
+
+            int idOfGroup = group_id;
+            int idOfAlbum = album_id;
+            string review = form["_review_text"].ToString();
+            FileWorker.CreateData(idOfGroup, idOfAlbum, review);
+            string mainPath = "/Album/InfoAlbum?albumId="+idOfAlbum;
+            return Redirect(mainPath);
         }
 
 

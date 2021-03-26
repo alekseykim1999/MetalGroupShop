@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicShop.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MusicShop.WorkClasses
 {
-    public class FileWorker
+    public class FileWorker 
     {
         public static List<string> readFileSongs(int _group, int _album)
         {
@@ -55,6 +56,18 @@ namespace MusicShop.WorkClasses
             }
             return await Task.FromResult(review);
         }
+
+        public static void CreateData(int _numGroup, int _numAlbum, string text)
+        {
+            string path = "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _numGroup + "\\" + _numAlbum + ".txt";
+            using (FileStream fs = new FileStream(path, FileMode.Append, FileAccess.Write))
+            using (StreamWriter sw = new StreamWriter(fs, Encoding.Unicode))
+            {
+                sw.WriteAsync("\n>>>\n" + text);
+
+            }
+        }
+
 
         internal static string readFileReviews(int idgroup, int idAlbum)
         {

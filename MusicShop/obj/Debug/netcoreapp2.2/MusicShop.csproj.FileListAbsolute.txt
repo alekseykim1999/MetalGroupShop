@@ -122,3 +122,4 @@ E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcorea
 E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\MusicShop.csproj.CopyComplete
 E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\News\AllNews.cshtml.g.cs
 E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Dictionary\AllAlbums.cshtml.g.cs
+E:\Дипломная работа\MusicShopProject\MusicShop\obj\Debug\netcoreapp2.2\Razor\Views\Album\CreateReview.cshtml.g.cs
