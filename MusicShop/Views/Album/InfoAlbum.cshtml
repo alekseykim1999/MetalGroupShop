@@ -45,7 +45,7 @@
             }
         </ul>
     </div>
-    <div class="btn_order">
+    <div class="btn_place">
         @using (Html.BeginForm("AddToCart", "ShopCart"))
         {
             <div class="pull-right">
@@ -54,12 +54,11 @@
                 <input type="submit" class="btn_cart" value="Add To Favourite" />
             </div>
         }
-    </div>
-    <div class="btn_review">
+
         @using (Html.BeginForm("CreateReview", "Album"))
         {
             <div class="pull-right">
-                <input type="submit" class="btn_cart" value="Write Review" />
+                <input type="submit" class="btn_cart_2" value="Write Review" />
             </div>
         }
     </div>
