@@ -81,15 +81,13 @@
                                 @album.Distributor
                             </td>
                             <td class="release_field">
-                                @album.Release_date
+                                @album.Release_date.ToShortDateString()
                             </td>
                             <td class="price_field">
                                 @album.Price
                             </td>
                         </tr>
-
                     }
-
                 }
             </table>
         </div>

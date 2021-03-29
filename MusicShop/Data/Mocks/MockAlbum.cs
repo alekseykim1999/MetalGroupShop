@@ -16,25 +16,27 @@ namespace MusicShop.Data.Mocks
         private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database.mdb;";
         protected OleDbConnection myConnection = new OleDbConnection(connectString);
         List<Album> albumsOfBand = new List<Album>();
-
-
+      
+        
         public IEnumerable<Album> getAllAlbums()
         {
             myConnection.Open();
             List<Album> allAlbums = new List<Album>();
+            var middleDate = new DateTime();
             string query = "SELECT [id_album],[name_group],[title],[distributor],[release_date] FROM [Albums],[Groups]" +
                 "WHERE [Albums].[num_group] = [Groups].[id_group] ORDER BY [id_album]";
             OleDbCommand command = new OleDbCommand(query, myConnection);
             OleDbDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
+                middleDate = (DateTime)reader[4];
                 allAlbums.Add(new Album
                 {
                     Id = (int)reader[0],
                     GroupName = reader[1].ToString(),
                     Name = reader[2].ToString(),
                     Distributor = reader[3].ToString(),
-                    Release_date = (DateTime)reader[4],
+                    Release_date = middleDate.Date,
                     Available = true,
                     Price = 4000,
                     img = ""
