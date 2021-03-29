@@ -2,13 +2,27 @@
 
 <html>
 <head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width" />
     <title class="title_name">Music Portal</title>
     <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=test&api_key=fc86b923e70297743cd18dbb9a4bdcc9&limit=10&format=json&callback=?", function (json) {
+                var html = '';
+                $.each(json.topartists.artist, function (i, item) {
+                    html += "<div style='margin-top: 10px;'><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " + item.playcount + "</a></div>";
+                });
+                $('#result').append(html);
+            });
+        });
+    </script>
     <div class="main">
         <div class="header">
             <div class="main_title">Welcome</div>
@@ -24,30 +38,27 @@
         </div>
         <div class="mleft">
             <div class="gap">
-               
             </div>
             <h3 class="groups_title">Artists</h3>
-                <ul>
-                    @{
-                        foreach (var band in Model.AllBands)
-                        {
-                            <li>
-                                <hr />
-                                <div>
-                                    <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id">
-                                        <div class="band_name">
-                                            @band.GroupName
-                                        </div>
-                                    </a>
-                                </div>
-                                <hr />
-                            </li>
-                        }
+            <ul>
+                @{
+                    foreach (var band in Model.AllBands)
+                    {
+                        <li>
+                            <hr />
+                            <div>
+                                <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id">
+                                    <div class="band_name">
+                                        @band.GroupName
+                                    </div>
+                                </a>
+                            </div>
+                            <hr />
+                        </li>
                     }
-                </ul>
-        
+                }
+            </ul>
         </div>
-
         <div class="fast_search">
             <div class="navigation">
                 <a href="/Album/Main"> Main Page </a>
@@ -68,12 +79,9 @@
                 <a href="/shop"> About </a>
             </div>
         </div>
-
-
         <div class="mright">
             @RenderBody()
         </div>
-
         <div class="footer">
             <font color="red">
                 <p>2020 Created by Aleksey</p>
@@ -81,7 +89,7 @@
         </div>
 
     </div>
-    
+
     <script src="~/js/bootstrap.min.js"></script>
 </body>
 </html>
