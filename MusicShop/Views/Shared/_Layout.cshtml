@@ -9,19 +9,39 @@
     <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://www.google.com/jsapi"></script>
 </head>
 <body>
     <script>
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart);
+        var array = [];
+        array.push(["Artist", "Population"]);
+
         $(document).ready(function () {
             $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=test&api_key=fc86b923e70297743cd18dbb9a4bdcc9&limit=10&format=json&callback=?", function (json) {
                 var html = '';
-                $.each(json.topartists.artist, function (i, item) {
+                $.each(json.topartists.artist, function (i, item)
+                {
+                    array.push([item.name, parseInt(item.playcount)]);
                     html += "<div style='margin-top: 10px;'><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " + item.playcount + "</a></div>";
                 });
                 $('#result').append(html);
             });
         });
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(array);
+            var options = {
+                title: 'Music Population',
+                is3D: true,
+                pieResidueSliceLabel: 'Other',
+                backgroundColor: { fill: 'transparent' }
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('diagramm'));
+            chart.draw(data, options);
+        }
+
     </script>
     <div class="main">
         <div class="header">
