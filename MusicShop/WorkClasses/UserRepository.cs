@@ -10,12 +10,8 @@ using Npgsql;
 namespace MusicShop.WorkClasses
 {
   
-    public class UserRepository
+    public class UserRepository : DatabaseConnection
     {
-        private static string connectString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Database.mdb;";
-
-        protected OleDbConnection myConnection = new OleDbConnection(connectString);
-        OleDbCommand worker = new OleDbCommand();
         public void SaveUserData(string _name, string _password) 
         {
             myConnection.Open();
@@ -32,35 +28,26 @@ namespace MusicShop.WorkClasses
         {
             string answer = "";
             string pass = "";
-
             myConnection.Open();
-            string query = "SELECT [Password] FROM [UserData] WHERE [Login] = '" + _name + "'";
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            OleDbDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                pass = reader[0].ToString();
-                
-                break;
-            }
 
-
-         
-            //var cs = "Host=localhost;Username=postgres;Password=12345;Database=Music Data Base";
-            //var con = new NpgsqlConnection(cs);
-            //con.Open();
-            //string sql = "SELECT userpassword FROM userdata WHERE userlogin = '" + _name + "'";
-            //var cmd = new NpgsqlCommand(sql, con);
-            //NpgsqlDataReader rdr = cmd.ExecuteReader();
-            //while (rdr.Read())
+            //string query = "SELECT [Password] FROM [UserData] WHERE [Login] = '" + _name + "'";
+            //OleDbCommand command = new OleDbCommand(query, myConnection);
+            //OleDbDataReader reader = command.ExecuteReader();
+            //while (reader.Read())
             //{
-            //    pass = rdr[0].ToString();
+            //    pass = reader[0].ToString();
             //    break;
             //}
-            //rdr.Close();
-            //con.Close();
-
-
+            string sql = "SELECT LastName FROM UserData WHERE Login = '" + _name + "'";
+            var cmd = new NpgsqlCommand(sql, myConnection);
+            NpgsqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                pass = rdr[0].ToString();
+                break;
+            }
+            rdr.Close();
+            myConnection.Close();
             try
             {
                 answer = pass.Substring(0, 47);
