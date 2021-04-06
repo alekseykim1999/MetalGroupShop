@@ -56,6 +56,9 @@ namespace MusicShop.WorkClasses
                     }
                      
                 }
+
+            parser.onCompleted -= parser_on_completed;
+            parser.onNewData -= parser_on_new_data;
             return resultList;
 
         }
