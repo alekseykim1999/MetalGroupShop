@@ -24,6 +24,7 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Sdk.Razor" Version="3.1.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="NAudio" Version="2.0.0" />
     <PackageReference Include="Npgsql" Version="5.0.3" />
     <PackageReference Include="React.AspNet" Version="5.2.11" />
     <PackageReference Include="System.Data.OleDb" Version="4.7.1" />

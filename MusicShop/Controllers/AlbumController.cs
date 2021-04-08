@@ -56,7 +56,6 @@ namespace MusicShop.Controllers
         {
             return View();
         }
-
         public RedirectResult WriteReview(IFormCollection form)
         {
 

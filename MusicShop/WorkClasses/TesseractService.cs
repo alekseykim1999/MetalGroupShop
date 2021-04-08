@@ -3,12 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-
 namespace Ocr
 {
-    /// <summary>
-    /// Service to read texts from images through OCR Tesseract engine.
-    /// </summary>
     public class TesseractService
     {
         private readonly string _tesseractExePath;
@@ -30,18 +26,15 @@ namespace Ocr
         public string GetText(params Stream[] images)
         {
             var output = string.Empty;
-
             if (images.Any())
             {
                 var tempPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
                 Directory.CreateDirectory(tempPath);
                 var tempInputFile = NewTempFileName(tempPath);
                 var tempOutputFile = NewTempFileName(tempPath);
-
                 try
                 {
                     WriteInputFiles(images, tempPath, tempInputFile);
-
                     var info = new ProcessStartInfo
                     {
                         FileName = _tesseractExePath,
@@ -80,28 +73,22 @@ namespace Ocr
 
         private static void WriteInputFiles(Stream[] inputStreams, string tempPath, string tempInputFile)
         {
-          
             if (inputStreams.Length > 1)
             {
                 var imagesListFileContent = new StringBuilder();
-
                 foreach (var inputStream in inputStreams)
                 {
                     var imageFile = NewTempFileName(tempPath);
-
                     using (var tempStream = File.OpenWrite(imageFile))
                     {
                         CopyStream(inputStream, tempStream);
                     }
-
                     imagesListFileContent.AppendLine(imageFile);
                 }
-
                 File.WriteAllText(tempInputFile, imagesListFileContent.ToString());
             }
             else
             {
-                
                 using (var tempStream = File.OpenWrite(tempInputFile))
                 {
                     CopyStream(inputStreams.First(), tempStream);

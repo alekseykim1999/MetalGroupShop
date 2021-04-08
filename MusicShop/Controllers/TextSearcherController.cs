@@ -16,13 +16,9 @@ namespace MusicShop.Controllers
 {
     public class TextSearcherController : Controller
     {
-
-
         ApplicationContext _context;
         IHostingEnvironment _appEnvironment;
-
         ScanViewModel scanned = new ScanViewModel();
-
         public TextSearcherController(ApplicationContext context, IHostingEnvironment appEnvironment)
         {
             _context = context;

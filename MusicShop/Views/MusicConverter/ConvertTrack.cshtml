@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+@*@using MusicShop.ViewModel
+    @model ScanViewModel*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Scan Result</title>
+    <link href="~/css/one_album_style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/text_searcher.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="header_block">
+        <br />
+        <h1 class="text_header">
+            Result Of Track Analyzing
+        </h1>
+    </div>
+    <div class="main_block">
+        @{
+            var text = Model.notes;
+        }
+        <textarea name="_review_text" class="textarea_style">@text</textarea>
+    </div>
+</body>
+</html>
+

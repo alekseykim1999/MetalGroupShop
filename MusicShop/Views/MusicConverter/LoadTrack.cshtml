@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sound Analyzer</title>
+    <link href="~/css/one_album_style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/text_searcher.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+        <div class="header_block">
+            <br />
+            <h1 class="text_header">
+                Music Notes Reader
+            </h1>
+        </div>
+
+        <div class="main_block">
+            <div class="image_input_form">
+                @using (Html.BeginForm("ConvertTrack", "MusicConverter"))
+                {
+                    <h3 class="text_form">Set Image</h3>
+                    <br />
+                    <label class="button_one">
+                        <input type="file" name="_file" />
+                        Set source WAV file
+                    </label>
+                    <br />
+                    <label class="button_two">
+                        <input type="submit" />
+                        Send
+                    </label>
+                  
+                }
+            </div>
+        </div>
+</body>
+</html>
+

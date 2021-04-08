@@ -2,14 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MusicShop.Interfaces
 {
-    public interface IAllAlbums
+    interface IConvertable
     {
-        Album getObjectAlbum(int id);
-        IEnumerable<Album> getConcreteAlbums(int v);
-        IEnumerable<Album> getAllAlbums();
+        StringBuilder ConvertSound();
+
     }
 }
