@@ -34,6 +34,19 @@ namespace MusicShop
         }
         public void ConfigureServices(IServiceCollection services) 
         {
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                options.HttpsPort = 44344;
+            });
+            services.AddHsts(options =>
+            {
+                options.Preload = true;
+                options.IncludeSubDomains = true;
+                options.MaxAge = TimeSpan.FromDays(60);
+                options.ExcludedHosts.Add("us.example.com");
+                options.ExcludedHosts.Add("www.example.com");
+            });
             services.AddDbContext<AppDBContent>(options=>options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ApplicationContext>();
             services.AddTransient<IAllAlbums, MockAlbum>(); 
@@ -62,15 +75,22 @@ namespace MusicShop
         {
             app.UseDeveloperExceptionPage(); 
             app.UseStatusCodePages(); 
-            app.UseStaticFiles(); 
+            app.UseStaticFiles();
+            app.UseHttpsRedirection();
             app.UseSession();
             app.UseMvcWithDefaultRoute(); 
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");
             });
-
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
+            }
             app.UseReact(config => { });
             app.UseDefaultFiles();
         }

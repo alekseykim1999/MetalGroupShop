@@ -38,6 +38,8 @@ namespace MusicShop.Data.Mocks
                 reader.Close();
                 myConnection.Close();
 
+
+
                 //string query = "SELECT [id_group],[name_group],[genre],[create_date] FROM [Groups]";
                 //OleDbCommand command = new OleDbCommand(query, myConnection);
                 //OleDbDataReader reader = command.ExecuteReader();
