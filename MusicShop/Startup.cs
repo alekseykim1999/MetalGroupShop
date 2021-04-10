@@ -18,6 +18,7 @@ using MusicShop.Data.Mocks;
 using MusicShop.Data.Models;
 using MusicShop.Data.Repository;
 using MusicShop.Interfaces;
+using MusicShop.WorkClasses;
 using React.AspNet;
 using Supermarket.Item;
 
@@ -53,7 +54,13 @@ namespace MusicShop
             services.AddTransient<IAllGroups, MockGroups>();
             services.AddMvcCore(); 
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
             services.AddDistributedMemoryCache();
+            services.AddSignalR();
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(10);
@@ -73,12 +80,17 @@ namespace MusicShop
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSignalR(route =>
+            {
+                route.MapHub<MessageHub>("/Message");
+            });
             app.UseDeveloperExceptionPage(); 
             app.UseStatusCodePages(); 
             app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseSession();
             app.UseMvcWithDefaultRoute(); 
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");
