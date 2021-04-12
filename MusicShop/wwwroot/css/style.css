@@ -139,13 +139,14 @@ button:hover
 
 a 
 {
+    color:black;
     text-decoration: none;
     background-size: 100px 200px;
 }
 
 a:visited 
 {
-    color: #0b0b01; 
+    color: #e333dd;
 }
 
 a:hover 

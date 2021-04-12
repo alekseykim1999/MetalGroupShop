@@ -10,48 +10,48 @@
     <meta name="viewport" content="width=device-width" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="~/lib/signalr/dist/browser/signalr.js"></script>
+    <link href="~/css/chat_style.css" rel="stylesheet" type="text/css" />
     <title>Chat</title>
 </head>
-<body>
-    <div class="container">
-        <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-2">User</div>
-            <div class="col-4"><input type="text" id="userInput" /></div>
-        </div>
-        <div class="row">
-            <div class="col-2">Message</div>
-            <div class="col-4"><input type="text" id="messageInput" /></div>
-        </div>
-        <div class="row">&nbsp;</div>
-        <div class="row">
-            <div class="col-6">
-                <input type="button" id="sendButton" value="Send Message" />
+<body class="main_chat">
+    <div class="chat_header">
+        <br />
+        <h1 class="chat_header_text">
+            Start Your Conversation!
+        </h1>
+    </div>
+  
+        <div class="new_message_block">
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="mes_title">User</div>
+                <div class="col-4"><input class="input_box" type="text" id="userInput"/></div>
+            </div>
+            <div class="row">
+                <div class="mes_title">Message</div>
+                <div class="col-4"><textarea class="input_box_full" type="textarea" id="messageInput"></textarea></div>
+            </div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-6">
+                    <input class="button_style" type="button" id="sendButton" value="Send Message" />
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <hr />
+
+        <div class="messages_block">
+             <div class="col-6">
+                 <ul id="messagesList"></ul>
+             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <ul id="messagesList"></ul>
-        </div>
-    </div>
+  
     <script>
         "use strict";
-
         var connection = new signalR.HubConnectionBuilder().withUrl("/Message").build();
-
-        //Disable send button until connection is established
         document.getElementById("sendButton").disabled = true;
-
         connection.on("ReceiveMessage", function (user, message) {
-            
             var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            var encodedMsg = user + " says " + msg;
+            var encodedMsg = user + " : " + msg;
             var li = document.createElement("li");
             li.textContent = encodedMsg;
             document.getElementById("messagesList").appendChild(li);
@@ -69,6 +69,8 @@
             connection.invoke("SendMessage", user, message).catch(function (err) {
                 return console.error(err.toString());
             });
+            document.getElementById('messageInput').value = "";
+            document.getElementById('userInput').disabled=true;
             event.preventDefault();
         });
     </script>

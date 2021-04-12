@@ -1,0 +1,122 @@
+﻿.chat_header 
+{
+    background: #b5bdc8;
+    background: linear-gradient(to top, #b5bdc8 0%, #a8a8a8 36%, #28343b 100%);
+    width: auto;
+    height: 120px;
+}
+
+.mes_title {
+    font-family: "HeavyMetal";
+    color: #4b4ef8;
+    font-size: 30px;
+    margin-left: 30px;
+}
+.chat_header_text 
+{
+    margin-left: 700px;
+    font-family: "HeavyMetal";
+    color: #72f0d5;
+}
+
+.main_chat 
+{
+    background: url("/img/ChatBackground.jpg") no-repeat;
+    width: auto;
+    height: 700px;
+}
+.messages_block {
+    border: 2px solid #eab93e;
+    width: 800px;
+    height: 500px;
+    background-color: aquamarine;
+    margin-left: 600px;
+    margin-top:-500px;
+    border-radius: 6px;
+    font-family:"HardRock";
+}
+
+.new_message_block {
+    border: 2px solid #11ff00;
+    border-radius: 6px;
+    width: 400px;
+    height: 500px;
+    background: #b5bdc8;
+    background: linear-gradient(to top, #0037ff 0%, #6100e9 36%, #e900e1 100%);
+    margin-top: 70px;
+    margin-left: 30px;
+}
+
+.input_box {
+    display: block;
+    width: 300px;
+    margin: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: 30px;
+    color: #0b0b01;
+    font-size: 11px;
+    font-family: Tahoma;
+    margin-left: 30px;
+    margin-top: 10px;
+    background-color: #ffe;
+    color: #930;
+    font-size: 20px;
+    font-family: "Quickiss";
+}
+
+.input_box_full {
+    vertical-align: top;
+    word-break: break-word;
+    display: block;
+    width: 300px;
+    height: 200px;
+    margin: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    color: #0b0b01;
+    font-size: 11px;
+    font-family: Tahoma;
+    margin-left: 30px;
+    margin-top: 10px;
+    background-color: #ffe;
+    color: #930;
+    font-size: 20px;
+    font-family: "Quickiss";
+}
+
+.button_style {
+    display: inline-block;
+    padding: 10px 40px;
+    color: #D7D7D7;
+    background: #db4851;
+    border: 2px solid #eab93e;
+    font-size: .95em;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    margin-left: 100px;
+}
+
+.button_style:hover {
+     background: #ff0000;
+}
+
+
+@font-face {
+    font-family: "HeavyMetal";
+    src: url(/img/Cooljazz.ttf);
+}
+
+
+@font-face {
+    font-family: "HardRock";
+    src: url(/img/Cooljazz.ttf);
+}
