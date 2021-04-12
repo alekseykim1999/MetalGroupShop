@@ -13,7 +13,7 @@ namespace MusicShop.WorkClasses
     {
         public async Task SendMessage(string sender, string message)
         {
-            await Clients.All.SendAsync("SendMessage", sender, message);
+            await Clients.All.SendAsync("ReceiveMessage", sender, message);
         }
     }
 }
