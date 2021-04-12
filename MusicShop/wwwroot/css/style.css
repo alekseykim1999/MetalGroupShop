@@ -1,8 +1,11 @@
-﻿.main {
+﻿.main 
+{
     width: 1400px;
     height: 1300px;
 }
-.header {
+
+.header 
+{
     width: 1527.5px;
     height: 170px;
     margin: auto;
@@ -10,10 +13,13 @@
     margin-top: -15px;
     background: url("/img/header.jpg");
 }
-.gap{
+
+.gap
+{
     height:15px;
 }
-.mleft {
+.mleft 
+{
     text-align: center;
     width: 197px;
     height: 1100px;
@@ -23,17 +29,22 @@
 }
 
 
-.groups_title {
+.groups_title 
+{
     font-family: "Lemon";
     margin-left: 30px;
     width: 100px;
     height: 30px;
 }
-li{
+
+li
+{
     text-align:left;
     margin-left:-20px;
 }
-.mright {
+
+.mright 
+{
     overflow: hidden;
     width: 1327.5px;
     height: 1050px;
@@ -45,7 +56,8 @@ li{
     background: url("/img/NewBackground.jpg") no-repeat;
 }
 
-.main_button {
+.main_button 
+{
     margin-top: 2px;
     width: 40px;
     height: 34px;
@@ -53,17 +65,19 @@ li{
 }
 
 
-li {
+li 
+{
     list-style-type: none;
     width: 20em;
 }
 
-ul {
+ul 
+{
     padding-left: -6px;
 }
 
-
-.texbox {
+.texbox 
+{
     float: left;
     display: block;
     width: 300px;
@@ -78,19 +92,27 @@ ul {
     font-family: Tahoma;
 }
 
-.login {
+.login 
+{
     float: left;
     display: block;
     width: 50px;
     margin-left: 1050px;
     margin-top: 7px;
 }
-.search {
+
+.search 
+{
     margin-top: 60px;
-    width:530px;
-    height:40px;
-    margin-left:1000px;
-    position:absolute;
+    width: 200px;
+    text-align: center;
+    height: 40px;
+    margin-left: 1200px;
+    position: absolute;
+    background-color: aqua;
+    font-family: Lemon;
+    font-size: 30px;
+    border-radius: 8px;
 }
 .search button 
 {
@@ -101,20 +123,22 @@ ul {
      border-radius: 5px;
 }
 
-button:hover {
+button:hover 
+{
     cursor: pointer;
     border-color: #f32323;
 }
 
-.main_button {
+.main_button 
+{
     margin-top: 2px;
     width: 40px;
     height: 34px;
     color: #ffffff;
 }
 
-
-a {
+a 
+{
     text-decoration: none;
     background-size: 100px 200px;
 }
@@ -123,45 +147,53 @@ a:visited
 {
     color: #0b0b01; 
 }
+
 a:hover 
 {
     text-decoration: none;
     color: #0b0b01;
 }
 
-@font-face {
+@font-face 
+{
     font-family: "Gothical";
     src: url(/img/Cooljazz.ttf);
 }
 
-@font-face {
+@font-face 
+{
     font-family: "Lemon";
     src: url(/img/LemonJelly.ttf);
 }
 
-
-@font-face {
+@font-face 
+{
     font-family: "HardRock";
     src: url(/img/Cooljazz.ttf);
 }
 
-@font-face {
+@font-face 
+{
     font-family: "HeavyMetal";
     src: url(/img/Cooljazz.ttf);
 }
 
-.album_name {
+.album_name 
+{
     font-family: HeavyMetal;
     font-size: 20px;
     color: black;
 }
-.band_name {
+.band_name 
+{
     font-family: "HardRock";
     color: #393939;
     font-size: 20px;
     margin-top: 3px;
 }
-.main_title {
+
+.main_title 
+{
     font-family: "Lemon";
     font-size: 50px;
     color: #b00808;
@@ -172,14 +204,15 @@ a:hover
     height:50px;
 }
 
-.fast_search {
-
+.fast_search 
+{
     width: 1327.3px;
     margin-left: 190px;
     margin-top: -1070px;
 }
 
-.navigation {
+.navigation 
+{
     float: left;
     line-height: 50px;
     font-size: 30px;
@@ -194,12 +227,13 @@ a:hover
     font-family: "Lemon";
 }
 
-.navigation :hover {
+.navigation :hover 
+{
     background: #828284; 
 }
 
-
-.footer {
+.footer 
+{
     height: 50px;
     width: 1518px;
     background-color: black;

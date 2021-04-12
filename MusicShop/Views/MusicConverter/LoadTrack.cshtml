@@ -16,23 +16,21 @@
                 Music Notes Reader
             </h1>
         </div>
-
-        <div class="main_block">
+        <div class="main_block_music">
             <div class="music_input_form">
                 @using (Html.BeginForm("ConvertTrack", "MusicConverter"))
                 {
-                    <h3 class="text_form">Set Music Track</h3>
+                    <h3 class="text_form_track">Set Music Track</h3>
                     <br />
-                    <label class="button_one">
+                    <label class="button_one_track">
                         <input type="file" name="_file" />
                         Set source WAV file
                     </label>
                     <br />
-                    <label class="button_two">
+                    <label class="button_two_track">
                         <input type="submit" />
                         Send
                     </label>
-                  
                 }
             </div>
         </div>

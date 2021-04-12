@@ -1,40 +1,45 @@
-﻿
-.dictionary_header {
+﻿.dictionary_header 
+{
     background: #b5bdc8;
     background: linear-gradient(to top, #b5bdc8 0%, #a8a8a8 36%, #28343b 100%);
     width: auto;
     height: 120px;
 }
-.dictionary_header_text {
+.dictionary_header_text 
+{
     margin-left: 700px;
     font-family: "Quickiss";
     color: #72f0d5;
 }
 
-.dictionary_background {
+.dictionary_background 
+{
     background: url("/img/NewBackground.jpg");
     width: auto;
     height: 200px;
 }
 
-@font-face {
+@font-face 
+{
     font-family: "Quickiss";
     src: url(/img/QuickKiss.ttf);
 }
 
-@font-face {
+@font-face 
+{
     font-family: "Cinderela";
     src: url(/img/Cinderela.ttf);
 }
 
-@font-face {
+@font-face 
+{
     font-family: "HeavyMetal";
     src: url(/img/Cooljazz.ttf);
 }
 
 
-
-.filter-text {
+.filter-text 
+{
     color: #930;
     font-size: 15px;
     margin-left:15px;
@@ -43,7 +48,8 @@
 }
 
 
-.price_field {
+.price_field 
+{
     color: #930;
     font-size: 20px;
     font-family: HeavyMetal;
@@ -51,28 +57,32 @@
     width:200px;
 }
 
-.id_field {
+.id_field 
+{
     color: #930;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.group_field {
+.group_field 
+{
     color: #0e179a;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.distributor_field {
+.distributor_field 
+{
     color: #26c9bc;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.release_field {
+.release_field 
+{
     color: #e60000;
     font-size: 20px;
     font-family: HeavyMetal;
@@ -81,14 +91,16 @@
 }
 
 
-.name_field {
+.name_field 
+{
     color: #a5027a;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.price_field_1 {
+.price_field_1 
+{
     color: #242222;
     font-size: 20px;
     font-family: HeavyMetal;
@@ -96,28 +108,32 @@
     width: 200px;
 }
 
-.id_field_1 {
+.id_field_1 
+{
     color: #242222;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.group_field_1 {
+.group_field_1 
+{
     color: #242222;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.distributor_field_1 {
+.distributor_field_1 
+{
     color: #242222;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.release_field_1 {
+.release_field_1 
+{
     color: #242222;
     font-size: 20px;
     font-family: HeavyMetal;
@@ -126,19 +142,22 @@
 }
 
 
-.name_field_1 {
+.name_field_1 
+{
     color: #242222;
     font-size: 20px;
     font-family: HeavyMetal;
     text-align: center;
 }
 
-.table_view {
+.table_view 
+{
     height: 300px;
     overflow-y: auto;
 }
-.table table-striped {
-   
+
+.table table-striped 
+{
     table-layout:fixed;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
@@ -146,32 +165,35 @@
     text-align: center;
     margin-top: 100px;
     width:1000px;
-   
 }
 
-th, td:first-child {
+th, td:first-child 
+{
     background: #AFCDE7;
     color: white;
     padding: 10px 20px;
 }
 
-th, td {
+th, td 
+{
     border-style: solid;
     border-width: 0 1px 1px 0;
     border-color: white;
 }
 
-td {
+td 
+{
     background: #D8E6F3;
 }
 
 th:first-child, td:first-child 
 {
-        text-align: left;
+    text-align: left;
 }
 
 
-.form-control {
+.form-control 
+{
     display: block;
     width: 300px;
     margin: 2px;

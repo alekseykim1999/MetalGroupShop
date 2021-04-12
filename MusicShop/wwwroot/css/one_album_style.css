@@ -1,26 +1,29 @@
-﻿body {
+﻿body 
+{
     background: url("/img/NewBackground.jpg") no-repeat;
 }
 
-@font-face {
+@font-face 
+{
     font-family: "Gothical";
     src: url(/img/Cooljazz.ttf);
 }
 
-@font-face {
+@font-face 
+{
     font-family: "HardRock";
     src: url(/img/Cooljazz.ttf);
 }
 
-@font-face {
+@font-face 
+{
     font-family: "HeavyMetal";
     src: url(/img/Cooljazz.ttf);
 }
 
 
-
-.title {
-    
+.title 
+{
     border-width: 3px;
     width: 300px;
     height: 300px;
@@ -30,10 +33,8 @@
 }
 
 
-
-
-.list_songs {
-    
+.list_songs 
+{
     border-width: 3px;
     width: 300px;
     height: 400px;
@@ -44,7 +45,8 @@
     font-size: 20px;
 }
 
-.text_review {
+.text_review 
+{
     overflow-y: auto;
     border-width: 3px;
     width: 1100px;
@@ -57,7 +59,8 @@
     font-family: HeavyMetal;
 }
 
-.btn_place{
+.btn_place
+{
    
     width: 1198px;
     height: 60px;
@@ -67,7 +70,8 @@
     font-family: "Gothical";
 }
 
-.btn_cart {
+.btn_cart 
+{
     display: inline-block;
     padding: 10px 40px;
     color: #D7D7D7;
@@ -91,7 +95,8 @@
     font-family: "Gothical";
 }
 
-.btn_cart_2 {
+.btn_cart_2 
+{
     position:absolute;
     display: inline-block;
     padding: 10px 40px;
@@ -116,16 +121,19 @@
     font-family: "Gothical";
 }
 
-.btn_cart_2:hover {
+.btn_cart_2:hover 
+{
     background: #999ff8;
 }
 
-.btn_cart:hover {
+.btn_cart:hover 
+{
     background: #999ff8;
 }
 
 
-.btn_review {
+.btn_review 
+{
     cursor: pointer;
     display: block;
     height: 60px;
@@ -135,26 +143,31 @@
     margin-left: 800px;
     margin-top: -60px;
 }
-li {
+
+li 
+{
     list-style-type: none;
 }
 
-
-.song_name {
+.song_name 
+{
     font-family: HardRock;
     margin-top: 3px;
     color: #4a000f;
 }
 
-.album_name {
+.album_name 
+{
     font-family: HeavyMetal;
     color: #ff0000
 }
-.group_name {
+.group_name 
+{
     font-family: HeavyMetal;
     color: #909090;
 }
-.textarea_style {
+.textarea_style 
+{
     width: 1400px;
     height: 500px;
     margin-left: 60px;
@@ -167,7 +180,8 @@ li {
     font-family: HeavyMetal;
 }
 
-.btn_write {
+.btn_write 
+{
     position: absolute;
     display: inline-block;
     padding: 10px 40px;
@@ -193,8 +207,9 @@ li {
 }
 
 
-    .btn_write:hover {
-        background: #f85757;
-    }
+.btn_write:hover 
+{
+    background: #f85757;
+}
 
 

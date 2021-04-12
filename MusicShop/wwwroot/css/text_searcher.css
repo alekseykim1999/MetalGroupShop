@@ -4,6 +4,12 @@
     height:700px;
 }
 
+.main_block_music {
+    background: url("/img/MusicConverterBackground.jpg") no-repeat;
+    width: auto;
+    height: 700px;
+}
+
 .header_block {
     background: #b5bdc8;
     background: linear-gradient(to top, #b5bdc8 0%, #a8a8a8 36%, #28343b 100%);
@@ -28,8 +34,20 @@
     background: linear-gradient(to top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
     width: 400px;
     height: 220px;
-    border: 1px solid #c6040c; /* Параметры рамки */
-    border-radius: 20px; /* Радиус скругления */
+    border: 1px solid #c6040c; 
+    border-radius: 20px; 
+}
+
+.music_input_form {
+    margin-left: 100px;
+    position: absolute;
+    margin-top: 100px;
+    background: #b5bdc8;
+    background: linear-gradient(to top, #b5bdc8 0%, #828c95 36%, #28343b 100%);
+    width: 400px;
+    height: 220px;
+    border: 1px solid #c6040c; 
+    border-radius: 20px; 
 }
 
 .text_form {
@@ -38,6 +56,14 @@
     font-size:30px;
     margin-top:10px;
     margin-left:30px;
+}
+
+.text_form_track {
+    font-family: "Quickiss";
+    color: #3707d3;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 30px;
 }
 
 .button_one {
@@ -62,9 +88,39 @@
 
 .button_one:active 
 {
-      background: linear-gradient(#f59500, #f5ae00) #f59500;
+    background: linear-gradient(#f59500, #f5ae00) #f59500;
 }
-.button_two {
+
+
+.button_one_track {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: .5em 2em;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #c70000;
+    border-radius: 6px;
+    background: linear-gradient(#00c750, #E38916) #bd0606;
+    transition: 0.2s;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.button_one:hover 
+{
+    background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+}
+
+.button_one:active 
+{
+    background: linear-gradient(#f59500, #f5ae00) #f59500;
+}
+
+
+.button_two 
+{
     display: inline-block;
     padding: 10px 40px;
     color: #D7D7D7;
@@ -79,6 +135,22 @@
     transition: all .2s;
     margin-left: 20px;
 
+}
+
+.button_two_track {
+    display: inline-block;
+    padding: 10px 40px;
+    color: #d38c07;
+    background: #b40101;
+    border: 2px solid #48A65B;
+    font-size: .95em;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    margin-left: 20px;
 }
 @font-face {
     font-family: "Quickiss";

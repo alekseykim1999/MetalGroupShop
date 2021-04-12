@@ -1,42 +1,49 @@
-﻿.main_entrance {
+﻿.main_entrance 
+{
     background: url("/img/NewBackground.jpg") no-repeat;
 }
 
-.input_form {
+.input_form 
+{
     margin-left: 600px;
     margin-top: 200px;
     background: #b5bdc8;
     background: linear-gradient(to top, #b5bdc8 0%, #f27c54 36%, #7ff427 100%);
     width: 400px;
-    border: 1px solid #c6040c; /* Параметры рамки */
-    border-radius: 20px; /* Радиус скругления */
+    border: 1px solid #c6040c; 
+    border-radius: 20px; 
 }
 
-.welcome_title {
+.welcome_title 
+{
     font-family: "Quickiss";
     color: #ea1660;
     margin-left: 90px;
     font-size:70px;
 }
 
-.login_title {
+.login_title 
+{
     font-family: "Cinderela";
     color: #4b4ef8;
     font-size: 30px;
     margin-left:130px;
 }
 
-@font-face {
+@font-face 
+{
     font-family: "Quickiss";
     src: url(/img/QuickKiss.ttf);
 }
 
-@font-face {
+@font-face 
+{
     font-family: "Cinderela";
     src: url(/img/Cinderela.ttf);
 }
 
-.input_box {
+.input_box 
+{
     display: block;
     width: 300px;
     margin: 2px;
@@ -61,7 +68,8 @@
     width:200px;
     text-align:center;
 }
-.button_style {
+.button_style 
+{
     display: inline-block;
     padding: 10px 40px;
     color: #D7D7D7;
@@ -82,15 +90,16 @@
     background: #79ff9f;
 }
 
-.link_style {
+.link_style 
+{
     font-family: "Cinderela";
     color: #4b4ef8;
     margin-top: 20px;
     margin-left: 70px;
 }
 
-
-.button-reg {
+.button-reg 
+{
     display: inline-block;
     color: white;
     text-decoration: none;
