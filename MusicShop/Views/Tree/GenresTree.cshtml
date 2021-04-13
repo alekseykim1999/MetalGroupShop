@@ -18,72 +18,83 @@
     <div id="tree"  class="tree_block"/>
     <script>
         window.onload = function () {
-            var chart = new OrgChart(document.getElementById("tree"), {
+
+            var chart = new OrgChart(document.getElementById("tree"),
+                {
                 nodeBinding: {
                     field_0: "Name",
                     img_0:"Photo1"
-                },
+                    },
+                    collapse: {
+                        level: 1,
+                        allChildren: true
+                    },
+                    expand: {
+                        level: 1,
+                        allChildren: true
+                    },
                 mouseScrool: OrgChart.action.scroll,
                 showYScroll: OrgChart.scroll.visible,
                 showXScroll: OrgChart.scroll.visible,
                 template: "diva",
                 align: OrgChart.ORIENTATION
-            });
-            chart.on("renderbuttons", function (sender, args) {
-                var pnode = sender.getNode(args.node.pid);
-                if (!pnode) return;
-                var t = OrgChart.t(args.node.templateName);
-                args.html += '<g control-expcoll-up-id="{id}" transform="matrix(1,0,0,1,{x},{y})"  style="cursor:pointer;">'
-                    .replace('{id}', args.node.id)
-                    .replace('{x}', args.node.x + (args.node.w / 2) - (t.expandCollapseSize / 2))
-                    .replace('{y}', args.node.y - t.expandCollapseSize / 2);
-                args.html += !args.node.parent ? t.plus : t.minus;
-                args.html += OrgChart.grCloseTag;
-            });
+                });
 
-            chart.on("redraw", function (sender) {
-                var upElements = document.querySelectorAll('[control-expcoll-up-id]');
-                for (var i = 0; i < upElements.length; i++) {
-                    upElements[i].addEventListener('click', function () {
-                        var id = this.getAttribute('control-expcoll-up-id');
-                        var node = sender.getNode(id);
-                        var pnode = sender.getNode(node.pid);
-
-                        if (pnode && !node.parent) {
-                            sender.config.roots = [pnode.id];
-                            sender.draw(OrgChart.action.update, { id: node.id });
-
-                        }
-                        else if (node.parent) {
-                            sender.config.roots = [node.id];
-                            sender.draw();
-                        }
-                    })
-                }
-            });
-
+        
             chart.load([
-                { id: 0, Name: "Music Industry", Photo1: "/img/TreeBackground.jpg" },
-                { id: 1, pid: 0, Name: "Rock Music" },
-                { id: 2, pid: 0, Name:"Hard Rock" },
-                { id: 3, pid: 0 },
-                { id: 4, pid: 1 },
-                { id: 5, pid: 1 },
-                { id: 6, pid: 2 },
-                { id: 7, pid: 2 },
-                { id: 8, pid: 3 },
-                { id: 9, pid: 3 }
+                { id: 0, Name: "Music Industry", Photo1: "/img/Genres/0.jpg" },
+
+
+                { id: 01, pid: 0, Name: "Rock", Photo1: "/img/Genres/Rock/01.jpg" },
+                { id: 011, pid: 01, Name: "Metal", Photo1: "/img/Genres/Rock/011.jpg" },
+                { id: 0111, pid: 011, Name: "Heavy Metal", Photo1: "/img/Genres/Rock/0111.jpg" },
+                { id: 0112, pid: 011, Name: "Thrash Metal", Photo1: "/img/Genres/Rock/0112.jpg" },
+                { id: 0113, pid: 011, Name: "Death Metal", Photo1: "/img/Genres/Rock/0113.jpg" },
+                { id: 01131, pid: 0113, Name: "Brutal Death Metal", Photo1: "/img/Genres/Rock/01131.jpg" },
+                { id: 01132, pid: 0113, Name: "Technical Death Metal", Photo1: "/img/Genres/Rock/01132.jpg" },
+                { id: 01133, pid: 0113, Name: "Melodic Death Metal", Photo1: "/img/Genres/Rock/01133.jpg" },
+                { id: 012, pid: 01, Name: "Hard Rock", Photo1: "/img/Genres/Rock/012.jpg" },
+                { id: 0121, pid: 012, Name: "Power Pop", Photo1: "/img/Genres/Rock/0121.jpg" },
+                { id: 0122, pid: 012, Name: "Grunge", Photo1: "/img/Genres/Rock/0122.jpg" },
+                { id: 013, pid: 01, Name: "Punk Rock", Photo1: "/img/Genres/Rock/013.jpg" },
+                { id: 0131, pid: 013, Name: "Anarcho Punk", Photo1: "/img/Genres/Rock/0131.jpg" },
+                { id: 0132, pid: 013, Name: "Crust Punk", Photo1: "/img/Genres/Rock/0132.jpg" },
+                { id: 0133, pid: 013, Name: "Skate Punk", Photo1: "/img/Genres/Rock/0133.jpg" },
+
+
+                { id: 02, pid: 0, Name: "Hip Hop", Photo1: "/img/Genres/Hip-Hop/02.jpg" },
+                { id: 021, pid: 02, Name: "Gangster Rap", Photo1: "/img/Genres/Hip-Hop/021.jpg" },
+                { id: 0211, pid: 021, Name: "Mafia Rap", Photo1: "/img/Genres/Hip-Hop/0211.jpg" },
+                { id: 022, pid: 02, Name: "Hardcore Rap", Photo1: "/img/Genres/Hip-Hop/022.jpg" },
+                { id: 0221, pid: 022, Name: "Horrorcore", Photo1: "/img/Genres/Hip-Hop/0221.jpg" },
+                { id: 023, pid: 02, Name: "Trap Rap", Photo1: "/img/Genres/Hip-Hop/023.jpg" },
+                { id: 0231, pid: 023, Name: "Mumble Rap", Photo1: "/img/Genres/Hip-Hop/0231.jpg" },
+                { id: 0232, pid: 023, Name: "Drill", Photo1: "/img/Genres/Hip-Hop/0232.jpg" },
+
+
+                { id: 03, pid: 0, Name: "Jazz", Photo1: "/img/Genres/Jazz/03.jpg" },
+                { id: 031, pid: 03, Name: "Traditional Jazz", Photo1: "/img/Genres/Jazz/031.jpg" },
+                { id: 032, pid: 03, Name: "Swing", Photo1: "/img/Genres/Jazz/032.jpg" },
+                { id: 0321, pid: 032, Name: "Electro Swing", Photo1: "/img/Genres/Jazz/0321.jpg" },
+                { id: 0322, pid: 032, Name: "New Jack Swing", Photo1: "/img/Genres/Jazz/0322.jpg" },
+                { id: 03221, pid: 0322, Name: "Hip Hop Soul", Photo1: "/img/Genres/Jazz/03221.jpg" },
+                { id: 033, pid: 03, Name: "Bebop", Photo1: "/img/Genres/Jazz/0333.jpg" },
+                { id: 034, pid: 03, Name: "Soul Jazz", Photo1: "/img/Genres/Jazz/034.jpg" },
+                { id: 0341, pid: 034, Name: "Funk", Photo1: "/img/Genres/Jazz/0341.jpg" },
+                { id: 0342, pid: 034, Name: "Disco", Photo1: "/img/Genres/Jazz/0342.jpg" },
+
+
+                { id: 04, pid: 0, Name: "Blues", Photo1: "/img/Genres/Blues/04.jpg" },
+                { id: 041, pid: 04, Name: "Delta Blues", Photo1: "/img/Genres/Blues/041.jpg" },
+                { id: 0411, pid: 041, Name: "Electric Blues", Photo1: "/img/Genres/Blues/0411.jpg" },
+                { id: 042, pid: 04, Name: "Chicago Blues", Photo1: "/img/Genres/Blues/042.jpg" },
+                { id: 043, pid: 04, Name: "Swamp Blues", Photo1: "/img/Genres/Blues/043.jpg" },
             ]);
         };
 
 
 
     </script>
-
-
-   
-
-   
 </body>
 </html>
 
