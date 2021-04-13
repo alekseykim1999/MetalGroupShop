@@ -61,11 +61,7 @@ ul, #myUL {
 
 .tree_block
 {
-    margin-top:100px;
-    margin-left:350px;
-    background-color:red;
-    color:gold;
-    width:800px;
-    height:450px
+    width:auto;
+    height:1000px;
 }
 

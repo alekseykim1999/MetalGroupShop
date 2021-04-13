@@ -3,9 +3,10 @@
 }
 <html>
 <head>
-   
     <link href="~/css/tree_view_style.css" rel="stylesheet" type="text/css" />
-  
+    <script src="~/lib/balkangraph/orgchart.js/orgchart.js"></script>
+    <script src="https://balkangraph.com/js/latest/orgchart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body class="tree_background">
     <div class="tree_header">
@@ -14,85 +15,75 @@
             Genres
         </h1>
     </div>
+    <div id="tree"  class="tree_block"/>
+    <script>
+        window.onload = function () {
+            var chart = new OrgChart(document.getElementById("tree"), {
+                nodeBinding: {
+                    field_0: "Name",
+                    img_0:"Photo1"
+                },
+                mouseScrool: OrgChart.action.scroll,
+                showYScroll: OrgChart.scroll.visible,
+                showXScroll: OrgChart.scroll.visible,
+                template: "diva",
+                align: OrgChart.ORIENTATION
+            });
+            chart.on("renderbuttons", function (sender, args) {
+                var pnode = sender.getNode(args.node.pid);
+                if (!pnode) return;
+                var t = OrgChart.t(args.node.templateName);
+                args.html += '<g control-expcoll-up-id="{id}" transform="matrix(1,0,0,1,{x},{y})"  style="cursor:pointer;">'
+                    .replace('{id}', args.node.id)
+                    .replace('{x}', args.node.x + (args.node.w / 2) - (t.expandCollapseSize / 2))
+                    .replace('{y}', args.node.y - t.expandCollapseSize / 2);
+                args.html += !args.node.parent ? t.plus : t.minus;
+                args.html += OrgChart.grCloseTag;
+            });
 
-    <div>
-        <div class="tree_block">
-            <ul id="myUL">
-                <li>
-                    <span class="caret">Rock</span>
-                    <ul class="nested">
-                        <li>
-                            <span class="caret">Metal</span>
-                            <ul class="nested">
-                                <li>Heavy Metal</li>
-                                <li>Thrash Metal</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="caret">Punk</span>
-                            <ul class="nested">
-                                <li>Hardcore Punk</li>
-                                <li>
-                                    <span class="caret">Crust Punk</span>
-                                    <ul class="nested">
-                                        <li>Britain Crust Punk</li>
-                                        <li>French Crust Punk</li>
-                                        <li>United States Crust Punk</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="caret">Grunge</span>
-                            <ul class="nested">
-                                <li>Classic Grunge</li>
-                                <li>Post-Grunge</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="caret">Blues Rock</span>
-                            <ul class="nested">
-                                <li>Old School Blues Rock</li>
+            chart.on("redraw", function (sender) {
+                var upElements = document.querySelectorAll('[control-expcoll-up-id]');
+                for (var i = 0; i < upElements.length; i++) {
+                    upElements[i].addEventListener('click', function () {
+                        var id = this.getAttribute('control-expcoll-up-id');
+                        var node = sender.getNode(id);
+                        var pnode = sender.getNode(node.pid);
 
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="caret">Hard Rock</span>
-                            <ul class="nested">
-                                <li>Britain Hard Rock</li>
-                                <li>United States Hard Rock</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="caret">Hip-Hop</span>
-                    <ul class="nested">
-                        <li>
-                            <span class="caret">Rap</span>
-                            <ul class="nested">
-                                <li>
-                                    <span class="caret">West Side Rap</span>
-                                    <ul class="nested">
-                                        <li>Gangsta Rap</li>
-                                        <li>J-Funk</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="caret">Rythm-And-Blues</span>
-                            <ul class="nested">
-                                <li>Club R-n-B</li>
-                                <li>Classic R-n-B</li>
-                                <li>New R-n-B</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+                        if (pnode && !node.parent) {
+                            sender.config.roots = [pnode.id];
+                            sender.draw(OrgChart.action.update, { id: node.id });
+
+                        }
+                        else if (node.parent) {
+                            sender.config.roots = [node.id];
+                            sender.draw();
+                        }
+                    })
+                }
+            });
+
+            chart.load([
+                { id: 0, Name: "Music Industry", Photo1: "/img/TreeBackground.jpg" },
+                { id: 1, pid: 0, Name: "Rock Music" },
+                { id: 2, pid: 0, Name:"Hard Rock" },
+                { id: 3, pid: 0 },
+                { id: 4, pid: 1 },
+                { id: 5, pid: 1 },
+                { id: 6, pid: 2 },
+                { id: 7, pid: 2 },
+                { id: 8, pid: 3 },
+                { id: 9, pid: 3 }
+            ]);
+        };
+
+
+
+    </script>
+
+
+   
+
+   
 </body>
 </html>
 

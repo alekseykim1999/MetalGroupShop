@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "afRpeFD6x/8+yxlSNSvLXL1kqwbYVmECSccEvcveplQba4XEkEPSBJH3oIyIjTrh1Yw9XvtEewowHW8LRkbQJA==",
+  "dgSpecHash": "ZeVUSkYQY35qqOFYuyOjffINLtEfEqbMpl7dnAikjp2QU37d+nMnSrB5zTrQ+qTwK0+EWtbn/8LV6+/JdGtbYg==",
   "success": true,
   "projectFilePath": "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\MusicShop.csproj",
   "expectedPackageFiles": [
@@ -221,6 +221,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\npgsql\\5.0.3\\npgsql.5.0.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
+    "C:\\Users\\Алексей\\.nuget\\packages\\orgchartjs\\4.1.2\\orgchartjs.4.1.2.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\react.aspnet\\5.2.11\\react.aspnet.5.2.11.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\react.aspnet.middleware\\5.2.11\\react.aspnet.middleware.5.2.11.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\react.core\\5.2.11\\react.core.5.2.11.nupkg.sha512",

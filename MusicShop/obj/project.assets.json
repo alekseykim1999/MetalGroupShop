@@ -3269,6 +3269,9 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "OrgChartJS/4.1.2": {
+        "type": "package"
+      },
       "React.AspNet/5.2.11": {
         "type": "package",
         "dependencies": {
@@ -9295,6 +9298,18 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "OrgChartJS/4.1.2": {
+      "sha512": "Q4BbcYeujJTS+A0F1N1D3I8tLfU72skNnT0hfuWx3htk+5Sq7R+JvQwt7oTuuJCKpSNpeQM285FgJVxfMdWhZQ==",
+      "type": "package",
+      "path": "orgchartjs/4.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/orgchart.js",
+        "orgchartjs.4.1.2.nupkg.sha512",
+        "orgchartjs.nuspec"
+      ]
+    },
     "React.AspNet/5.2.11": {
       "sha512": "DdC/TKAQRj+3sw+CNCdhan4qa3GT+ZEsTbtVL6lk0TJtCcvp51q3ZXJdHbll2hCJMK/rqDWY49Qa/CySRb4wNQ==",
       "type": "package",
@@ -14503,6 +14518,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "NAudio >= 2.0.0",
       "Npgsql >= 5.0.3",
+      "OrgChartJS >= 4.1.2",
       "React.AspNet >= 5.2.11",
       "System.Data.OleDb >= 4.7.1",
       "Tesseract >= 4.1.1",
@@ -14652,6 +14668,10 @@
           "Npgsql": {
             "target": "Package",
             "version": "[5.0.3, )"
+          },
+          "OrgChartJS": {
+            "target": "Package",
+            "version": "[4.1.2, )"
           },
           "React.AspNet": {
             "target": "Package",
