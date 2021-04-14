@@ -17,9 +17,9 @@ namespace MusicShop.WorkClasses
             myConnection.Open();
             worker.Connection = myConnection;
             worker.CommandType = CommandType.Text;
-            worker.CommandText = ("INSERT INTO [UserData]([Login],[Password]) VALUES (@name,@pass)");
+            worker.CommandText = ("INSERT INTO UserData (Login,LastName) VALUES (@name,@pass)");
             worker.Parameters.AddWithValue("@name", _name);
-            worker.Parameters.AddWithValue("@name", _password);
+            worker.Parameters.AddWithValue("@pass", _password);
             worker.ExecuteNonQuery();
             myConnection.Close();
         }

@@ -8,32 +8,46 @@
     <title>Sound Analyzer</title>
     <link href="~/css/one_album_style.css" rel="stylesheet" type="text/css" />
     <link href="~/css/text_searcher.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-        <div class="header_block">
-            <br />
-            <h1 class="text_header">
-                Music Notes Reader
-            </h1>
+    <div class="header_block">
+        <br />
+        <h1 class="text_header">
+            Music Notes Reader
+        </h1>
+    </div>
+    <div class="main_block_music">
+        <div class="music_input_form">
+            @using (Html.BeginForm("ConvertTrack", "MusicConverter"))
+            {
+                <h3 class="text_form_track">Set Music Track</h3>
+                <br />
+                <label class="button_one_track">
+                    <input type="file" name="_file" id="upload" />
+                    Set source WAV file
+                </label>
+                <br />
+                <audio class="audio" id="audio" controls>
+                    <source src="" id="src" />
+                </audio>
+                <label class="button_two_track">
+                    <input type="submit" />
+                    Send
+                </label>
+
+            }
         </div>
-        <div class="main_block_music">
-            <div class="music_input_form">
-                @using (Html.BeginForm("ConvertTrack", "MusicConverter"))
-                {
-                    <h3 class="text_form_track">Set Music Track</h3>
-                    <br />
-                    <label class="button_one_track">
-                        <input type="file" name="_file" />
-                        Set source WAV file
-                    </label>
-                    <br />
-                    <label class="button_two_track">
-                        <input type="submit" />
-                        Send
-                    </label>
-                }
-            </div>
-        </div>
+    </div>
+
+    <script>
+        function handleFiles(event) {
+            var files = event.target.files;
+            $("#src").attr("src", URL.createObjectURL(files[0]));
+            document.getElementById("audio").load();
+        }
+        document.getElementById("upload").addEventListener("change", handleFiles, false);
+    </script>
 </body>
 </html>
 
