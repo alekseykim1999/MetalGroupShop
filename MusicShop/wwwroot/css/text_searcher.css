@@ -156,6 +156,11 @@
     margin-top:10px;
 }
 
+.button_two_track :hover 
+{
+    background: #ff7b80;
+}
+
 .photo_reader {
     margin-left: 700px;
     position: absolute;

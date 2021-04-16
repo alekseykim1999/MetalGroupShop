@@ -34,8 +34,8 @@ namespace MusicShop.Controllers
         public ViewResult ConvertTrack(IFormCollection form)
         {
             IConvertable sound_notes = new SoundConverter();
-            //var stream = System.IO.File.OpenRead(form["_file"].ToString());
-            converted_notes.notes = sound_notes.ConvertSound().ToString();
+            var path =form["_file"].ToString();
+            converted_notes.notes = sound_notes.ConvertSound(path).ToString();
             return View(converted_notes);
         
         }

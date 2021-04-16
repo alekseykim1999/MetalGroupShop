@@ -10,10 +10,10 @@ namespace MusicShop.WorkClasses
 {
     public class SoundConverter :IConvertable
     { 
-        public StringBuilder ConvertSound()
+        public StringBuilder ConvertSound(string _path)
         {
             StringBuilder notes = new StringBuilder();
-            using (var rdr = new AudioFileReader("E:\\Дипломная работа\\Вспомогательные проекты\\AudioWork\\audio.wav"))
+            using (var rdr = new AudioFileReader("E:\\Дипломная работа\\MusicShopProject\\MusicShop\\audio3.wav"))
             {
                 int steps = 100;
                 int stepSize = (int)rdr.Length / steps;

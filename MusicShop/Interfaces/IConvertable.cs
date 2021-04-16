@@ -9,7 +9,7 @@ namespace MusicShop.Interfaces
 {
     interface IConvertable
     {
-        StringBuilder ConvertSound();
+        StringBuilder ConvertSound(string _path);
 
     }
 }
