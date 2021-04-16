@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MusicShop.Data.Mocks;
+using MusicShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,11 @@ namespace MusicShop.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<List<Album>> Get()
         {
-            return new string[] { "Rap", "Hip Hop", "Rock", "Jazz", "Blues" };
+            MockAlbum library = new MockAlbum();
+            List<Album> AllAlbums = (List<Album>)library.getAllAlbums();
+            return AllAlbums;
         }
     }
 }
