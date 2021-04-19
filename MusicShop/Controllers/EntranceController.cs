@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MusicShop.WorkClasses;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace MusicShop.Controllers
 {
@@ -15,16 +18,23 @@ namespace MusicShop.Controllers
         private UserRepository repo = new UserRepository();
 
         [HttpPost]
-        public RedirectResult CheckData(IFormCollection form)
+        [ValidateAntiForgeryToken]
+        public async Task<RedirectResult>  CheckData(IFormCollection form)
         {
             string mainPath = "";           
             string login =form["_login"].ToString(); //получить логин
             string _hashPassword = worker.HashFunction(form["_password"].ToString()); 
 
-            if (_hashPassword==repo.GetUserData(login)) 
-                mainPath="/Album/Main";
+            if (_hashPassword==repo.GetUserData(login))
+            {
+                mainPath = "/Album/Main";
+                await Authenticate(login); 
+            }
             else
+            {
                 mainPath = "...";
+            }
+               
             return Redirect(mainPath);
         }
 
@@ -38,14 +48,25 @@ namespace MusicShop.Controllers
         }
 
 
-        public ViewResult Authorization() //главная страница
+        public ViewResult Authorization() 
         {
             return View(); 
         }
 
-        public ViewResult Registration() //главная страница
+        public ViewResult Registration() 
         {
             return View();
+        }
+
+
+        private async Task Authenticate(string userName)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+            };
+            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
     }
 }

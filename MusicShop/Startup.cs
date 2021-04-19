@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using JavaScriptEngineSwitcher.ChakraCore;
 using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -67,19 +68,22 @@ namespace MusicShop
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
-
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => //CookieAuthenticationOptions
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Entrance/Authorization");
+                });
             services.AddMemoryCache();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
             services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
-
-
-
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+           
             app.UseSignalR(route =>
             {
                 route.MapHub<MessageHub>("/Message");
@@ -89,8 +93,8 @@ namespace MusicShop
             app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseSession();
-            app.UseMvcWithDefaultRoute(); 
-
+            app.UseMvcWithDefaultRoute();
+            app.UseAuthentication();    
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Entrance}/{action=Authorization}");
