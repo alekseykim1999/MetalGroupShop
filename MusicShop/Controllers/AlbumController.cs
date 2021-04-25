@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,8 +28,11 @@ namespace MusicShop.Controllers
             all_albums = _iAllAlbums;
             obj.AllBands = _iAllGroups.getAllGroups;
         }
-        public ViewResult Main() //главная страница
+        public ViewResult Main() 
         {
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userName = User.FindFirstValue(ClaimTypes.Name);
             ViewBag.Title = "Rock Portal";
             ViewBag.GroupName = "Metal Music"; 
             return View(obj); 
@@ -58,7 +62,6 @@ namespace MusicShop.Controllers
         }
         public RedirectResult WriteReview(IFormCollection form)
         {
-
             int idOfGroup = group_id;
             int idOfAlbum = album_id;
             string review = form["_review_text"].ToString();

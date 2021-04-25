@@ -47,6 +47,7 @@ namespace MusicShop.WorkClasses
                     using (StreamReader sr = new StreamReader(path))
                     {
                        review = await sr.ReadToEndAsync();
+                       review.Replace(">>>", "\n"); 
                     }
                 }
                 catch (Exception e)
@@ -57,18 +58,16 @@ namespace MusicShop.WorkClasses
             return await Task.FromResult(review);
         }
 
-        public static void CreateData(int _numGroup, int _numAlbum, string text)
+        public static async void CreateData(int _numGroup, int _numAlbum, string text)
         {
             string path = "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _numGroup + "\\" + _numAlbum + ".txt";
             using (FileStream fs = new FileStream(path, FileMode.Append, FileAccess.Write))
-            using (StreamWriter sw = new StreamWriter(fs, Encoding.Unicode))
+            using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
             {
-                sw.WriteAsync("\n>>>\n" + text);
+                await sw.WriteAsync("\n>>>\n"+text);
 
             }
         }
-
-
         internal static string readFileReviews(int idgroup, int idAlbum)
         {
             throw new NotImplementedException();

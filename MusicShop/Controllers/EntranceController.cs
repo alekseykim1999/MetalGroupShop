@@ -28,7 +28,7 @@ namespace MusicShop.Controllers
             if (_hashPassword==repo.GetUserData(login))
             {
                 mainPath = "/Album/Main";
-                await Authenticate(login); 
+                //await Authenticate(login); 
             }
             else
             {
@@ -59,14 +59,14 @@ namespace MusicShop.Controllers
         }
 
 
-        private async Task Authenticate(string userName)
-        {
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
-            };
-            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
-        }
+        //private async Task Authenticate(string userName)
+        //{
+        //    var claims = new List<Claim>
+        //    {
+        //        new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+        //    };
+        //    ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+        //    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        //}
     }
 }

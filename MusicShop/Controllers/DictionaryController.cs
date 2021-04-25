@@ -16,7 +16,7 @@ namespace MusicShop.Controllers
         private readonly IAllAlbums all_albums;
       
         AlbumListViewModel obj = new AlbumListViewModel();
-        public ActionResult AllAlbums() //главная страница
+        public ActionResult AllAlbums() 
         {
             MockAlbum library = new MockAlbum();
             obj.AllAlbums = library.getAllAlbums();

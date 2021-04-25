@@ -82,8 +82,6 @@ namespace MusicShop
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-
-           
             app.UseSignalR(route =>
             {
                 route.MapHub<MessageHub>("/Message");
