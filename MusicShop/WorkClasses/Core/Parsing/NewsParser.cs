@@ -14,21 +14,27 @@ namespace Parser.Core.Platonus
         public string[] Parse(IHtmlDocument document) 
         {
 
-            var list = new List<string>(); 
-            foreach (var img in document.QuerySelectorAll("img"))
+            var list = new List<string>();
+            foreach (HtmlElement parentDiv in document.QuerySelectorAll("div").Where(i => i.ClassName == "tn-image-container" || i.ClassName == "tn-video-container"))
             {
-                string src = img.GetAttribute("src");
-                if(!src.Contains(".png") && src!="https://tengrinews.kz/https://mc.yandex.ru/watch/1838272")
-                 list.Add("https://tengrinews.kz/"+src); 
+                HtmlElement tag = (HtmlElement)parentDiv.FirstElementChild;
+                if (!tag.HasChildNodes)
+                {
+                    list.Add(tag.GetAttribute("src") + tag.InnerHtml);
+                }
+                else
+                {
+                    HtmlElement video = (HtmlElement)parentDiv.FirstElementChild;
+                    HtmlElement source = (HtmlElement)video.FirstElementChild;
+                    list.Add(source.GetAttribute("src"));
+                }
             }
-            list.RemoveAt(list.Count - 1);
 
-            foreach (var span in document.QuerySelectorAll("span").Where(i => i.ClassName != null && i.ClassName.Contains("tn-article-title")))
+
+            foreach (var span in document.QuerySelectorAll("a").Where(i => i.ClassName != null && i.ClassName.Contains("tn-link")))
             {
                 list.Add(span.TextContent);
             }
-            list.RemoveAt(list.Count - 1);
-
             return list.ToArray();
         }
 

@@ -8,7 +8,7 @@ namespace Parser.Core.Platonus
 {
     class ParserSettings : IParserSettings 
     {
-        public string BaseUrl { get; set; } = "https://tengrinews.kz/music/"; 
+        public string BaseUrl { get; set; } = "https://tengrinews.kz/tag/music/"; 
         public string Prefix { get; set; } = ""; 
     }
 }

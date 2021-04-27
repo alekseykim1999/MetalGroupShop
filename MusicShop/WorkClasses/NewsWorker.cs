@@ -14,48 +14,34 @@ namespace MusicShop.WorkClasses
         static List<string> allNews = new List<string>();
         public List<NewsModel> getAllNews()
         {
+            Console.WriteLine("Парсинг начат");
             ParserWorker<string[]> parser = new ParserWorker<string[]>(
                 new NewsParser());
 
             parser.ParserSettings = new ParserSettings();
             parser.onCompleted += parser_on_completed; 
-            parser.onNewData += parser_on_new_data; 
+            parser.onNewData += parser_on_new_data;
             parser.Start();
-
-            Thread.Sleep(3000); 
+            Thread.Sleep(3000);
+            Console.WriteLine("Результат парсинга");
+            Console.WriteLine(allNews.Count);
             List<string> images = new List<string>();
             List<string> texts = new List<string>();
 
             foreach (string ss in allNews)
             {
-                if (ss.Contains(".jpeg"))
-                {
-                    images.Add(ss);
-                }
+                if (ss.Contains(".jpeg") || ss.Contains(".png") || ss.Contains(".mp4"))
+                    images.Add("https://tengrinews.kz"+ss);
                 else
-                {
-                    if(!texts.Contains(ss))
-                    {
-                        texts.Add(ss);
-                    }
-                }
-                    
+                    texts.Add(ss);
             }
-            texts.RemoveRange(12, 7);
-            List<NewsModel> resultList = new List<NewsModel>();
 
-                for (int index = 0; index < texts.Count; index++)
-                {
-                    try
-                    {
-                        resultList.Add(new NewsModel { img = images[index], news = texts[index] });
-                    }
-                    catch
-                    {
-                        resultList.Add(new NewsModel { img = " ", news = " " });
-                    }
-                     
-                }
+
+            List<NewsModel> resultList = new List<NewsModel>();
+            for (int index = 0; index < texts.Count; index++)
+            {
+                resultList.Add(new NewsModel { img = images[index], news = texts[index] });
+            }
 
             parser.onCompleted -= parser_on_completed;
             parser.onNewData -= parser_on_new_data;
