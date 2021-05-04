@@ -12,7 +12,6 @@ namespace MusicShop.Controllers
     [ApiController]
     public class ValuesController
     {
-        // GET api/values
         [HttpGet]
         public ActionResult<List<Album>> Get()
         {

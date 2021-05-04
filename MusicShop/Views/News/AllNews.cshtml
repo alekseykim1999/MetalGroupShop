@@ -22,19 +22,58 @@
             </h1>
         </div>
         <div class="background_color">
-            <ul>
+            <div class="slideshow-container">
                 @{
                     foreach (var newsInfo in Model.allnews)
                     {
-                        <li>
-                            <div class="news_block">
-                                <img class="news_image" src="@newsInfo.img" />
-                                <h3 class="news_text">@newsInfo.news</h3>
+                        if (newsInfo.img.Contains(".mp4"))
+                        {
+                            <div class="mySlides fade">
+                                <div class="numbertext">News</div>
+                                <video class="news_image" src="@newsInfo.img" style="width:100%" />
+                                <div class="text">@newsInfo.news</div>
                             </div>
-                        </li>
+                        }
+                        else
+                        {
+                            <div class="mySlides fade">
+                                <div class="numbertext">News</div>
+                                <img  src="@newsInfo.img" style="width:100%" />
+                                <div class="text">@newsInfo.news</div>
+                            </div>
+                        }
+
                     }
                 }
-            </ul>
-        </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+    </div>
     </body>
 </html>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>

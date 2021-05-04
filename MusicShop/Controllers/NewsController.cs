@@ -7,18 +7,27 @@ using MusicShop.Interfaces;
 using MusicShop.Models;
 using MusicShop.ViewModel;
 using MusicShop.WorkClasses;
-
+using Parser.Models;
 namespace MusicShop.Controllers
 {
     public class NewsController : Controller
     {
         public ViewResult AllNews() 
         {
-            NewsViewModel obj = new NewsViewModel();
-            NewsWorker newsGetter = new NewsWorker();
-            obj.allnews = newsGetter.getAllNews();
-
-            return View(obj); 
+            try
+            {
+                NewsViewModel obj = new NewsViewModel();
+                NewsWorker newsGetter = new NewsWorker();
+                obj.allnews = newsGetter.getAllNews();
+                return View(obj);
+            }
+            catch 
+            {
+                NewsViewModel obj = new NewsViewModel();
+                obj.allnews = new List<NewsModel>() { new NewsModel { img = "", news = "Error" } };
+                return View(obj);
+            }
+           
         }
 
     }

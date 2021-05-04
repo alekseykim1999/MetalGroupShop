@@ -102,11 +102,19 @@ namespace Parser.Core.Platonus
             }
             else
             {
-                var source = await loader.getSourceByPageId(); 
-                var domParser = new HtmlParser(); 
-                var documentPage = await domParser.ParseDocumentAsync(source); 
-                var result = parser.Parse(documentPage); 
-                onNewData.Invoke(this, result); 
+                try
+                {
+                    var source = await loader.getSourceByPageId();
+                    var domParser = new HtmlParser();
+                    var documentPage = await domParser.ParseDocumentAsync(source);
+                    var result = parser.Parse(documentPage);
+                    onNewData.Invoke(this, result);
+                }
+                catch
+                {
+
+                }
+               
             }
 
             onCompleted?.Invoke(this);

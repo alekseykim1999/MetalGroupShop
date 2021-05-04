@@ -19,10 +19,10 @@ namespace MusicShop.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<RedirectResult>  CheckData(IFormCollection form)
+        public RedirectResult  CheckData(IFormCollection form)
         {
             string mainPath = "";           
-            string login =form["_login"].ToString(); //получить логин
+            string login =form["_login"].ToString(); 
             string _hashPassword = worker.HashFunction(form["_password"].ToString()); 
 
             if (_hashPassword==repo.GetUserData(login))
@@ -32,7 +32,7 @@ namespace MusicShop.Controllers
             }
             else
             {
-                mainPath = "...";
+                mainPath = "/Entrance/Incorrect";
             }
                
             return Redirect(mainPath);
@@ -51,6 +51,11 @@ namespace MusicShop.Controllers
         public ViewResult Authorization() 
         {
             return View(); 
+        }
+
+        public ViewResult Incorrect()
+        {
+            return View();
         }
 
         public ViewResult Registration() 
