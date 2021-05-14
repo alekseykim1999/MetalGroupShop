@@ -13,21 +13,23 @@
     <title>Registration</title>
 </head>
 <body class="main_entrance">
-    @using (Html.BeginForm("RegisterUser", "Entrance"))
-    {
-        <div class="login_title">
-            Enter login
-        </div>
-        <br />
-        <input type="text" name="_newLogin" class="input_box" />
-        <br />
-        <div class="login_title">
-            Enter password</div>
+    <div class="reg_form">
+        @using (Html.BeginForm("RegisterUser", "Entrance"))
+        {
+            <div class="login_title">
+                Enter login
+            </div>
             <br />
-            <input type="text" name="_newPassword" class="input_box" />
+            <input type="text" name="_newLogin" class="reg_input_box" />
             <br />
-
-            <input type="submit" value="Registration" class="button_style"/>
+            <div class="login_title">
+                Enter password
+            </div>
+            <br />
+            <input type="text" name="_newPassword" class="reg_input_box" />
+            <br />
+            <input type="submit" value="Registration" class="button_reg_style" />
         }
+    </div>
 </body>
 </html>
