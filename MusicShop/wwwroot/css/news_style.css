@@ -1,8 +1,8 @@
 ﻿.news_image {
-    display: block;
-    width: auto;
-    height: auto
-
+    width: 500px;
+    border: 1px solid;
+    border-color: darkred;
+    border-radius: 50px 50px 50px 50px;
 }
 .news_text 
 {
@@ -66,9 +66,13 @@
 
 
 .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
+    width: 500px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left:500px;
+    border:1px solid;
+    border-color:darkred;
+    border-radius: 50px 50px 50px 50px;
 }
 
 
@@ -107,7 +111,6 @@
     color: #b919e6;
     font-size: 30px;
     font-weight: bold;
-    font-family: "Quickiss";
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;

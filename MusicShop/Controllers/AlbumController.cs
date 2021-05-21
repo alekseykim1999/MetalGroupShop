@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicShop.Interfaces;
@@ -17,16 +18,16 @@ namespace MusicShop.Controllers
 
         private readonly IAllAlbums all_albums;
         public static IEnumerable<Album> help_albums;
-
         AlbumListViewModel obj = new AlbumListViewModel();
-
         private static int group_id;
         private static int album_id;
 
-        public AlbumController(IAllAlbums _iAllAlbums, IAllGroups _iAllGroups)
+        private FileWorker fileWorker;
+        public AlbumController(IAllAlbums _iAllAlbums, IAllGroups _iAllGroups, IHostingEnvironment env)
         {
             all_albums = _iAllAlbums;
             obj.AllBands = _iAllGroups.getAllGroups;
+            this.fileWorker = new FileWorker(env);
         }
         public ViewResult Main() 
         {
@@ -43,6 +44,7 @@ namespace MusicShop.Controllers
             help_albums = all_albums.getConcreteAlbums(bandId);
             group_id = bandId;
             obj.AllAlbums = help_albums;
+            
             return View(obj);
         }
 
@@ -51,6 +53,7 @@ namespace MusicShop.Controllers
             obj.AllAlbums = help_albums;
             obj.idAlbum = albumId;
             obj.idgroup = group_id;
+            obj.fileWorker = this.fileWorker;
             album_id = albumId;
             return View(obj);
         }
@@ -64,8 +67,9 @@ namespace MusicShop.Controllers
         {
             int idOfGroup = group_id;
             int idOfAlbum = album_id;
+           
             string review = form["_review_text"].ToString();
-            FileWorker.CreateData(idOfGroup, idOfAlbum, review);
+            this.fileWorker.CreateData(idOfGroup, idOfAlbum, review);
             string mainPath = "/Album/InfoAlbum?albumId="+idOfAlbum;
             return Redirect(mainPath);
         }

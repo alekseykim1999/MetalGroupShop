@@ -24,6 +24,12 @@ ul, #myUL {
     list-style-type: none;
 }
 
+@font-face {
+    font-family: "Quickiss";
+    src: url(/img/QuickKiss.ttf);
+}
+
+
 
 #myUL {
     margin: 0;

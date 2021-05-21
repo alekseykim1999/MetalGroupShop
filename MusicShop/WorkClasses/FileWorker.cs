@@ -1,4 +1,5 @@
-﻿using MusicShop.Interfaces;
+﻿using Microsoft.AspNetCore.Hosting;
+using MusicShop.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,9 +11,14 @@ namespace MusicShop.WorkClasses
 {
     public class FileWorker 
     {
-        public static List<string> readFileSongs(int _group, int _album)
+        private IHostingEnvironment env;
+        public FileWorker(IHostingEnvironment _environment)
         {
-            string path = "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\wwwroot\\songs\\" + _group + "\\" + _album + ".txt";
+            this.env = _environment;
+        }
+        public List<string> readFileSongs(int _group, int _album)
+        {
+            string path = this.env.WebRootPath + "/songs/" + _group + "/" + _album + ".txt";
             List<string> songs = new List<string>();
             using (StreamReader _sw = new StreamReader(path, Encoding.Default))
             {
@@ -36,9 +42,9 @@ namespace MusicShop.WorkClasses
         }
 
 
-        public static async Task<string> readFileReview(int _group, int _album)
+        public async Task<string> readFileReview(int _group, int _album)
         {
-            string path = "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _group + "\\" + _album + ".txt";
+            string path = this.env.WebRootPath + "/reviews/" + _group + "/" + _album + ".txt";
             string review="";
             using (StreamReader _sw = new StreamReader(path, Encoding.Default))
             {
@@ -58,9 +64,9 @@ namespace MusicShop.WorkClasses
             return await Task.FromResult(review);
         }
 
-        public static async void CreateData(int _numGroup, int _numAlbum, string text)
+        public async void CreateData(int _numGroup, int _numAlbum, string text)
         {
-            string path = "E:\\Дипломная работа\\MusicShopProject\\MusicShop\\wwwroot\\reviews\\" + _numGroup + "\\" + _numAlbum + ".txt";
+            string path = this.env.WebRootPath + "/reviews/" + _numGroup + "/" + _numAlbum + ".txt";
             using (FileStream fs = new FileStream(path, FileMode.Append, FileAccess.Write))
             using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
             {

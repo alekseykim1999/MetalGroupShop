@@ -12,7 +12,6 @@ namespace MusicShop.Controllers
 {
     public class TreeController : Controller
     {
-
         public ActionResult GenresTree()
         {
             return View();

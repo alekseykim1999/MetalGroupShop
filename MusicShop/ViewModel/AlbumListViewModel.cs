@@ -1,4 +1,5 @@
-﻿using MusicShop.Models;
+﻿using Microsoft.AspNetCore.Hosting;
+using MusicShop.Models;
 using MusicShop.WorkClasses;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace MusicShop.ViewModel
         public IEnumerable<MetalGroup> AllBands { get; set; }
         public int idAlbum { get; set; }
         public int idgroup { get; set; }
+
+        public FileWorker fileWorker { get; set; }
+  
 
         public Album ConcreteAlbum
         {
@@ -33,13 +37,13 @@ namespace MusicShop.ViewModel
 
         public List<string> getSongs()
         {
-            return FileWorker.readFileSongs(idgroup, idAlbum);
+            return fileWorker.readFileSongs(idgroup, idAlbum);
         }
 
 
         public string getReview()
         {
-            Task<string> task1 = FileWorker.readFileReview(idgroup, idAlbum); 
+            Task<string> task1 = fileWorker.readFileReview(idgroup, idAlbum); 
             return task1.Result;
         }
 
