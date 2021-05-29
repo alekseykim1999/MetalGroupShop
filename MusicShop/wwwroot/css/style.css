@@ -212,8 +212,7 @@ a:hover
     margin-top: -1070px;
 }
 
-.navigation 
-{
+.navigation {
     float: left;
     line-height: 50px;
     font-size: 30px;
@@ -222,7 +221,7 @@ a:hover
     margin-top: -30px;
     width: 221.2px;
     text-align: center;
-    background: steelblue linear-gradient( rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .2) 50% ) center center / 100% 1em;
+    background-color: #f486f6;
     border: 1px solid;
     border-color: black;
     font-family: "Lemon";
@@ -233,6 +232,13 @@ a:hover
     background: #828284; 
 }
 
+.artist {
+    color: red;
+}
+
+.artist :hover {
+    color: blue;
+}
 .footer 
 {
     height: 50px;

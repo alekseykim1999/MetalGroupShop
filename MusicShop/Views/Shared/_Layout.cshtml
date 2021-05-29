@@ -24,7 +24,7 @@
                 $.each(json.topartists.artist, function (i, item)
                 {
                     array.push([item.name, parseInt(item.playcount)]);
-                    html += "<div style='margin-top: 10px;'><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " + item.playcount + "</a></div>";
+                    html += "<div style='margin-top: 10px;'><a class='artist' href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " + item.playcount + "</a></div>";
                 });
                 $('#result').append(html);
             });
@@ -61,7 +61,7 @@
                         <li>
                             <hr />
                             <div>
-                                <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id">
+                                <a href='/Album/AlbumsOfGroup?bandId=@band.id' id="@band.id" class="artist">
                                     <div class="band_name">
                                         @band.GroupName
                                     </div>

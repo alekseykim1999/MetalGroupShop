@@ -12,7 +12,6 @@ namespace MusicShop.WorkClasses
         protected static string connectString = "Host=localhost;Username=postgres;Password=12345;Database=musicdatabase";
         //protected OleDbConnection myConnection = new OleDbConnection(connectString);
         protected NpgsqlConnection myConnection = new NpgsqlConnection(connectString);
-
         protected NpgsqlCommand worker = new NpgsqlCommand();
     }
 }

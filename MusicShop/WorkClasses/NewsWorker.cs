@@ -13,18 +13,15 @@ namespace MusicShop.WorkClasses
 
         static List<string> allNews = new List<string>();
         public List<NewsModel> getAllNews()
-        {
-            Console.WriteLine("Парсинг начат");
+        {  
             ParserWorker<string[]> parser = new ParserWorker<string[]>(
                 new NewsParser());
-
             parser.ParserSettings = new ParserSettings();
             parser.onCompleted += parser_on_completed; 
             parser.onNewData += parser_on_new_data;
             parser.Start();
             Thread.Sleep(3000);
-            Console.WriteLine("Результат парсинга");
-            Console.WriteLine(allNews.Count);
+          
             List<string> images = new List<string>();
             List<string> texts = new List<string>();
 

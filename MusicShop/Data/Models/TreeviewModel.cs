@@ -8,9 +8,7 @@ namespace MusicShop.Data.Models
     public class TreeviewModel
     {
         public int parent_id { get; set; }
-
         public int cat_id { get; set; }
-
         public string descript { get; set; }
     }
 }

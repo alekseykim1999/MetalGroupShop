@@ -69,7 +69,7 @@ namespace MusicShop
                 options.Cookie.IsEssential = true;
             });
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options => //CookieAuthenticationOptions
+                .AddCookie(options => 
                 {
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Entrance/Authorization");
                 });
